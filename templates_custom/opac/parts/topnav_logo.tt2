@@ -1,0 +1,1 @@
+<div id="topnav_logo"> <a href="/"><img alt="[% l('Evergreen Logo') %]" src="[% ctx.media_prefix %]/opac/images/opac_logo.jpg" /></a></div>

@@ -1,0 +1,14 @@
+<div id="homesearch_main_logo">
+<center>
+      <div style="font-size:50px;">SageCat</div></br>
+      <div style="font-size:20px;">A library catalog serving the members of the Sage Library System</div>
+<h2 style="border:2px solid;">
+<b>TEST SERVER</b>
+</center>
+</h2>
+<br/>
+<hr style="border:2px solid;">
+<!--
+[% INCLUDE "opac/parts/book_carousel.tt2" %]
+-->
+</div>
