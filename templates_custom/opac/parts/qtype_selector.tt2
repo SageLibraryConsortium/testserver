@@ -4,6 +4,7 @@
     {value => "jtitle", label => l("Magazine Title")},
     {value => "author", label => l("Author")},
     {value => "subject", label => l("Subject")},
+    {value => "identifier|isbn", label =>("ISBN")},
     {value => "series", label => l("Series")},
 ] %]
 <select name="qtype"[% IF id; ' id="'; id ; '"' ; END %]>
