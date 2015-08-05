@@ -8,7 +8,5 @@
 </h2>
 <br/>
 <hr style="border:2px solid;">
-<!--
 [% INCLUDE "opac/parts/book_carousel.tt2" %]
--->
 </div>
