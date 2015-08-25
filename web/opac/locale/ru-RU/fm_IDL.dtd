@@ -349,6 +349,7 @@
 <!ENTITY field.atval.module.label "Название модуля">
 <!ENTITY field.atreact.module.label "Название модуля">
 <!ENTITY field.atclean.module.label "Название модуля">
+<!ENTITY field.acqpo.amount_estimated.label "Amount Estimated">
 <!ENTITY class.ccnbin.label "Примечание единицы Корзины шифров хранения документов">
 <!ENTITY field.vqbr.create_time.label "Время создания">
 <!ENTITY field.vqar.create_time.label "Время создания">

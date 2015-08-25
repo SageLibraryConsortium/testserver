@@ -349,6 +349,7 @@
 <!ENTITY field.atval.module.label "Moduulin nimi">
 <!ENTITY field.atreact.module.label "Moduulin nimi">
 <!ENTITY field.atclean.module.label "Moduulin nimi">
+<!ENTITY field.acqpo.amount_estimated.label "Amount Estimated">
 <!ENTITY class.ccnbin.label "Hyllypaikan siiloniteen ilmoitushuomautus">
 <!ENTITY field.vqbr.create_time.label "Luomisaika">
 <!ENTITY field.vqar.create_time.label "Luomisaika">

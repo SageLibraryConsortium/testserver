@@ -3847,7 +3847,7 @@
 <!ENTITY staff.client.portal.recordbuckets.description "Record Buckets">
 <!ENTITY staff.client.portal.recordbuckets.tab_name "Record Buckets">
 <!ENTITY staff.client.portal.admin "Administration">
-<!ENTITY staff.client.portal.helpdesk "Sage Documentation">
+<!ENTITY staff.client.portal.helpdesk "Get Help with Evergreen">
 <!ENTITY staff.client.portal.helpdesk.description "Submit A Helpdesk Ticket">
 <!ENTITY staff.client.portal.reports "Reports">
 <!ENTITY staff.client.portal.reports.description "Reports">

@@ -349,6 +349,7 @@
 <!ENTITY field.atval.module.label "Segundo nombre">
 <!ENTITY field.atreact.module.label "Segundo nombre">
 <!ENTITY field.atclean.module.label "Segundo nombre">
+<!ENTITY field.acqpo.amount_estimated.label "Amount Estimated">
 <!ENTITY class.ccnbin.label "Call Number Bucket Item Note">
 <!ENTITY field.vqbr.create_time.label "Hora de creación">
 <!ENTITY field.vqar.create_time.label "Hora de creación">

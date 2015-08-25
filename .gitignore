@@ -1,5 +1,3 @@
-## .gitignore for testserver ##
-
 /catalog
 /circ
 /cgi-bin
@@ -8,13 +6,15 @@
 /log
 /penalty
 /run
-/updates
+/updates*
 /xsl
+
 /web/conify
 /web/reports
 /web/reporter
 /web/standalone
 /web/xul
+/web/js
 
 *.log
 *.zip

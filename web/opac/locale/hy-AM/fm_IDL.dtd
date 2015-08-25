@@ -349,6 +349,7 @@
 <!ENTITY field.atval.module.label "Մոդուլի անուն">
 <!ENTITY field.atreact.module.label "Մոդուլի անուն">
 <!ENTITY field.atclean.module.label "Մոդուլի անուն">
+<!ENTITY field.acqpo.amount_estimated.label "Amount Estimated">
 <!ENTITY class.ccnbin.label "Դասիչ. Փնջի նյութի նշում">
 <!ENTITY field.vqbr.create_time.label "Ստեղծման ժամ">
 <!ENTITY field.vqar.create_time.label "Ստեղծման ժամ">

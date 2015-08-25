@@ -349,6 +349,7 @@
 <!ENTITY field.atval.module.label "Nome do Módulo">
 <!ENTITY field.atreact.module.label "Nome do Módulo">
 <!ENTITY field.atclean.module.label "Nome do Módulo">
+<!ENTITY field.acqpo.amount_estimated.label "Amount Estimated">
 <!ENTITY class.ccnbin.label "Nota de Item de Cesta de Nº de chamada">
 <!ENTITY field.vqbr.create_time.label "Criar Hora">
 <!ENTITY field.vqar.create_time.label "Criar Hora">
