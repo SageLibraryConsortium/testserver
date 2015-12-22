@@ -1,9 +1,0 @@
-<div>
-<center><b>Featured Items</b></center>
-</div>
-<iframe width="960" height="240" src="/books.php" frameborder="0" marginwidth="5" marginheight="5" scrolling="no" style="display:block;margin:0 auto;text-align:center"></iframe>
-<div>
-<h2>
-<center><b>TEST SERVER</b></center>
-[% INCLUDE "opac/parts/book_carousel.tt2" %]
-</h2>

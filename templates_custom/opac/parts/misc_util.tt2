@@ -7,7 +7,7 @@
         FOR node IN xml.findnodes('//*[@tag="' _ target_field _ '"]');
             raw_vals = [];
             core_val = '';
-            FOR subnode IN node.findnodes('./*[not(contains("w 0 4 5 6 8 9", @code))]');
+            FOR subnode IN node.findnodes('./*[not(contains("e w 0 4 5 6 7 8 9", @code))]');
                 raw_vals.push(subnode.textContent());
             END;
             core_val = raw_vals.join(" ");
@@ -137,9 +137,16 @@
             args.isbns.push(isbn.textContent);
         END;
 
+        # UPCs can be identified either by ind1="1" or subfield 2 of "upc"
         args.upcs = [];
-        FOR upc IN xml.findnodes('//*[@tag="024"]/*[@code="a"]');
+        FOR upc IN xml.findnodes('//*[@tag="024" and @ind="1"]/*[@code="a"]');
             args.upcs.push(upc.textContent);
+        END;
+        FOR upcfield IN xml.findnodes('//*[@tag="024"]/*[@code="2" and text()="upc"]');
+            my_parent = upcfield.parentNode();
+            FOR upc IN my_parent.findnodes('./*[@code="a"]');
+                args.upcs.push(upc.textContent);
+            END;
         END;
         args.upc = args.upcs.0; # use first UPC as the default
 
@@ -177,11 +184,6 @@
         END;
         args.title_extended = (args.titles.size) ? args.titles.0 : '';
 
-        seriesresults = xml.findnodes('//*[@tag="490"]/*[@code="a" or @code="v"]');
-        seriesresults_content = [];
-        FOR sub IN seriesresults; seriesresults_content.push(sub.textContent); END;
-        args.series = seriesresults_content.join(" ");
-
         args.pubplaces = [];
         pubplace_hunt = xml.findnodes('//*[@tag="260"]/*[@code="a"]') ||
             xml.findnodes('//*[@tag="264" and @ind2="1"]/*[@code="a"]');
@@ -206,8 +208,76 @@
         END;
         args.pubdate = (args.pubdates.size) ? args.pubdates.0 : '';
 
-        # Full publisher info
-        args.pubinfo = "$args.pubplace $args.publisher $args.pubdate";
+        # Get RDA Copyright Info.
+        args.copyrights = [];
+        FOR sub IN xml.findnodes('//*[@tag="264" and @ind2="4"]/*[@code="c"]');
+            args.copyrights.push(sub.textContent);
+        END;
+        args.copyright = (args.copyrights.size) ? args.copyrights.0 : '';
+
+        IF args.copyright.length >= 4;
+            args.copyrightYear = args.copyright.match('(\d{4})');
+            IF args.copyrightYear;
+                args.copyrightYear = args.copyrightYear.0;
+            END;
+        END;
+
+        # Get the RDA Production info.
+        args.producers = [];
+        FOR sub IN xml.findnodes('//*[@tag="264" and @ind2="0"]/*[@code="b"]');
+            args.producers.push(sub.textContent);
+        END;
+        args.producer = (args.producers.size) ? args.producers.0 : '';
+
+        args.prodplaces = [];
+        FOR sub IN xml.findnodes('//*[@tag="264" and @ind2="0"]/*[@code="a"]');
+            args.prodplaces.push(sub.textContent);
+        END;
+        args.prodplace = (args.prodplaces.size) ? args.prodplaces.0 : '';
+
+        args.proddates = [];
+        FOR sub IN xml.findnodes('//*[@tag="264" and @ind2="0"]/*[@code="c"]');
+            args.proddates.push(sub.textContent);
+        END;
+        args.proddate = (args.proddates.size) ? args.proddates.0 : '';
+
+        # Get the RDA Distribution args.
+        args.distributors = [];
+        FOR sub IN xml.findnodes('//*[@tag="264" and @ind2="2"]/*[@code="b"]');
+            args.distributors.push(sub.textContent);
+        END;
+        args.distributor = (args.distributors.size) ? args.distributors.0 : '';
+
+        args.distplaces = [];
+        FOR sub IN xml.findnodes('//*[@tag="264" and @ind2="2"]/*[@code="a"]');
+            args.distplaces.push(sub.textContent);
+        END;
+        args.distplace = (args.distplaces.size) ? args.distplaces.0 : '';
+
+        args.distdates = [];
+        FOR sub IN xml.findnodes('//*[@tag="264" and @ind2="2"]/*[@code="c"]');
+            args.distdates.push(sub.textContent);
+        END;
+        args.distdate = (args.distdates.size) ? args.distdates.0 : '';
+
+        # Get the RDA Manufacture args.
+        args.manufacturers = [];
+        FOR sub IN xml.findnodes('//*[@tag="264" and @ind2="3"]/*[@code="b"]');
+            args.manufacturers.push(sub.textContent);
+        END;
+        args.manufacturer = (args.manufacturers.size) ? args.manufacturers.0 : '';
+
+        args.manplaces = [];
+        FOR sub IN xml.findnodes('//*[@tag="264" and @ind2="3"]/*[@code="a"]');
+            args.manplaces.push(sub.textContent);
+        END;
+        args.manplace = (args.manplaces.size) ? args.manplaces.0 : '';
+
+        args.mandates = [];
+        FOR sub IN xml.findnodes('//*[@tag="264" and @ind2="3"]/*[@code="c"]');
+            args.mandates.push(sub.textContent);
+        END;
+        args.mandate = (args.mandates.size) ? args.mandates.0 : '';
 
         # RDA adds 264 to the pubinfo 880 consideration mix
         graphic_880s = [];
@@ -219,6 +289,24 @@
             args.pubinfos.push(pubinfo.primary.value);
         END;
         args.pubinfo = (args.pubinfos.size) ? args.pubinfos.0 : '';
+
+        args.series = [];
+        FOR sub IN xml.findnodes('//*[@tag="800" and @ind1="1"]/*[@code="t"]');
+           args.series.push(sub.textContent);
+        END;
+        FOR sub IN xml.findnodes('//*[@tag="830" and @ind1="1"]/*[@code="a"]');
+           args.series.push(sub.textContent);
+        END;
+        args.series = (args.series.size) ? args.series.0 : '';
+
+        args.seriesnumber = [];
+        FOR sub IN xml.findnodes('//*[@tag="800" and @ind1="1"]/*[@code="v"]');
+           args.seriesnumber.push(sub.textContent);
+        END;
+        FOR sub IN xml.findnodes('//*[@tag="830" and @ind1="1"]/*[@code="v"]');
+           args.seriesnumber.push(sub.textContent);
+        END;
+        args.seriesnumber = (args.seriesnumber.size) ? args.seriesnumber.0 : '';
 
         args.summaries = [];
         FOR sub IN xml.findnodes('//*[@tag="520"]/*[@code="a"]');
@@ -370,6 +458,11 @@
                     res.href = uri.getAttribute('href');
                     res.link = uri.getAttribute('label');
                     res.note = uri.getAttribute('use_restriction');
+                    # Avoid displaying the href as the link text if we can display the note instead
+                    IF res.link == res.href AND res.note;
+                        res.link = res.note;
+                        res.note = '';
+                    END;
                     args.uris.push(res);
                 END;
                 NEXT;

@@ -3,18 +3,19 @@
     PROCESS "opac/parts/css/fonts.tt2";
 %]
 
+/*
 @import url(//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
-/*@import url(//fonts.googleapis.com/css?family=Open+Sans-Bold); */
+*/
 
 body {
     margin:0;
-    font-family: Open Sans, Helvetica, sans-serif;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: [% css_fonts.size_base %];
     background: [% css_colors.primary %];
 }
 
 button, input {
-    font-family: Open Sans, Helvetica, sans-serif;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: [% css_fonts.size_base %];
 }
 
@@ -30,7 +31,7 @@ img {
 #homesearch_main_logo {
     padding-top: 20px;
     margin: auto;
-    margin-right: 30px;
+		margin-right: 30px;
     width: auto;
 }
 
@@ -47,7 +48,7 @@ a {
     border:1px solid [% css_colors.border_standard %];
     margin:0;
     padding:0;
-    width: 12em;
+    width: 13em;
 }
 
 .searchbar {
@@ -142,6 +143,23 @@ for now until a better color is picked - if needed.
 */
 #dash_fines { color: [% css_colors.text_attention %]; }
 
+#dash_wrapper #dash_user_message_button_container {
+    display: inline;
+    padding: 0;
+}
+#dash_wrapper #unread_message_count_floater {
+    position: absolute;
+    background-color: [% css_colors.text_alert %];
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    display: inline-block;
+    font-size: 95%;
+    border-radius: 0;
+    z-index: 2;
+    margin-top: 0.2em;
+    margin-left: -1.5em;
+}
+
 #header-wrap {
     background: linear-gradient([% css_colors.primary %], [% css_colors.primary_fade %]);
     background: -moz-linear-gradient([% css_colors.primary %], [% css_colors.primary_fade %]);
@@ -215,6 +233,7 @@ for now until a better color is picked - if needed.
     margin-left: 1em;
     padding-left:0px;
 }
+
 /* custom */
 .opac-button-goldlinks {
     color: #fbf9f9;
@@ -385,6 +404,10 @@ for now until a better color is picked - if needed.
      display: none;
 }
 
+#mobile_acct_search_links {
+      background: [% css_colors.primary_fade %];
+}
+
 .rdetail_header {
     padding: 5px 7px 6px 0px;
     margin-left: 1em;
@@ -395,6 +418,7 @@ for now until a better color is picked - if needed.
     color:[% css_colors.primary_fade %];
     font-weight:bold;
     font-size: [% css_fonts.size_bigger %];
+    text-decoration: none;
 }
 
 .rdetail_result_count {
@@ -408,6 +432,11 @@ for now until a better color is picked - if needed.
     font-weight:normal;
     padding-left: 1em;
     display: inline-block;
+}
+
+.rdetail_result_nav a {
+   text-decoration:none;
+   font-size: 125%;
 }
 
 #rdetail_details_table {
@@ -475,6 +504,11 @@ div.place_hold {
 }
 
 div.toggle_list { padding-top: 6px; }
+
+div.share_record {
+    padding-top: 6px;
+    border-top: 1px dotted [% css_colors.accent_light %];
+}
 
 div.format_icon {
     float: right;
@@ -750,7 +784,7 @@ tr.result_table_row > td.result_table_title_cell {
 
 .result_metadata {
     float: left;
-    width: 30em;
+    width: 40em;
     padding-right: 2em;
 }
 
@@ -885,20 +919,6 @@ div.result_table_utils_cont {
     font-weight: normal;
 }
 
-table.acct_notes {
-    border-collapse: collapse;
-    margin: -1em 0 0.5em 0;
-}
-
-table.acct_notes * {
-    border: solid thin;
-    padding: 0.5em; 
-}
-
-table.acct_notes th {
-    font-weight: bold;
-}
-
 #myopac_sum_fines {
     float:right;
     padding: 15px 0px 0px 23px;
@@ -918,7 +938,7 @@ table.acct_notes th {
     /*padding-left:10px;*/
 }
 
-#acct_checked_main_header, #acct_holds_main_header, #acct_checked_hist_header, #acct_list_header, #acct_list_header_anon, #temp_list_holds {
+#acct_checked_main_header, #acct_holds_main_header, #acct_checked_hist_header, #acct_list_header, #acct_list_header_anon, #temp_list_holds, #acct_messages_main_header {
     border-collapse: collapse;
 }
 
@@ -929,12 +949,12 @@ table.acct_notes th {
 
 .hold_note_title { font-weight: bold; }
 
-#acct_checked_main_header td, #acct_holds_main_header td, #acct_checked_hist_header td, #acct_list_header td, #acct_list_header_anon td, #temp_list_holds td {
+#acct_checked_main_header td, #acct_holds_main_header td, #acct_checked_hist_header td, #acct_list_header td, #acct_list_header_anon td, #temp_list_holds td, #acct_messages_main_header td {
     background: [% css_colors.accent_lighter2 %];
     padding: 10px;
 }
 
-#acct_checked_main_header th, #acct_holds_main_header th, #acct_checked_hist_header th, #acct_list_header th, #acct_list_header_anon th, #temp_list_holds th {
+#acct_checked_main_header th, #acct_holds_main_header th, #acct_checked_hist_header th, #acct_list_header th, #acct_list_header_anon th, #temp_list_holds th, #acct_messages_main_header th {
     text-align: left;
     padding: 0px 10px 0px 10px;
 }
@@ -1166,7 +1186,7 @@ div#facet_sidebar {
     padding-left: 1em;
 }
 #opac.result.sort { width: 160px; }
-.renew-summary { font-size: [% css_fonts.size_bigger %]; font-style: italic; margin: 0.5ex 0; }
+.renew-summary, .message-update-summary { font-size: [% css_fonts.size_bigger %]; font-style: italic; margin: 0.5ex 0; }
 .failure-text { margin-left: 4em; font-style: italic; color: [% css_colors.text_alert %]; }
 .refine-controls { font-size: [% css_fonts.size_bigger %]; padding: 0.5ex 0; }
 #adv_search_refine input[type=text] { border: 1px inset [% css_colors.accent_light %] !important; }
@@ -1223,18 +1243,23 @@ a.dash-link:hover { text-decoration: underline !important; }
 .expert-search-row { padding-top: 10px; }
 #adv_expert_row label { font-weight: bold; }
 
-.bookshelf thead tr td {
+.bookshelf tr.browse_border td {
     border-bottom: 1px dashed [% css_colors.accent_dark %];
+    font-size: 1px;
+    height: 1px;
     padding-bottom: 1ex;
 }
 .cn_browse_item { padding: 2ex; }
 .results-paginator-list { padding-left: 1em; }
 .results-paginator-selected { color: [% css_colors.text_alert %]; }
 .inactive-hold { background: [% css_colors.accent_lightest %]; }
+.unread-patron-message { font-weight: bold; }
 
 #hold-items-list td { padding: 5px; margin-bottom: 20px; }
 .hold-items-list-title { font-size: [% css_fonts.size_bigger %]; }
 .hold-items-list-problem { color: [% css_colors.text_alert %]; }
+
+.hold_success_links > span { margin: 0 2em; }
 
 .mr_holds_no_formats { 
   padding: 5px;
@@ -1260,7 +1285,6 @@ a.dash-link:hover { text-decoration: underline !important; }
  *     the tradeoff of increased stylesheet complexity (TODO: rethink?)
  */
 
-/*modded to be curvier and diff color*/
 .opac-multiline-button > a,
 .opac-button, .results_header_btns a, #simple-detail-view-links a, .dash_account_buttons a {
     color: [% css_colors.button_text %];
@@ -1299,9 +1323,9 @@ button.opac-button::-moz-focus-inner, input.opac-button::-moz-focus-inner {
     background: [% css_colors.control %];
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
     /* font-size: [% css_fonts.size_base %]; */
-	padding: .6em;
-	border-radius: 10px;
-	font-size: 13px;
+		padding: .6em;
+		border-radius: 10px;
+		font-size: 13px;
 }
 a.opac-button-header:hover, #dash_wrapper a.opac-button:hover {
     border-color: [% css_colors.control %];
@@ -1499,6 +1523,7 @@ table.result_holdings_table thead tr {
 }
 table.result_holdings_table thead tr th {
     font-weight: bold;
+		text-transform: capitalize;
 }
 span.preflib {
     margin: 0 2em 0 2em;
@@ -1732,6 +1757,32 @@ a.preflib_change {
     font-size: [% css_fonts.size_bigger %];
 }
 
+/* styling for sms text call number */
+.sms_text pre {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: [% css_fonts.size_medium %];
+    background: [% css_colors.accent_lightest %];
+    padding: .5%;
+    /* Allow text to wrap */
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+.mobile_view {
+   display:none;
+}
+
+/* patron message center */
+#myopac_message_tbody {
+    vertical-align: top;
+}
+.myopac_message_message {
+    white-space: pre-wrap;
+}
+
 @media only screen and (max-width: 800px) {
     .facet_sidebar_hidden, .result_block_hidden {
         display: none;
@@ -1757,11 +1808,10 @@ a.preflib_change {
     #header {
         padding: 10px;
         margin: 0px;
-	background: white;
+				background: white;
     }
     #homesearch_main_logo img {
-        width:100%; /*changed from 75*/
-	visbility: hidden;
+        width:100px; /*changed from 75%*/
     }
     #format_selector {
         display:none;
@@ -1903,8 +1953,8 @@ a.preflib_change {
         padding-top: 5px;
     }
     #main-content-home {
-        padding: 0px;
-        margin: 0px;
+        /* padding: 0px;*/ /*For Mobile Centering*/
+        /* margin: 0px; */
     }
     /* Make use of full width in mobile mode */
     .facet_box_wrapper .box_wrapper .box,
@@ -2069,6 +2119,15 @@ a.preflib_change {
         table#acct_holds_main_header td:nth-of-type(8):before { content: "[% l('Active') %]"; }
         table#acct_holds_main_header td:nth-of-type(9):before { content: "[% l('Status') %]"; }
         table#acct_holds_main_header td.hold_notes:before { content: "[% l('Notes') %]"; }
+
+       /*Want to see these in mobile ONLY */
+       .mobile_view{
+          display:block;
+       }
+
+       .mobile_search_lbl_clr{
+          color:[% css_colors.mobile_header_text %];
+       }
 }
 
 
@@ -2086,4 +2145,16 @@ See also http://webaim.org/techniques/css/invisiblecontent/
     overflow: hidden;                                                            
     clip: rect(0, 0, 0, 0);                                                      
     border: 0;                                                                   
+}
+
+/* Make added rows in Expert Search have bold labels like the initial row */
+label[for*=expert_]
+{
+    font-weight: bold;
+}  
 } 
+
+.sort_deemphasize {
+    font-weight: lighter;
+    font-size: 70%;
+}

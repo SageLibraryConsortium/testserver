@@ -275,7 +275,7 @@
 <!ENTITY staff.auth.change_type_description "Dočasná přihlášení do systému vyprší po několoka minutách bez aktivity. Přihlášení personálu jsou stejná, jako počáteční přihlášení do služebního klienta. Trvalé přihlášení zruší existující přihlašovací relaci a nahradí ji novou.">
 <!ENTITY staff.auth.change_type_staff "Personál">
 <!ENTITY staff.auth.change_type_temporary "Dočasné">
-<!ENTITY staff.auth.change_type_permanent "Trvaleé">
+<!ENTITY staff.auth.change_type_permanent "Trvalé">
 
 <!ENTITY staff.symbols.west_european "Západoevropské">
 <!ENTITY staff.symbols.turkish "Turečtina">
@@ -819,8 +819,8 @@
 <!ENTITY staff.main.menu.admin.server_admin.conify.circulation_limit_group.label "Skupiny výpůjčních limitů">
 <!ENTITY staff.main.menu.admin.server_admin.conify.floating_groups.label "Pohyblivá skupina">
 
-<!ENTITY staff.main.menu.admin.server_admin.acq.label "Akvizice">
-<!ENTITY staff.main.menu.admin.server_admin.acq.accesskey "A">
+<!ENTITY staff.main.menu.admin.server_admin.acq.label "Správa akvizice">
+<!ENTITY staff.main.menu.admin.server_admin.acq.accesskey "a">
 <!ENTITY staff.main.menu.admin.server_admin.acq.lineitem_alert.label "Upozornění k položce akvizičního seznamu">
 <!ENTITY staff.main.menu.admin.server_admin.acq.lineitem_alert.accesskey "l">
 <!ENTITY staff.main.menu.admin.server_admin.acq.lineitem_marc_attr_def.label "Definice atributů MARC v položce akvizičního seznamu">
@@ -988,7 +988,7 @@
 <!ENTITY staff.main.menu.cat.edit_user_buckets.label "Seznamy  uživatelů">
 <!ENTITY staff.main.menu.cat.key "a">
 <!ENTITY staff.main.menu.cat.label "Katalogizace">
-<!ENTITY staff.main.menu.cat.marc_batch_edit.label "Editace dávky MARC">
+<!ENTITY staff.main.menu.cat.marc_batch_edit.label "Dávková Editace MARCu">
 <!ENTITY staff.main.menu.cat.marc_batch_edit.accesskey "E">
 <!ENTITY staff.main.menu.cat.retrieve_last_record.accesskey "p">
 <!ENTITY staff.main.menu.cat.retrieve_last_record.label "Vyhledat poslední záznam">
@@ -2535,7 +2535,7 @@
 <!ENTITY staff.circ.circ_brief.xact_start.label "Čas výpůjčky">
 <!ENTITY staff.circ.circ_brief.due_date.label "K vrácení dne">
 <!ENTITY staff.circ.circ_brief.stop_fines_time.label "Pokuty zastaveny">
-<!ENTITY staff.circ.circ_brief.checkin_time.label "Půjčeno">
+<!ENTITY staff.circ.circ_brief.checkin_time.label "Čas vrácení">
 <!ENTITY staff.circ.circ_brief.circ_lib.label "Půjčující knihovna">
 <!ENTITY staff.circ.circ_brief.renewal.label "Prodloužení">
 <!ENTITY staff.circ.circ_brief.stop_fines.label "Důvod zastavení pokut">
@@ -2729,7 +2729,7 @@
 <!ENTITY staff.cat.bib_brief.call_number.label "Signatura z bib. záznamu #:">
 <!ENTITY staff.cat.bib_brief.call_number.accesskey "">
 <!-- "TCN" is an abbreviation for "title control number" -->
-<!ENTITY staff.cat.bib_brief.title_control_number.label "TCN (kontrollní č. zázn.):">
+<!ENTITY staff.cat.bib_brief.title_control_number.label "TCN (kontrol. č. záznamu):">
 <!ENTITY staff.cat.bib_brief.title_control_number.accesskey "">
 <!ENTITY staff.cat.bib_brief.biblio_record_entry_id.label "Databázové ID:">
 <!ENTITY staff.cat.bib_brief.biblio_record_entry_id.accesskey "">
@@ -3323,6 +3323,8 @@
 <!ENTITY staff.patron.bill_interface.void_all_billings.accesskey "V">
 <!ENTITY staff.patron.bill_interface.refund.label "Vrátit">
 <!ENTITY staff.patron.bill_interface.refund.accesskey "r">
+<!ENTITY staff.patron.bill_interface.adjust_to_zero.label "Nastavit na nulu">
+<!ENTITY staff.patron.bill_interface.adjust_to_zero.accesskey "u">
 <!ENTITY staff.patron.bill_interface.full_details.label "Podrobnosti">
 <!ENTITY staff.patron.bill_interface.full_details.accesskey "d">
 <!ENTITY staff.patron.bill_interface.show_in_catalog.label "Zobrazit v katalogu">
@@ -3507,7 +3509,7 @@
 <!ENTITY staff.patron.info.notes.accesskey "P">
 <!ENTITY staff.patron.info.triggered_events.label "Spuštěné události">
 <!ENTITY staff.patron.info.triggered_events.accesskey "d">
-<!ENTITY staff.patron.message_center.label "Message Center">
+<!ENTITY staff.patron.message_center.label "Centrum pro zprávy">
 <!ENTITY staff.patron.message_center.accesskey "r">
 <!ENTITY staff.patron.info.stat_cats.label "Statistické kategorie">
 <!ENTITY staff.patron.info.stat_cats.accesskey "S">
@@ -3813,7 +3815,7 @@
 <!ENTITY staff.printing.advanced.custom_print.warning.header "Poznámka k uživatelskému / externímu tisku">
 <!ENTITY staff.printing.advanced.custom_print.warning.text "Tato tisková strategie bude ignorovat nastavení tiskárny v &quot;normálním nastavení&quot;. Pokročilé  šablony, které využívají Javascript nemusí pracovat správně, i když externí nástroj může přijmout soubor receipt.html">
 <!ENTITY staff.printing.advanced.html_templates.warning.header "Také">
-<!ENTITY staff.printing.advanced.html_templates.warning.text "If using Receipt Templates with either the DOS LPT1 Print strategy or the Custom/External Print strategy (with &quot;receipt.txt&quot;), the client will try to translate any HTML markup to text, but this process may be imperfect, and for the best fidelity you should consider reworking your templates to be plain text if you are using a plain text print strategy.  However, if using a plain text print strategy with HTML markup, you may include special character codes in 2-digit hexadecimal in a &quot;hex&quot; attribute for any given element.  Such codes will be converted to actual characters and inserted at the place of the tag.  For example, &lt;p hex=&quot;0C&quot;&gt;Hello World&lt;/p&gt; will translate to form feed control character + Hello World. &lt;p&gt;Hello World&lt;/p hex=&quot;0C&quot;&gt; will translate to Hello World + form feed control character.">
+<!ENTITY staff.printing.advanced.html_templates.warning.text 'Pokud používate tiskovou šablonu pro tiskovou strategii DOS LPT1 nebo pro přizpůsobenou/externí tiskovou strategii (s "potvrzen.txt"), klient se pokusí převést jakékoliv HTML tagy na text. Tento proces však nemusí být bezchybný a pokud používáte stategii tisku prostého textu,  byste měli zvážit přepracování šablon do prostého textu. Pokud však používáte tiskovou strategii prostého textu spolu s HTML tagy, můžete do atributu "hex" pro jakýkoliv element zahrnout speciální dvoučíselné hecadecimální kódy znaků. Tyto kódy budou konvertovány na aktuální znaky a vloženy na místo tagu.  Npříklad  &lt;p hex="0C"&gt;Hello World&lt;/p&gt; bude interpretováno jako přechod na novou stránku + Hello World. &lt;p&gt;Hello World&lt;/p hex="0C"&gt; bude interpretován jako Hello World + přechod na novou stránku'>
 <!ENTITY staff.client.portal.title "Portál služebního  klienta Evergreenu">
 <!ENTITY staff.client.portal.tab_name "Portál">
 <!ENTITY staff.client.portal.welcome "Vítejte v Evergreenu">

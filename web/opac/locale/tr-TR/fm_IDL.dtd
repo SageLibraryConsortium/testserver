@@ -1,3 +1,4 @@
+<!ENTITY class.stgu.label "User Stage">
 <!ENTITY field.bre.source.label "Kayıt Kaynağı">
 <!ENTITY class.rxpt.label "Transaction Paid Totals">
 <!ENTITY field.sunit.sort_key.label "Sort Key">
@@ -102,6 +103,8 @@
 <!ENTITY field.viiad.owner.label "Owner">
 <!ENTITY field.vbq.owner.label "Owner">
 <!ENTITY field.vaq.owner.label "Owner">
+<!ENTITY field.cmrcfld.owner.label "Owner">
+<!ENTITY field.cmrcsubfld.owner.label "Owner">
 <!ENTITY field.cracct.owner.label "Owner">
 <!ENTITY field.are.owner.label "Owner">
 <!ENTITY field.bre.owner.label "Owner">
@@ -127,7 +130,7 @@
 <!ENTITY field.vibtf.grp.label "Group">
 <!ENTITY field.pgpt.grp.label "Group">
 <!ENTITY field.acplgm.lgroup.label "Group">
-<!ENTITY field.acqftr.transfer_time.label "Transfer Time">
+<!ENTITY field.au.ident_type2.label "İkincil Kimlik">
 <!ENTITY field.actscsf.name.label "Field Name">
 <!ENTITY field.ascsf.name.label "Field Name">
 <!ENTITY field.auoi.staff.label "Staff Member">
@@ -150,6 +153,8 @@
 <!ENTITY class.actsced.label "User Stat Cat Default Entry">
 <!ENTITY field.mb.billing_ts.label "Billing Timestamp">
 <!ENTITY field.acqscl.item.label "Serial Item">
+<!ENTITY field.afs.id.label "Fieldset ID">
+<!ENTITY field.afscv.fieldset.label "Fieldset ID">
 <!ENTITY class.acqpa.label "Provider Address">
 <!ENTITY field.acqlia.id.label "Attribute Value ID">
 <!ENTITY class.ahcm.label "Hold Copy Map">
@@ -376,6 +381,7 @@
 <!ENTITY field.ccm.sip2_media_type.label "SIP2 Media Type">
 <!ENTITY field.vqbrad.code.label "Code">
 <!ENTITY field.vqarad.code.label "Code">
+<!ENTITY field.cmrcfmt.code.label "Code">
 <!ENTITY field.ccvm.code.label "Code">
 <!ENTITY field.cza.code.label "Code">
 <!ENTITY field.ccm.code.label "Code">
@@ -416,6 +422,7 @@
 <!ENTITY field.acqmapinv.purchase_order.label "Purchase Order ID">
 <!ENTITY field.sunit.age_protect.label "Age Hold Protection">
 <!ENTITY field.acp.age_protect.label "Age Hold Protection">
+<!ENTITY field.cmrcfld.repeatable.label "Repeatabl?">
 <!ENTITY field.brt.name.label "Resource Type Name">
 <!ENTITY class.sunit.label "Unit">
 <!ENTITY field.sitem.unit.label "Unit">
@@ -526,7 +533,8 @@
 <!ENTITY field.acqpca.contact.label "Contact">
 <!ENTITY class.puwoum.label "User Work Org Unit Map">
 <!ENTITY field.accs.last_checkin_workstation.label "Last Checkin Workstation">
-<!ENTITY class.stgu.label "User Stage">
+<!ENTITY field.vii.stat_cat_data.label "Stat Cat Data">
+<!ENTITY field.viiad.stat_cat_data.label "Stat Cat Data">
 <!ENTITY field.ccmw.org_unit.label "Org Unit">
 <!ENTITY field.cwa.org_unit.label "Org Unit">
 <!ENTITY field.ccmm.org_unit.label "Org Unit">
@@ -619,6 +627,7 @@
 <!ENTITY field.circ.usr.label "Patron">
 <!ENTITY field.ancc.patron.label "Patron">
 <!ENTITY field.rodcirc.usr.label "Patron">
+<!ENTITY field.mb.adjustments.label "Adjustments">
 <!ENTITY field.cmfpm.length.label "Length">
 <!ENTITY field.cmpcsm.length.label "Length">
 <!ENTITY field.cbc.length.label "Length">
@@ -646,7 +655,7 @@
 <!ENTITY field.acqii.inv_item_type.label "Invoice Item Type">
 <!ENTITY field.acqpoi.inv_item_type.label "Invoice Item Type">
 <!ENTITY field.stgsc.value.label "Stat Cat Value">
-<!ENTITY field.au.ident_type2.label "İkincil Kimlik">
+<!ENTITY field.acqftr.transfer_time.label "Transfer Time">
 <!ENTITY class.mfr.label "Flattened MARC Fields">
 <!ENTITY class.acpn.label "Copy Note">
 <!ENTITY field.cmc.a_weight.label "A Weight">
@@ -734,6 +743,8 @@
 <!ENTITY field.sunit.dummy_isbn.label "Dummy ISBN">
 <!ENTITY field.acp.dummy_isbn.label "Dummy ISBN">
 <!ENTITY field.ath.key.label "Hook Key">
+<!ENTITY field.cmrcfld.marc_format.label "MARC Format">
+<!ENTITY field.cmrcsubfld.marc_format.label "MARC Format">
 <!ENTITY field.acn.label.label "Call Number Label">
 <!ENTITY field.ahopl.call_number_label.label "Call Number Label">
 <!ENTITY field.acqlid.cn_label.label "Call Number Label">
@@ -771,6 +782,8 @@
 <!ENTITY field.vqbrad.description.label "Description">
 <!ENTITY field.vqarad.description.label "Description">
 <!ENTITY field.cin.description.label "Description">
+<!ENTITY field.cmrcfld.description.label "Description">
+<!ENTITY field.cmrcsubfld.description.label "Description">
 <!ENTITY field.crad.description.label "Description">
 <!ENTITY field.ccvm.description.label "Description">
 <!ENTITY field.ath.description.label "Description">
@@ -874,6 +887,7 @@
 <!ENTITY class.acqfsrcb.label "Funding Source Balance">
 <!ENTITY class.pugm.label "User Group Map">
 <!ENTITY field.cbho.approx.label "Adjusted Capture Location to Pickup Lib Proximity">
+<!ENTITY field.cmrcsubfld.repeatable.label "Repeatable?">
 <!ENTITY field.aua.street2.label "Street (2)">
 <!ENTITY field.aal.street2.label "Street (2)">
 <!ENTITY field.acqpca.street2.label "Street (2)">
@@ -994,7 +1008,9 @@
 <!ENTITY field.actscecm.stat_cat.label "Statistical Category">
 <!ENTITY field.aaactsc.stat_cat.label "Statistical Category">
 <!ENTITY field.aaasc.stat_cat.label "Statistical Category">
-<!ENTITY field.acqfc.id.label "Fiscal Calendar ID">
+<!ENTITY field.ahr.usr.label "Hold User">
+<!ENTITY field.ahopl.usr.label "Hold User">
+<!ENTITY field.alhr.usr.label "Hold User">
 <!ENTITY field.vii.circulate.label "Circulate">
 <!ENTITY field.viiad.circulate.label "Circulate">
 <!ENTITY class.abl.label "Authority-Bibliographic Record Link">
@@ -1004,7 +1020,7 @@
 <!ENTITY field.acp.edit_date.label "Last Edit Date/Time">
 <!ENTITY field.vbq.id.label "Queue ID">
 <!ENTITY field.vaq.id.label "Queue ID">
-<!ENTITY field.brt.tgt_rsrc_types.label "Target Resource Types">
+<!ENTITY class.cmrcfmt.label "MARC Formats">
 <!ENTITY field.aoupa.absolute_adjustment.label "Absolute adjustment?">
 <!ENTITY field.cuat.ehow.label "Event Mechanism">
 <!ENTITY field.actsce.stat_cat.label "Stat Cat">
@@ -1230,6 +1246,8 @@
 <!ENTITY field.acqfsrcct.amount.label "Total Credits to Funding Source">
 <!ENTITY class.mct.label "Collections Tracker">
 <!ENTITY field.qsi.grouped_by.label "Is Grouped By">
+<!ENTITY field.cmrcfld.tag.label "MARC Tag">
+<!ENTITY field.cmrcsubfld.tag.label "MARC Tag">
 <!ENTITY field.crad.tag.label "MARC Tag">
 <!ENTITY field.czs.db.label "DB">
 <!ENTITY field.vibtf.field.label "Field">
@@ -1269,6 +1287,8 @@
 <!ENTITY field.vms.name.label "Name">
 <!ENTITY field.cgf.name.label "Name">
 <!ENTITY field.cin.name.label "Name">
+<!ENTITY field.cmrcfmt.name.label "Name">
+<!ENTITY field.cmrcfld.name.label "Name">
 <!ENTITY field.crad.name.label "Name">
 <!ENTITY field.csc.name.label "Name">
 <!ENTITY field.cza.name.label "Name">
@@ -1553,6 +1573,7 @@
 <!ENTITY field.bresv.request_lib.label "Request Library">
 <!ENTITY field.asvr.usr.label "Responding User">
 <!ENTITY class.atval.label "Trigger Condition Validator">
+<!ENTITY class.cmrcfld.label "MARC Fields">
 <!ENTITY class.acqexr.label "Exchange Rate">
 <!ENTITY field.qxp.table_alias.label "Table Alias">
 <!ENTITY field.qfr.table_alias.label "Table Alias">
@@ -1578,7 +1599,7 @@
 <!ENTITY field.ssub.start_date.label "Start Date">
 <!ENTITY field.acn.label_class.label "Classification Scheme">
 <!ENTITY class.mb.label "Billing Line Item">
-<!ENTITY field.brav.attr_val_maps.label "Resource Attribute Value Maps">
+<!ENTITY field.chmm.age_hold_protect_rule.label "Copy Age Hold Protection Rule">
 <!ENTITY field.cxt.prefix.label "Namespace Prefix">
 <!ENTITY class.mucs.label "User Circulation Summary">
 <!ENTITY class.ocirccount.label "Open Circulation Count">
@@ -1656,6 +1677,7 @@
 <!ENTITY field.acqfap.funding_source.label "Funding Source">
 <!ENTITY field.acqft.owner.label "Fund Tag Owner">
 <!ENTITY class.acqfa.label "Fund Allocation">
+<!ENTITY field.crad.vocabulary.label "Vocabulary URI">
 <!ENTITY field.auoi.id.label "Opt-in ID">
 <!ENTITY field.asvq.answers.label "Answers">
 <!ENTITY field.rocit.stat_cat_1.label "Legacy Stat Cat 1">
@@ -1691,8 +1713,8 @@
 <!ENTITY field.au.checkouts.label "All Circulations">
 <!ENTITY field.aouctn.sibling_order.label "Sibling Sort Order">
 <!ENTITY field.aws.name.label "Workstation Name">
-<!ENTITY field.circ.parent_circ.label "Parent Circulation">
-<!ENTITY field.acirc.parent_circ.label "Parent Circulation">
+<!ENTITY class.cmc.label "Metabib Class">
+<!ENTITY field.cmcts.field_class.label "Metabib Class">
 <!ENTITY class.ccnb.label "Call Number Bucket">
 <!ENTITY field.ssub.scaps.label "Captions and Patterns">
 <!ENTITY field.ahr.fulfillment_staff.label "Fulfilling Staff">
@@ -1731,7 +1753,8 @@
 <!ENTITY field.acqpoi.estimated_cost.label "Estimated Cost">
 <!ENTITY field.crahp.prox.label "Allowed Proximity">
 <!ENTITY field.atb.layout.label "Layout">
-<!ENTITY field.qdt.datatype_name.label "Datatype Name">
+<!ENTITY field.cmrcfld.hidden.label "Hidden?">
+<!ENTITY field.cmrcsubfld.hidden.label "Hidden?">
 <!ENTITY field.mbt.grocery.label "Grocery Billing link">
 <!ENTITY field.vbq.match_set.label "Match Set">
 <!ENTITY field.vaq.match_set.label "Match Set">
@@ -1798,6 +1821,7 @@
 <!ENTITY field.jub.estimated_unit_price.label "Estimated Unit Price">
 <!ENTITY field.acqlih.estimated_unit_price.label "Estimated Unit Price">
 <!ENTITY field.acsaf.linking_subfield.label "Linking Subfield">
+<!ENTITY class.cmrcsubfld.label "MARC Subfields">
 <!ENTITY field.crad.sf_list.label "MARC Subfields">
 <!ENTITY field.acs.authority_fields.label "Controlling Authority Fields">
 <!ENTITY class.mbtslv.label "Billable Transaction Summary with Billing Location">
@@ -1965,6 +1989,7 @@
 <!ENTITY field.acqmapinv.lineitem.label "Lineitem ID">
 <!ENTITY field.aba.maps.label "Authority Field Maps">
 <!ENTITY class.cnal.label "Net Access Level">
+<!ENTITY field.cmrcfld.fixed_field.label "Fixed Field?">
 <!ENTITY field.vii.opac_visible.label "OPAC Visible">
 <!ENTITY field.viiad.opac_visible.label "OPAC Visible">
 <!ENTITY field.ccvm.opac_visible.label "OPAC Visible">
@@ -2075,6 +2100,8 @@
 <!ENTITY field.mndp.voided.label "Voided?">
 <!ENTITY field.mdp.voided.label "Voided?">
 <!ENTITY field.mb.voided.label "Voided?">
+<!ENTITY field.cmrcfld.marc_record_type.label "MARC Record Type">
+<!ENTITY field.cmrcsubfld.marc_record_type.label "MARC Record Type">
 <!ENTITY class.viiad.label "Import Item Attribute Definition">
 <!ENTITY field.rccc.circ_lib.label "Library Circulation Location Short (Policy) Name">
 <!ENTITY field.aun.id.label "Note ID">
@@ -2122,6 +2149,9 @@
 <!ENTITY field.vqarad.id.label "ID">
 <!ENTITY field.cin.id.label "ID">
 <!ENTITY field.cmfinm.id.label "ID">
+<!ENTITY field.cmrcfmt.id.label "ID">
+<!ENTITY field.cmrcfld.id.label "ID">
+<!ENTITY field.cmrcsubfld.id.label "ID">
 <!ENTITY field.csc.id.label "ID">
 <!ENTITY field.murav.id.label "ID">
 <!ENTITY field.mrs.id.label "ID">
@@ -2203,6 +2233,7 @@
 <!ENTITY class.cmfts.label "Metabib Field TS Map">
 <!ENTITY field.ath.core_type.label "Core Type">
 <!ENTITY field.mb.billing_type.label "Legacy Billing Type">
+<!ENTITY field.ccvm.concept_uri.label "Concept URI">
 <!ENTITY field.acqpa.street1.label "Street 1">
 <!ENTITY field.clm.value.label "Language">
 <!ENTITY field.acqpa.street2.label "Street 2">
@@ -2249,7 +2280,7 @@
 <!ENTITY field.acqdfe.id.label "Entry ID">
 <!ENTITY field.rsce1.id.label "Entry ID">
 <!ENTITY field.rsce2.id.label "Entry ID">
-<!ENTITY field.chmm.age_hold_protect_rule.label "Copy Age Hold Protection Rule">
+<!ENTITY field.brav.attr_val_maps.label "Resource Attribute Value Maps">
 <!ENTITY field.qfr.id.label "From Relation ID">
 <!ENTITY field.qrc.from_relation.label "From Relation ID">
 <!ENTITY field.chmm.include_frozen_holds.label "Max includes Frozen">
@@ -2589,9 +2620,7 @@
 <!ENTITY field.bram.id.label "Resource Attribute Map ID">
 <!ENTITY field.acqftr.funding_source_credit.label "Funding Source Credit ID">
 <!ENTITY field.acqfy.year_begin.label "Year Begin">
-<!ENTITY field.ahr.usr.label "Hold User">
-<!ENTITY field.ahopl.usr.label "Hold User">
-<!ENTITY field.alhr.usr.label "Hold User">
+<!ENTITY field.acqfc.id.label "Fiscal Calendar ID">
 <!ENTITY field.ssub.record_entry.label "Bibliographic Record Entry">
 <!ENTITY field.rhcrpbap.holds_everywhere.label "Active Holds Everywhere">
 <!ENTITY field.au.usrgroup.label "Family Linkage or other Group">
@@ -2692,6 +2721,7 @@
 <!ENTITY field.sra.field.label "Index Field">
 <!ENTITY class.xnum.label "Number Expression">
 <!ENTITY field.aur.pubdate.label "Publication Date">
+<!ENTITY field.brt.tgt_rsrc_types.label "Target Resource Types">
 <!ENTITY field.au.mailing_address.label "Mailing Address">
 <!ENTITY field.aal.mailing_address.label "Mailing Address">
 <!ENTITY field.aou.mailing_address.label "Mailing Address">
@@ -2773,6 +2803,9 @@
 <!ENTITY field.rmocbbol.billed.label "Total Billed">
 <!ENTITY field.rmocbbcol.billed.label "Total Billed">
 <!ENTITY field.rmocbbhol.billed.label "Total Billed">
+<!ENTITY field.mp.account_adjustment.label "Account Adjustment Detail">
+<!ENTITY field.mbp.account_adjustment.label "Account Adjustment Detail">
+<!ENTITY field.mndp.account_adjustment.label "Account Adjustment Detail">
 <!ENTITY field.mbts.xact_start.label "Transaction Start Time">
 <!ENTITY field.mbtslv.xact_start.label "Transaction Start Time">
 <!ENTITY field.asc.sip_format.label "SIP Format">
@@ -2921,6 +2954,7 @@
 <!ENTITY class.cmf.label "Metabib Field">
 <!ENTITY field.cmfts.metabib_field.label "Metabib Field">
 <!ENTITY field.uvs.search.label "Search Constraints">
+<!ENTITY field.cmrcsubfld.code.label "MARC Subfield">
 <!ENTITY class.mbts.label "Billable Transaction Summary">
 <!ENTITY field.acqfscred.id.label "Credit ID">
 <!ENTITY field.mrd.item_lang.label "Lang">
@@ -3074,8 +3108,8 @@
 <!ENTITY class.mg.label "Grocery Transaction">
 <!ENTITY field.cmsa.alias.label "Alias (RegExp)">
 <!ENTITY field.aur.phone_notify.label "Phone Notify">
-<!ENTITY class.cmc.label "Metabib Class">
-<!ENTITY field.cmcts.field_class.label "Metabib Class">
+<!ENTITY field.circ.parent_circ.label "Parent Circulation">
+<!ENTITY field.acirc.parent_circ.label "Parent Circulation">
 <!ENTITY field.qseq.child_query.label "Child Query">
 <!ENTITY field.acqinv.shipper.label "Shipper">
 <!ENTITY field.acqedi.vendcode.label "Vendor Assigned Code">
@@ -3087,8 +3121,7 @@
 <!ENTITY field.ahr.notify_time.label "Notify Time">
 <!ENTITY field.ahopl.notify_time.label "Notify Time">
 <!ENTITY field.alhr.notify_time.label "Notify Time">
-<!ENTITY field.afs.id.label "Fieldset ID">
-<!ENTITY field.afscv.fieldset.label "Fieldset ID">
+<!ENTITY class.maa.label "Account Adjustment">
 <!ENTITY class.ahr.label "Hold Request">
 <!ENTITY field.bre.notes.label "Non-MARC Record Notes">
 <!ENTITY field.acqpro.currency_type.label "Currency">
@@ -3401,6 +3434,8 @@
 <!ENTITY field.acqpro.edi_default.label "EDI Default">
 <!ENTITY field.mb.id.label "Billing ID">
 <!ENTITY field.aalink.source.label "Source Record">
+<!ENTITY field.cmrcfld.mandatory.label "Mandatory?">
+<!ENTITY field.cmrcsubfld.mandatory.label "Mandatory?">
 <!ENTITY field.vmsp.id.label "Match Definition ID">
 <!ENTITY field.acqpoh.audit_id.label "Audit ID">
 <!ENTITY field.acqlih.audit_id.label "Audit ID">
@@ -3657,6 +3692,8 @@
 <!ENTITY field.acqliuad.ident.label "Is Identifier?">
 <!ENTITY field.acqlipad.ident.label "Is Identifier?">
 <!ENTITY field.acqlilad.ident.label "Is Identifier?">
+<!ENTITY field.qdt.datatype_name.label "Datatype Name">
+<!ENTITY field.aiit.blanket.label "Blanket?">
 <!ENTITY field.circ.renewal_remaining.label "Remaining Renewals">
 <!ENTITY field.combcirc.renewal_remaining.label "Remaining Renewals">
 <!ENTITY field.acirc.renewal_remaining.label "Remaining Renewals">

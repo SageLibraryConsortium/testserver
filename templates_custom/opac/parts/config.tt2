@@ -83,6 +83,14 @@ record.summary.jacket_size = 'medium';
 
 
 ##############################################################################
+# Option for full details as a default, esp. impt. for e-content
+# that uses resolver plumbing. Valid values are 'true', 'false' and 'hide'.
+# Setting this to 'true' shows full details by default but allows the link
+# to appear for 'Show Fewer Details'. The 'hide' option shows full details
+# and also suppresses the link from displaying at all.
+show_more_details.default = 'hide';
+
+##############################################################################
 # Define the order in which facets are displayed.  Only facets listed here 
 # will be displayed.  To show all facets sorted by name, comment out this 
 # setting.  
@@ -90,7 +98,7 @@ record.summary.jacket_size = 'medium';
 facet.display = [
     {facet_class => 'keyword', facet_order => ['materialtype']},
     {facet_class => 'author',  facet_order => ['personal', 'corporate']},
-    {facet_class => 'series',  facet_order => ['personal', 'uniform']},
+    {facet_class => 'series', facet_order => ['personal', 'uniform']},
     {facet_class => 'subject', facet_order => ['topic', 'name', 'geographic']},
     {facet_class => 'subject', facet_order => ['genre']}
 ];
@@ -111,14 +119,19 @@ facet.default_display_count = 5;
 #   lib_selector will put the search library box (with limit to available)
 #   pub_year will put the publication year box
 #   sort_selector will put the sort results selector
+# id DOM id used for linking labels to form controls.  They are pinned 
+#   here instead of auto-generated (from the attr type, for example) 
+#   for consistency.
 
 search.adv_config = [
-    {adv_label => l("Item Type"), adv_filter => ["mat_format"]},
-    {adv_label => l("Language"),  adv_attr => "item_lang"},
-    {adv_label => l("Search Library"), adv_special => "lib_selector"},    
-    {adv_label => l("Shelving Location"), adv_special => "copy_location", js_only => 1, adv_break => 1},
-    {adv_label => l("Publication Year"), adv_special => "pub_year"},
-    {adv_label => l("Sort Results"), adv_special => "sort_selector"},
+    {adv_label => l("Item Type"), adv_filter => ["mat_format"], id => 'adv_selector_item_type'},
+    {adv_label => l("Language"),  adv_attr => "item_lang", id => 'adv_selector_item_lang'},
+    {adv_label => l("Literary Form"), adv_attr => "lit_form", id => 'adv_selector_lit_form', adv_break => 1},
+		{adv_label => l("Audience"), adv_attr => ["audience_group", "audience"], id => 'adv_selector_audience'},
+    {adv_label => l("Shelving Location"), adv_special => "copy_location", id => 'adv_copy_location_selector', js_only => 1},
+    {adv_label => l("Search Library"), adv_special => "lib_selector", id => 'adv_org_selector', adv_break => 1},
+    {adv_label => l("Publication Year"), adv_special => "pub_year", id => 'adv_selector_pub_year'},
+    {adv_label => l("Sort Results"), adv_special => "sort_selector", id => 'adv_selector_sort_results'},
 ];
 
 # Set the default height of the select boxes. Defaults to 4.
@@ -143,7 +156,7 @@ search.default_qtypes = ['keyword','title','author'];
 
 search.basic_config = {
     type => 'filter',
-    group => ['mat_format'],
+    group => [ctx.get_cgf('opac.format_selector.attr').value, 'mat_format'],
     none_label => l("All Formats"),
 };
 
@@ -157,5 +170,24 @@ ctx.google_books_preview = 1;
 # Set a maintenance message to display in the catalogue
 #
 # ctx.maintenance_message = "The system will not be available February 29, 2104.";
+
+
+##############################################################################
+# Metarecords configuration
+# metarecords.disabled = 1; # disable all metarecord access points
+##############################################################################
+
+##############################################################################
+# Local date format (uses POSIX strftime() formatting)
+# See http://www.template-toolkit.org/docs/modules/Template/Plugin/Date.html
+# DATE_FORMAT = '%Y-%m-%d'; # for 2014-06-31 format
+##############################################################################
+
+##############################################################################
+# Local time format (uses POSIX strftime() formatting)
+# See http://www.template-toolkit.org/docs/modules/Template/Plugin/Date.html
+# TIME_FORMAT = '%H:%M:%S'; # for 16:32:32 (24 hour) format
+# TIME_FORMAT = '%H:%M'; # for 16:32 (24 hour) format
+##############################################################################
 
 %]

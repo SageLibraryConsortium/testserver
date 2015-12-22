@@ -106,7 +106,7 @@
 <!ENTITY common.barcode.accesskey "CB">
 <!ENTITY staff.about.title "Acerca de">
 <!ENTITY staff.acp_label_barcode "Código de barras">
-<!ENTITY staff.acp_label_call_number "Llamar al numero">
+<!ENTITY staff.acp_label_call_number "Signatura Topográfica">
 <!ENTITY staff.acp_label_circ_as_type "Circular como tipo">
 <!ENTITY staff.acp_label_circ_lib "Libreria en circulacion">
 <!ENTITY staff.acp_label_circ_modifier "Modificador de circulación">
@@ -819,7 +819,7 @@
 <!ENTITY staff.main.menu.admin.server_admin.conify.circulation_limit_group.label "Circulation Limit Groups">
 <!ENTITY staff.main.menu.admin.server_admin.conify.floating_groups.label "Floating Groups">
 
-<!ENTITY staff.main.menu.admin.server_admin.acq.label "Acquisitions">
+<!ENTITY staff.main.menu.admin.server_admin.acq.label "Acquisitions Administration">
 <!ENTITY staff.main.menu.admin.server_admin.acq.accesskey "A">
 <!ENTITY staff.main.menu.admin.server_admin.acq.lineitem_alert.label "Line Item Alerts">
 <!ENTITY staff.main.menu.admin.server_admin.acq.lineitem_alert.accesskey "L">
@@ -2998,7 +2998,7 @@
 <!ENTITY staff.cat.copy_summary.label "Resumen de elementos">
 <!ENTITY staff.cat.copy_summary.barcode.label "Código de barras:">
 <!ENTITY staff.cat.copy_summary.location.label "Location:">
-<!ENTITY staff.cat.copy_summary.call_number.label "Call Number:">
+<!ENTITY staff.cat.copy_summary.call_number.label "Signatura Topográfica:">
 <!ENTITY staff.cat.copy_summary.status.label "Status:">
 <!ENTITY staff.cat.copy_summary.circulate.label "Circulate:">
 <!ENTITY staff.cat.copy_summary.reference.label "Reference:">
@@ -3018,8 +3018,8 @@
 <!ENTITY staff.cat.marcedit.stackSubfields.accesskey "s">
 <!ENTITY staff.cat.marcedit.fastItemAdd.label "Fast Item Add">
 <!ENTITY staff.cat.marcedit.fastItemAdd.accesskey "A">
-<!ENTITY staff.cat.marcedit.fastItemAdd_callnumber.label "Call Number">
-<!ENTITY staff.cat.marcedit.fastItemAdd_callnumber.accesskey "C">
+<!ENTITY staff.cat.marcedit.fastItemAdd_callnumber.label "Signatura Topográfica">
+<!ENTITY staff.cat.marcedit.fastItemAdd_callnumber.accesskey "S">
 <!ENTITY staff.cat.marcedit.fastItemAdd_barcode.label "Código de barras del elemento">
 <!ENTITY staff.cat.marcedit.fastItemAdd_barcode.accesskey "b">
 <!ENTITY staff.cat.marcedit.validate.label "Validate">
@@ -3150,7 +3150,7 @@
 <!ENTITY staff.cat.spine_labels.pocket_label.include_author.label "Include Author">
 <!ENTITY staff.cat.spine_labels.pocket_label.include_title.label "Include Title (segment after wrapping)">
 <!ENTITY staff.cat.spine_labels.indent_title.label "Indent a space?">
-<!ENTITY staff.cat.spine_labels.inc_call_number.label "Include Call Number">
+<!ENTITY staff.cat.spine_labels.inc_call_number.label "Incluir Signatura Topográfica">
 <!ENTITY staff.cat.spine_labels.inc_owning_library_policy_code.label "Include Owning Library (policy code)">
 <!ENTITY staff.cat.spine_labels.inc_owning_library.label "Include Owning Library">
 <!ENTITY staff.cat.spine_labels.inc_shelving_location.label "Include Shelving Location">
@@ -3323,6 +3323,8 @@
 <!ENTITY staff.patron.bill_interface.void_all_billings.accesskey "V">
 <!ENTITY staff.patron.bill_interface.refund.label "Refund">
 <!ENTITY staff.patron.bill_interface.refund.accesskey "R">
+<!ENTITY staff.patron.bill_interface.adjust_to_zero.label "Adjust to Zero">
+<!ENTITY staff.patron.bill_interface.adjust_to_zero.accesskey "Z">
 <!ENTITY staff.patron.bill_interface.full_details.label "Full Details">
 <!ENTITY staff.patron.bill_interface.full_details.accesskey "D">
 <!ENTITY staff.patron.bill_interface.show_in_catalog.label "Show in Catalog">
