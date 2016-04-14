@@ -11,7 +11,7 @@
     </div>
 
     <div class="container-fluid pad-vert" ng-show="show_vols">
-        <div class="row bg-info">
+        <div ng-show="record_id" class="row bg-info">
             <div class="col-xs-2"><h4 class="center-block">[% l('Batch Apply') %]</h4></div>
             <div class="col-xs-10">
                 <div class="row">
@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class="row pad-vert">
-            <div class="col-xs-1"><b>[% l('Library') %]</b></div>
+            <div class="col-xs-1"><b>[% l('Owning Library') %]</b></div>
             <div class="col-xs-1"><b>[% l('Volumes') %]</b></div>
             <div class="col-xs-10">
                 <div class="row">
@@ -52,7 +52,10 @@
                         </div>
                     </div>
                     <div class="col-xs-2" ng-show="only_vols">
-                        <button class="btn btn-default center-block" ng-click="workingToComplete() && saveAndExit()" type="button">[% l('Save & Exit') %]</button>
+                        <button class="btn btn-default center-block" ng-click="workingToComplete() && saveAndExit()" type="button">
+                            <span ng-if="embedded">[% l('Save changes') %]</span>
+                            <span ng-if="!embedded">[% l('Save & Exit') %]</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -61,7 +64,7 @@
             focus-next="focusNextFirst"
             ng-repeat="(lib,callnumbers) in data.tree | orderBy:lib track by lib"
             ng-init="ind = $index"
-            record="record.id()"
+            record="{{record_id}}"
             only-vols="only_vols"
             lib="{{lib}}"
             allcopies="data.copies"
@@ -103,12 +106,15 @@
         
                           <eg-grid-menu-item handler="workingToComplete"
                            label="[% l('Store Selected') %]"></eg-grid-menu-item>
+                          <eg-grid-menu-item handler="workingSaveAndExit"
+                           label="[% l('Save & Exit') %]"></eg-grid-menu-item>
         
                         
                           <eg-grid-field label="[% l('Barcode') %]"     path='barcode' visible></eg-grid-field>
                           <eg-grid-field label="[% l('Created') %]"     path="create_date" visible></eg-grid-field>
                           <eg-grid-field label="[% l('Activated') %]"   path="active_date" visible></eg-grid-field>
                           <eg-grid-field label="[% l('Call Number') %]" path="call_number.label" visible></eg-grid-field>
+                          <eg-grid-field label="[% l('Copy ID') %]"     path="id" hidden></eg-grid-field>
                         
                         </eg-grid>
         
@@ -151,7 +157,8 @@
                  <eg-grid-field label="[% l('Reference?') %]"  path="ref" visible></eg-grid-field>
                  <eg-grid-field label="[% l('Status') %]"      flesher="statusById" path="status.name" visible></eg-grid-field>
                  <eg-grid-field label="[% l('OPAC Visible') %]" path="opac_visible" visible></eg-grid-field>
-               
+                 <eg-grid-field label="[% l('Copy ID') %]"      path="id" hidden></eg-grid-field>
+
                </eg-grid>
             </div>
           </div>

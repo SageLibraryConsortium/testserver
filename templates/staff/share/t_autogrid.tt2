@@ -13,7 +13,7 @@
     <button type="button" class="btn btn-default dropdown-toggle eg-grid-menu-item">
       {{menuLabel}}<span class="caret"></span>
     </button>
-    <ul class="dropdown-menu">
+    <ul class="dropdown-menu scrollable-menu">
       <li ng-repeat="item in menuItems | filter : { standalone : 'false' }" ng-class="{divider: item.divider}">
         <a ng-if="!item.divider" href ng-disabled="item.disabled"
           ng-click="item.handler()">{{item.label}}</a>
@@ -89,7 +89,7 @@
       <button type="button" class="btn btn-default dropdown-toggle">
         [% l('Actions') %] <span class="caret"></span>                       
       </button>                                                              
-      <ul class="dropdown-menu pull-right grid-action-dropdown">                                  
+      <ul class="dropdown-menu pull-right grid-action-dropdown scrollable-menu">                                  
         <li ng-repeat-start="group in actionGroups">
           <span style="padding-left: 1em;" ng-if="group.label"><strong><u>{{group.label}}</u></strong></span>
         </li>
@@ -102,7 +102,7 @@
     </div>
 
     <div class="btn-group" dropdown is-open="gridRowCountIsOpen" ng-show="showPagination">
-      <button type="button" title="[% ('Select Row Count') %]"
+      <button type="button" title="[% l('Select Row Count') %]"
         class="btn btn-default dropdown-toggle">
         [% l('Rows [_1]', '{{limit()}}') %]
         <span class="caret"></span>
@@ -113,11 +113,14 @@
             {{t}}
           </a>
         </li>
+        <li ng-if="allowAll" >
+          <a href ng-click='offset(0);limit(10000);collect()'>[% l('All') %]</a>
+        </li>
       </ul>
     </div>
 
     <div class="btn-group" dropdown is-open="gridPageSelectIsOpen" ng-show="showPagination">
-      <button type="button" title="[% ('Select Page') %]"
+      <button type="button" title="[% l('Select Page') %]"
         class="btn btn-default dropdown-toggle">
         [% l('Page [_1]', '{{page()}}') %]
         <span class="caret"></span>
@@ -300,18 +303,18 @@
           ng-click="handleRowClick($event, item)"
           ng-dblclick="gridControls.activateItem(item)"
           ng-repeat="col in columns"
-          style="text-align:{{col.align}}; padding-left:5px; padding-right:5px; flex:{{col.flex}}"
+          style="text-align:{{col.align}}; flex:{{col.flex}}"
           ng-show="col.visible">
 
           <!-- if the cell comes with its own template,
                translate that content into HTML and insert it here -->
-          <span ng-if="col.template" 
+          <span ng-if="col.template" style="padding-left:5px; padding-right:10px;"
             ng-bind-html="translateCellTemplate(col, item)">
           </span>
 
           <!-- otherwise, simply display the item value, which may 
                pass through datatype-specific filtering. -->
-          <span ng-if="!col.template">
+          <span ng-if="!col.template" style="padding-left:5px; padding-right:10px;">
             {{itemFieldValue(item, col) | egGridValueFilter:col}}
           </span>
       </div>

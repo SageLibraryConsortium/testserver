@@ -10,6 +10,7 @@
 <script src="[% ctx.media_prefix %]/js/ui/default/staff/services/ui.js"></script>
 <script src="[% ctx.media_prefix %]/js/ui/default/staff/services/user.js"></script>
 <script src="[% ctx.media_prefix %]/js/ui/default/staff/services/eframe.js"></script>
+<script src="[% ctx.media_prefix %]/js/ui/default/staff/services/date.js"></script>
 <script src="[% ctx.media_prefix %]/js/ui/default/staff/circ/services/billing.js"></script>
 <script src="[% ctx.media_prefix %]/js/ui/default/staff/circ/services/circ.js"></script>
 [% INCLUDE 'staff/circ/share/circ_strings.tt2' %]
@@ -17,6 +18,7 @@
 [% INCLUDE 'staff/circ/share/hold_strings.tt2' %]
 <script src="[% ctx.media_prefix %]/js/ui/default/staff/cat/services/record.js"></script>
 <script src="[% ctx.media_prefix %]/js/ui/default/staff/circ/patron/app.js"></script>
+<script src="[% ctx.media_prefix %]/js/ui/default/staff/circ/patron/regctl.js"></script>
 
 <!-- load the rest on demand? -->
 
@@ -45,10 +47,18 @@ angular.module('egCoreMod').run(['egStrings', function(s) {
 }]);
 </script>
 
+<!-- add room for the fixed navigation elements -->
+<style ng-if="is_patron_edit">
+  #top-content-container { padding-top: 120px; }
+</style>
+<style ng-if="!is_patron_edit">
+  #top-content-container { padding-top: 80px; }
+</style>
+
 [% END %]
 
-<div class="row">
-  <div class="col-md-3">
+<div class="row" id="patron-fixed-tabs">
+  <div class="col-md-3 patron-name-header">
     <div ng-show="patron()">
       <h4 title="{{patron().id()}}">
         <div class="flex-row">
@@ -70,10 +80,11 @@ angular.module('egCoreMod').run(['egStrings', function(s) {
               <span class="glyphicon glyphicon-resize-full"></span>
             </a>
           </div>
-        </div><!-- row -->
+        </div>
       </h4>
-    </div><!-- if patron -->
-  </div><!-- col -->
+    </div>
+  </div>
+
   <div class="col-md-9">
     <ul class="nav nav-pills nav-pills-like-tabs">
       <li ng-class="{active : tab == 'checkout', disabled : !patron()}">
@@ -156,6 +167,10 @@ angular.module('egCoreMod').run(['egStrings', function(s) {
         <a href="./circ/patron/search">[% l('Patron Search') %]</a>
       </li>
     </ul>
+    <div class="flex-row patron-reg-actions-bar" ng-if="is_patron_edit()">
+      [% INCLUDE 'staff/circ/patron/reg_actions.tt2' %]
+    </div>
+
   </div><!-- col -->
 </div><!-- row -->
 

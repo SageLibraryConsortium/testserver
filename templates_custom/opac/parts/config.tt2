@@ -124,7 +124,7 @@ facet.default_display_count = 5;
 #   for consistency.
 
 search.adv_config = [
-    {adv_label => l("Item Type"), adv_filter => ["mat_format"], id => 'adv_selector_item_type'},
+    {adv_label => l("Item Type"), adv_filter => ["item_type"], id => 'adv_selector_item_type'},
     {adv_label => l("Language"),  adv_attr => "item_lang", id => 'adv_selector_item_lang'},
     {adv_label => l("Literary Form"), adv_attr => "lit_form", id => 'adv_selector_lit_form', adv_break => 1},
 		{adv_label => l("Audience"), adv_attr => ["audience_group", "audience"], id => 'adv_selector_audience'},
@@ -155,8 +155,8 @@ search.default_qtypes = ['keyword','title','author'];
 # none_label is the label for the default nothing selected entry.
 
 search.basic_config = {
-    type => 'filter',
-    group => [ctx.get_cgf('opac.format_selector.attr').value, 'mat_format'],
+    type => 'attr',
+    group => [ctx.get_cgf('opac.format_selector.attr').value, 'item_type'],
     none_label => l("All Formats"),
 };
 
@@ -169,8 +169,7 @@ ctx.google_books_preview = 1;
 
 # Set a maintenance message to display in the catalogue
 #
-# ctx.maintenance_message = "The system will not be available February 29, 2104.";
-
+#ctx.maintenance_message = "The system will be down for upgrades on January 10, 2016.";
 
 ##############################################################################
 # Metarecords configuration

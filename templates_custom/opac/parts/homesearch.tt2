@@ -2,8 +2,11 @@
 <center>
       <div style="font-family:helvetica neue;font-size:50px;">TEST SERVER - 2.9.1</div></br>
       <div style="font-family:helvetica neue;font-size:20px;">A test library catalog serving the members of the Sage Library System</div>
+<p>
+<div style="font-family:helvetica neue;font-size:20px;"><b><i>Please take a moment to complete our <a href="patron survey">patron survey</a></i></b></div>
+</p>
 </center>
 <br/>
 <hr style="border:2px solid;color:grey;">
-[% INCLUDE "opac/parts/book_carousel.tt2" %]
+<!-- [% INCLUDE "opac/parts/book_carousel.tt2" %] -->
 </div>
