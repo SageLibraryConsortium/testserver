@@ -260,12 +260,10 @@ within the "form" by name for validation.
 <div class="row reg-field-row" ng-show="show_field('au.dob')">
   [% draw_field_label('au', 'dob') %]
   <div class="col-md-3 reg-field-input">
-    <input eg-date-input 
-      name="dob"
-      ng-change="field_modified()" 
-      ng-required="field_required('au', 'dob')"
-      ng-blur="handle_field_changed(patron, 'dob')"
-      class="form-control" ng-model="patron.dob"/>
+    <eg-date-input 
+      ng-model="patron.dob"
+      ng-blur="handle_field_changed(patron, 'dob')">
+    </eg-date-input>
   </div>
   <div class="col-md-6 patron-reg-example">
     [% draw_example_text('au', 'dob') %]
@@ -276,7 +274,14 @@ within the "form" by name for validation.
 
 <div class="row reg-field-row" ng-show="show_field('au.juvenile')">
   [% draw_field_label('au', 'juvenile') %]
-  [% draw_form_input('au', 'juvenile', '', 'checkbox'); %]
+  <div class="col-md-3 reg-field-input">
+    <div class='checkbox'>
+      <input 
+        ng-change="field_modified()" 
+        ng-blur="handle_field_changed(patron, 'juvenile')"
+        type='checkbox' ng-model="patron.juvenile"/>
+    </div>
+  </div>
 </div>
 
 <!-- ident_type -->
@@ -326,6 +331,17 @@ within the "form" by name for validation.
       [% l('Example: [_1]',
         "{{org_settings['ui.patron.edit.au.email.example']}}") %]
     </span>
+  </div>
+</div>
+
+<div class="row reg-field-row" ng-show="show_field('au.email') && opt_in_setting_types['circ.send_email_checkout_receipts']">
+  <div class="col-md-3 reg-field-label">
+    <label>{{opt_in_setting_types['circ.send_email_checkout_receipts'].label()}}</label>
+  </div>
+  <div class="col-md-3 reg-field-input">
+    <input
+      ng-change="field_modified()"
+      type='checkbox' ng-model="user_settings['circ.send_email_checkout_receipts']"/>
   </div>
 </div>
 
@@ -401,15 +417,15 @@ within the "form" by name for validation.
 <div class="row reg-field-row" ng-show="show_field('au.profile')">
   [% draw_field_label('au', 'profile') %]
   <div class="col-md-3 reg-field-input">
-    <div class="btn-group" dropdown>
-      <button type="button" class="btn btn-default dropdown-toggle"
+    <div class="btn-group" uib-dropdown>
+      <button type="button" class="btn btn-default" uib-dropdown-toggle
           ng-class="{'ng-invalid' : invalid_profile()}">
         <span style="padding-right: 5px;">
           {{patron.profile.name() || "[% l('Profile Group') %]"}}
         </span>
         <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu">
+      <ul uib-dropdown-menu>
         <li ng-repeat="grp in edit_profiles" 
           ng-class="{disabled : grp.usergroup() == 'f'}">
           <a href 
@@ -428,9 +444,10 @@ within the "form" by name for validation.
 <div class="row reg-field-row" ng-show="show_field('au.expire_date')">
   [% draw_field_label('au', 'expire_date') %]
   <div class="col-md-3 reg-field-input">
-    <input eg-date-input 
+    <eg-date-input 
       ng-blur="handle_field_changed(patron, 'expire_date')"
-      class="form-control" ng-model="patron.expire_date"/>
+      ng-model="patron.expire_date">
+    </eg-date-input>
   </div>
   <div class="col-md-3">
     <button class="btn btn-default" ng-click="set_expire_date()">
@@ -457,21 +474,42 @@ within the "form" by name for validation.
 
 <div class="row reg-field-row" ng-show="show_field('au.active')">
   [% draw_field_label('au', 'active') %]
-  [% draw_form_input('au', 'active', '', 'checkbox') %]
+  <div class="col-md-3 reg-field-input">
+    <div class='checkbox'>
+      <input 
+        ng-change="field_modified()" 
+        ng-blur="handle_field_changed(patron, 'active')"
+        type='checkbox' ng-model="patron.active"/>
+    </div>
+  </div>
 </div>
 
 <!-- BARRED -->
 
 <div class="row reg-field-row" ng-show="show_field('au.barred')">
   [% draw_field_label('au', 'barred') %]
-  [% draw_form_input('au', 'barred', '', 'checkbox') %]
+  <div class="col-md-3 reg-field-input">
+    <div class='checkbox'>
+      <input 
+        ng-change="field_modified()" 
+        ng-blur="handle_field_changed(patron, 'barred')"
+        type='checkbox' ng-model="patron.barred"/>
+    </div>
+  </div>
 </div>
 
 <!-- MASTER_ACCOUNT -->
 
 <div class="row reg-field-row" ng-show="show_field('au.master_account')">
   [% draw_field_label('au', 'master_account') %]
-  [% draw_form_input('au', 'master_account', '', 'checkbox') %]
+  <div class="col-md-3 reg-field-input">
+    <div class='checkbox'>
+      <input 
+        ng-change="field_modified()" 
+        ng-blur="handle_field_changed(patron, 'master_account')"
+        type='checkbox' ng-model="patron.master_account"/>
+    </div>
+  </div>
 </div>
 
 <!-- CLAIMS_RETURNED_COUNT -->
@@ -612,12 +650,12 @@ within the "form" by name for validation.
     <label>[% l('Default SMS Carrier') %]</label>
   </div>
   <div class="col-md-3 reg-field-input">
-    <div class="btn-group" dropdown>
-      <button type="button" class="btn btn-default dropdown-toggle">
+    <div class="btn-group" uib-dropdown>
+      <button type="button" class="btn btn-default" uib-dropdown-toggle>
         <span style="padding-right: 5px;"></span>
         <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu">
+      <ul uib-dropdown-menu>
         <li ng-repeat="carrier in sms_carriers">
           <a href 
             ng-click="field_modified();user_settings['opac.default_sms_carrier'] = carrier">
@@ -630,10 +668,10 @@ within the "form" by name for validation.
 </div>
 
 <div class="row reg-field-row" ng-repeat="type in opt_in_setting_types">
-  <div class="col-md-3 reg-field-label">
+  <div class="col-md-3 reg-field-label" ng-if="type.name() != 'circ.send_email_checkout_receipts'">
     <label>{{type.label()}}</label>
   </div>
-  <div class="col-md-3 reg-field-input">
+  <div class="col-md-3 reg-field-input" ng-if="type.name() != 'circ.send_email_checkout_receipts'">
     <input 
       ng-change="field_modified()" 
       type='checkbox' ng-model="user_settings[type.name()]"/>
@@ -675,7 +713,8 @@ within the "form" by name for validation.
   <!-- ADDRESS_TYPE -->
   <div class="row reg-field-row" ng-show="show_field('aua.address_type')">
     [% draw_field_label('aua', 'address_type') %]
-    [% draw_form_input('aua', 'address_type', 'addresses[$index]') %]
+    [% draw_form_input('aua', 
+      'address_type', 'addresses[$index]', '', 'addr._linked_owner') %]
     <div class="col-md-6 patron-reg-example">
       [% draw_example_text('aua', 'address_type') %]
     </div>
@@ -685,7 +724,8 @@ within the "form" by name for validation.
 
   <div class="row reg-field-row" ng-show="show_field('aua.post_code')">
     [% draw_field_label('aua', 'post_code') %]
-    [% draw_form_input('aua', 'post_code', 'addresses[$index]') %]
+    [% draw_form_input('aua', 
+      'post_code', 'addresses[$index]', '', 'addr._linked_owner') %]
     <div class="col-md-6 patron-reg-example">
       [% draw_example_text('aua', 'post_code') %]
     </div>
@@ -695,7 +735,8 @@ within the "form" by name for validation.
 
   <div class="row reg-field-row" ng-show="show_field('aua.street1')">
     [% draw_field_label('aua', 'street1') %]
-    [% draw_form_input('aua', 'street1', 'addresses[$index]') %]
+    [% draw_form_input('aua', 
+      'street1', 'addresses[$index]', '', 'addr._linked_owner') %]
     <div class="col-md-6 patron-reg-example">
       [% draw_example_text('aua', 'street1') %]
     </div>
@@ -705,7 +746,8 @@ within the "form" by name for validation.
 
   <div class="row reg-field-row" ng-show="show_field('aua.street2')">
     [% draw_field_label('aua', 'street2') %]
-    [% draw_form_input('aua', 'street2', 'addresses[$index]') %]
+    [% draw_form_input('aua', 
+      'street2', 'addresses[$index]', '', 'addr._linked_owner') %]
     <div class="col-md-6 patron-reg-example">
       [% draw_example_text('aua', 'street2') %]
     </div>
@@ -715,7 +757,8 @@ within the "form" by name for validation.
 
   <div class="row reg-field-row" ng-show="show_field('aua.city')">
     [% draw_field_label('aua', 'city') %]
-    [% draw_form_input('aua', 'city', 'addresses[$index]') %]
+    [% draw_form_input('aua', 
+      'city', 'addresses[$index]', '', 'addr._linked_owner') %]
     <div class="col-md-6 patron-reg-example">
       [% draw_example_text('aua', 'city') %]
     </div>
@@ -725,7 +768,8 @@ within the "form" by name for validation.
 
   <div class="row reg-field-row" ng-show="show_field('aua.county')">
     [% draw_field_label('aua', 'county') %]
-    [% draw_form_input('aua', 'county', 'addresses[$index]') %]
+    [% draw_form_input('aua', 
+      'county', 'addresses[$index]', '', 'addr._linked_owner') %]
     <div class="col-md-6 patron-reg-example">
       [% draw_example_text('aua', 'county') %]
     </div>
@@ -735,7 +779,8 @@ within the "form" by name for validation.
 
   <div class="row reg-field-row" ng-show="show_field('aua.state')">
     [% draw_field_label('aua', 'state') %]
-    [% draw_form_input('aua', 'state', 'addresses[$index]') %]
+    [% draw_form_input('aua', 
+      'state', 'addresses[$index]', '', 'addr._linked_owner') %]
     <div class="col-md-6 patron-reg-example">
       [% draw_example_text('aua', 'state') %]
     </div>
@@ -745,7 +790,8 @@ within the "form" by name for validation.
 
   <div class="row reg-field-row" ng-show="show_field('aua.country')">
     [% draw_field_label('aua', 'country') %]
-    [% draw_form_input('aua', 'country', 'addresses[$index]') %]
+    [% draw_form_input('aua', 
+      'country', 'addresses[$index]', '', 'addr._linked_owner') %]
     <div class="col-md-6 patron-reg-example">
       [% draw_example_text('aua', 'country') %]
     </div>
@@ -755,7 +801,16 @@ within the "form" by name for validation.
 
   <div class="row reg-field-row" ng-show="show_field('aua.valid')">
     [% draw_field_label('aua', 'valid') %]
-    [% draw_form_input('aua', 'valid', 'addresses[$index]', 'checkbox') %]
+    <div class="col-md-3 reg-field-input">
+      <div class='checkbox'>
+        <input 
+          type='checkbox' 
+          ng-change="field_modified()" 
+          ng-disabled='addr._linked_owner'
+          ng-blur="handle_field_changed(patron.addresses[$index], 'valid')"
+          ng-model="patron.addresses[$index].valid"/>
+      </div>
+    </div>
     <div class="col-md-6 patron-reg-example">
       [% draw_example_text('aua', 'valid') %]
     </div>
@@ -765,20 +820,29 @@ within the "form" by name for validation.
 
   <div class="row reg-field-row" ng-show="show_field('aua.within_city_limits')">
     [% draw_field_label('aua', 'within_city_limits') %]
-    [% draw_form_input('aua', 'within_city_limits', 'addresses[$index]', 'checkbox') %]
+    <div class="col-md-3 reg-field-input">
+      <div class='checkbox'>
+        <input 
+          type='checkbox' 
+          ng-change="field_modified()" 
+          ng-disabled='addr._linked_owner'
+          ng-blur="handle_field_changed(patron.addresses[$index], 'within_city_limits')"
+          ng-model="patron.addresses[$index].within_city_limits"/>
+      </div>
+    </div>
     <div class="col-md-6 patron-reg-example">
       [% draw_example_text('aua', 'within_city_limits') %]
     </div>
   </div>
 
-  <div class="row" ng-if="$last">
-    <button type="button" ng-click="new_address()" 
-      class="btn btn-success">[% l('New Address') %]</button>
-  </div>
-
   <!-- pending address -->
 
 </div> <!-- addresses -->
+
+<div class="row">
+  <button type="button" ng-click="new_address()" 
+    class="btn btn-success">[% l('New Address') %]</button>
+</div>
 
 <div class="alert alert-success row" role="alert" 
     ng-show="show_field('stat_cats')" ng-if="stat_cats.length > 0">
@@ -804,13 +868,13 @@ within the "form" by name for validation.
     -->
     
     <div ng-if="cat.entries().length != 0">
-      <div class="btn-group" dropdown>
-        <button type="button" class="btn btn-default dropdown-toggle">
+      <div class="btn-group" uib-dropdown>
+        <button type="button" class="btn btn-default" uib-dropdown-toggle>
           <span style="padding-right: 5px;">
             {{stat_cat_entry_maps[cat.id()]}}</span>
           <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu">
+        <ul uib-dropdown-menu>
           <li ng-repeat="entry in cat.entries()">
             <a href 
               ng-click="field_modified();stat_cat_entry_maps[cat.id()]=entry.value()"> 
@@ -846,14 +910,14 @@ within the "form" by name for validation.
       style="margin-bottom: 10px;">
       <div class="col-md-6">{{question.question()}}</div>
       <div class="col-md-6">
-        <div class="btn-group" dropdown>
-          <button type="button" class="btn btn-default dropdown-toggle">
+        <div class="btn-group" uib-dropdown>
+          <button type="button" class="btn btn-default" uib-dropdown-toggle>
             <span style="padding-right: 5px;">
               {{survey_responses[question.id()].answer()}}
             </span>
             <span class="caret"></span>
           </button>
-          <ul class="dropdown-menu">
+          <ul uib-dropdown-menu>
             <li ng-repeat="answer in question.answers()">
               <a href 
                 ng-click="field_modified();survey_responses[question.id()] = answer"> 

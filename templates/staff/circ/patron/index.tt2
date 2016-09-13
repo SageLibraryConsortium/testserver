@@ -44,6 +44,11 @@ angular.module('egCoreMod').run(['egStrings', function(s) {
   s.RENEW_ITEMS = "[% l('Renew Items?') %]";
   s.RENEW_ALL_ITEMS = "[% l('Renew All Items?') %]";
   s.CHECK_IN_CONFIRM = "[% l('Check In Items?') %]";
+  s.REG_INVALID_FIELDS = 
+    "[% l('Please enter valid values for all required fields.') %]"
+  s.PAYMENT_WARN_AMOUNT = "[% l('Are you sure you want to apply a payment of $[_1]?', '{{payment_amount}}') %]";
+  s.PAYMENT_WARN_AMOUNT_TITLE = "[% l('Verify Payment Amount') %]";
+  s.PAYMENT_OVER_MAX = "[% l('Payments over $[_1] are denied by policy.', '{{max_amount}}') %]";
 }]);
 </script>
 
@@ -120,12 +125,12 @@ angular.module('egCoreMod').run(['egStrings', function(s) {
       <li ng-class="{active : tab == 'edit', disabled : !patron()}">
         <a href="./circ/patron/{{patron().id()}}/edit">[% l('Edit') %]</a>
       </li>
-      <li class="dropdown" ng-class="{active : tab == 'other', disabled : !patron()}">
-        <a a-disabled="!patron()" href class="dropdown-toggle" data-toggle="dropdown">
+      <li uib-dropdown ng-class="{active : tab == 'other', disabled : !patron()}">
+        <a a-disabled="!patron()" href uib-dropdown-toggle>
             [% l('Other') %]
             <b class="caret"></b>
         </a>
-        <ul class="dropdown-menu">
+        <ul uib-dropdown-menu>
           <li>
             <a href="./circ/patron/{{patron().id()}}/alerts">
               [% l('Display Alert and Messages') %]

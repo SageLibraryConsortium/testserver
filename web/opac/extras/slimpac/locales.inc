@@ -6,4 +6,5 @@
   <option value='fi-FI'>Finnish</option>
   <option value='fr-CA'>French (Canada)</option>
   <option value='ru-RU'>Russian</option>
+  <option value='es-ES'>Spanish</option>
 </select>

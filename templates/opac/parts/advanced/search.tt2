@@ -32,6 +32,8 @@
 
     <div id='adv_search_submit'>
         <input type="hidden" name="_adv" value="1" />
+        <input id="detail" type="hidden" name="detail_record_view"
+               value="[% show_detail_view %]"/>
         <span>
             <input id='search-submit-go' type="submit" value="[% l('Search') %]" title="[% l('Search') %]" class="opac-button"
                 onclick='setTimeout(function(){$("search-submit-spinner").className=""; $("search-submit-go").className="hidden"}, 2000)'/>
@@ -116,9 +118,13 @@
                             [% END %]
 [%
                 CASE "sort_selector";
+                    default_sort=ctx.default_sort;
+                    IF CGI.param('sort');
+                        default_sort=CGI.param('sort');
+                    END;
                     INCLUDE "opac/parts/filtersort.tt2"
                         id=adv_chunk.id
-                        value=CGI.param('sort') class='results_header_sel';
+                        value=default_sort class='results_header_sel';
                     %]
 
                     [% IF NOT metarecords.disabled %]

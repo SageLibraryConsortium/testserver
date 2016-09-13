@@ -3,20 +3,20 @@
     PROCESS "opac/parts/css/fonts.tt2";
 %]
 
-/*
-@import url(//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
-*/
-
+@charset "UTF-8";@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300);
+@charset "UTF-8";@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
 body {
     margin:0;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    font-size: [% css_fonts.size_base %];
-    background: [% css_colors.primary %];
+    font-size: 13px;
+    background: [% css_colors.primary_fade %];
+    -webkit-font-smoothing: antialiased; /*Chrome - Sage */
+    -moz-osx-font-smoothing: grayscale; /*Firefox - Sage*/
 }
 
 button, input {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    font-size: [% css_fonts.size_base %];
+    font-size: 13px;
 }
 
 img {
@@ -25,13 +25,13 @@ img {
 
 /* adjusted to be a little smaller for header */
 #topnav_logo {
-    margin: 1.5em 0;
+    margin: 1.4em 0;
 }
 
 #homesearch_main_logo {
     padding-top: 20px;
     margin: auto;
-		margin-right: 30px;
+    margin-right: 30px;
     width: auto;
 }
 
@@ -48,7 +48,8 @@ a {
     border:1px solid [% css_colors.border_standard %];
     margin:0;
     padding:0;
-    width: 13em;
+    width: 14em;
+    font-size: 13px;
 }
 
 .searchbar {
@@ -87,7 +88,7 @@ h2.graphic880 {
 }
 
 .hide_me, .hidden {
-    display: none;
+    display: none!important;
     visibility: hidden;
 }
 
@@ -183,29 +184,61 @@ for now until a better color is picked - if needed.
     text-decoration: none;
 }
 
-#header-links {
-    color: [% css_colors.text_invert %];
-    font-size: [% css_fonts.size_small %];
-    font-weight: bold;
-    position: relative;
-    top:4px;
-    
+#header a:hover {
+    color: #fff;
+    text-decoration: none;
 }
 
-/* adjusted for the buttons-should fix from this hack */
-#header-links a {
-    color: [% css_colors.text_invert %];
-    display: block;
+#header-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#header-links li {
     float:left;
-    margin-right:2px;
-    margin-left:2px;
+}
+
+#header-links li a, .sagedropdown-bits {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 13px 14px;
     text-decoration: none;
+    -webkit-transition: background-color .2s,color .10s,box-shadow .2s,opacity 0.2s;
+    transition: background-color .2s,color .10s,box-shadow .2s,opacity 0.2s;
+    font-size: 14px;
 }
 
 #header-links a:hover {
-    color: [% css_colors.text_invert %];
-    text-shadow: 0 0 0.2em [% css_colors.primary %], 0 0 0.2em [% css_colors.primary %];
+    color: #000;
     text-decoration: none;
+    background-color:rgba(246, 255, 240, 0.7);
+}
+
+.sagedropdown-bits {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color:#333;
+}
+
+.sagedropdown-bits a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.sagedropdown-bits a:hover {background-color: #f1f1f1}
+
+.sage-dropdown:hover .sagedropdown-bits {
+    display: block;
 }
 
 #header #header-links2 {
@@ -225,13 +258,13 @@ for now until a better color is picked - if needed.
 
 /* changed to hide My Account button */
 #your-acct-login {
-    padding-top:2em;
+  padding-top:2em;
 	visibility:inherit;
 }
 
 #gold-links {
-    margin-left: 1em;
-    padding-left:0px;
+    margin-left: .5em;
+    padding-left: 0px;
 }
 
 /* custom */
@@ -242,13 +275,18 @@ for now until a better color is picked - if needed.
     cursor: pointer !important;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    border: 1px solid #5B743D;
+    /*border: 1px solid #5B743D;*/
     margin: 0.5em;
     padding: 0.3em;
     display: inline-block;
-    background: #A7C089;
+    background: #75954E;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-    font-size: 12px;
+    font-size: 13px;
+}
+
+/* custom */
+.opac-button-goldlinks:hover {
+    background-color:#5B743D;
 }
 
 #gold-links-home {
@@ -258,8 +296,7 @@ for now until a better color is picked - if needed.
 
 #gold-links-holder {
     min-height: 44px;
-    /* background: [% css_colors.background_invert %]; */
-    background: rgb(236, 236, 236);
+    background: rgba(246, 255, 240, 0.7);
     height: auto;
 }
 
@@ -411,7 +448,7 @@ for now until a better color is picked - if needed.
 .rdetail_header {
     padding: 5px 7px 6px 0px;
     margin-left: 1em;
-    border-bottom: 1px dotted [% css_colors.accent_light %];
+    /*border-bottom: 1px dotted [% css_colors.accent_light %];*/
 }
 
 .rdetail_results a {
@@ -468,6 +505,9 @@ div.rdetail_show_copies {
 div#rdetail_actions_div {
     float: right;
     background: [% css_colors.background %];
+    box-shadow: 0px 1px 4px 3px rgba(204,204,204,0.5);
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 span#rdetail_copy_counts {
@@ -492,14 +532,14 @@ span#rdetail_hold_counts p {
 }
 
 .rdetail_aux_utils {
-    border-left:1px dotted [% css_colors.accent_light %];
+    /*border-left:1px dotted [% css_colors.accent_light %];*/
     padding-left: 17px;
     padding-bottom: 6px;
     padding-right: 70px;
 }
 
 div.place_hold {
-    border-bottom: 1px dotted [% css_colors.accent_light %];
+    /*border-bottom: 1px dotted [% css_colors.accent_light %];*/
     padding-top: 10px;
 }
 
@@ -507,7 +547,7 @@ div.toggle_list { padding-top: 6px; }
 
 div.share_record {
     padding-top: 6px;
-    border-top: 1px dotted [% css_colors.accent_light %];
+    /*border-top: 1px dotted [% css_colors.accent_light %];*/
 }
 
 div.format_icon {
@@ -516,7 +556,7 @@ div.format_icon {
 }
 
 .result_util {
-    border-bottom: 1px dotted [% css_colors.accent_light %];
+    /*border-bottom: 1px dotted [% css_colors.accent_light %];*/
     padding-top: 6px;
 }
 
@@ -567,8 +607,8 @@ div.format_icon {
 
 .rdetail_extras {
     background: [% css_colors.primary_fade %];
-    border: 1px solid [% css_colors.primary %];
-    padding-top:1px;
+    /*border: 1px solid [% css_colors.primary %];*/
+    /*padding-top:1px;*/
     clear:both;
 }
 
@@ -741,6 +781,10 @@ collapse correctly when the window width decreases */
     vertical-align: middle;
 }
 
+#metabib_search_modifier {
+    vertical-align: middle;
+}
+
 .results_header_sel {
     /* width: 88px; */
     float:left;
@@ -788,8 +832,14 @@ tr.result_table_row > td.result_table_title_cell {
     padding-right: 2em;
 }
 
+tr.result_table_row > td {
+    padding-bottom: 5px;
+}
+
 tr.result_table_row:nth-child(n+2) > td {
     border-top: 1px solid [% css_colors.accent_lighter2 %];
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 tr.result_table_row > td.result_table_pic_header {
@@ -917,6 +967,20 @@ div.result_table_utils_cont {
 
 .acct_sum_table .view_link {
     font-weight: normal;
+}
+
+table.acct_notes {
+    border-collapse: collapse;
+    margin: -1em 0 0.5em 0;
+}
+
+table.acct_notes * {
+    border: solid thin;
+    padding: 0.5em; 
+}
+
+table.acct_notes th {
+    font-weight: bold;
 }
 
 #myopac_sum_fines {
@@ -1142,10 +1206,10 @@ div#facet_sidebar {
 }
 
 #footer-wrap {
-    background: linear-gradient([% css_colors.primary_fade %], [% css_colors.primary %]);
-    background: -moz-linear-gradient([% css_colors.primary_fade %], [% css_colors.primary %]);
-    background: -o-linear-gradient([% css_colors.primary_fade %], [% css_colors.primary %]);
-    background: -webkit-linear-gradient([% css_colors.primary_fade %], [% css_colors.primary %]);
+    background: linear-gradient([% css_colors.primary %], [% css_colors.primary_fade %]);
+    background: -moz-linear-gradient([% css_colors.primary %], [% css_colors.primary_fade %]);
+    background: -o-linear-gradient([% css_colors.primary %], [% css_colors.primary_fade %]);
+    background: -webkit-linear-gradient([% css_colors.primary %], [% css_colors.primary_fade %]);
     background-color: [% css_colors.primary %];
 }
 
@@ -1233,7 +1297,7 @@ a.dash-link:hover { text-decoration: underline !important; }
 .text-right-top { text-align: right; vertical-align: top; }
 .rdetail-author-div {
     padding-bottom: 10px;
-    display: inline-block;
+    display: inline-table;
 }
 
 .invisible { visibility: hidden; }
@@ -1256,10 +1320,23 @@ a.dash-link:hover { text-decoration: underline !important; }
 .unread-patron-message { font-weight: bold; }
 
 #hold-items-list td { padding: 5px; margin-bottom: 20px; }
-.hold-items-list-title { font-size: [% css_fonts.size_bigger %]; }
+.hold-items-list-title {
+  font-size: [% css_fonts.size_bigger %];
+  margin-bottom: 20px;
+}
 .hold-items-list-problem { color: [% css_colors.text_alert %]; }
 
 .hold_success_links > span { margin: 0 2em; }
+
+.radio-parts-selection { 
+  width: 75%;
+  margin-bottom: 20px;
+}
+
+.parts-radio-option { 
+  display: inline-block;
+  width:15em;
+}
 
 .mr_holds_no_formats { 
   padding: 5px;
@@ -1746,6 +1823,7 @@ a.preflib_change {
 #search_query_label, #search_qtype_label, #search_itype_label, #search_locg_label {
     white-space: nowrap;
     display: inline-block;
+    padding: 5px 0 0px 0;
 }
 
 .result_table_title_cell {
@@ -1759,7 +1837,7 @@ a.preflib_change {
 
 /* styling for sms text call number */
 .sms_text pre {
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: [% css_fonts.size_medium %];
     background: [% css_colors.accent_lightest %];
     padding: .5%;
@@ -1783,6 +1861,22 @@ a.preflib_change {
     white-space: pre-wrap;
 }
 
+@media only screen and (max-width: 1015px) {
+    .facet_sidebar_visible, .result_block_visible {
+        display: inline ! important;
+    }
+/* Center Box Biz */
+    /* Hide Library Info for Mobile*/
+    .center_box {
+    	display:inline-block;
+    	padding: 5px;
+    	}
+    .format_icon {
+    	float:right;
+    	margin-left:16em;
+	}
+}
+
 @media only screen and (max-width: 800px) {
     .facet_sidebar_hidden, .result_block_hidden {
         display: none;
@@ -1793,9 +1887,53 @@ a.preflib_change {
     #acct_select, #acct_prefs_select {
         display: inline-block;
     }
-#acct_tabs, #acct_prefs_tabs {
+    #acct_tabs, #acct_prefs_tabs {
          display:none;
-     }
+    }
+    .radio-parts-selection { width: 90%; }
+
+/* Center Box Biz */
+    /* Hide Library Info for Mobile*/
+    table.result_holdings_table {
+      display: none;
+    }
+    .result_util {
+      padding-left: 0;
+      border-bottom:none;
+    }
+    div.place_hold {
+      border-bottom:none;
+    }
+    .results_header_nav1 {
+      text-align:center;
+    }
+    .center_box {
+      display:inline-block;
+      padding: 5px;
+      font-weight: bold;
+    }
+    .center_box a {
+      text-decoration: none;
+    }
+    .format_icon {
+      float:right;
+      margin-left:14em;
+    }
+    #header-links {
+      display:inline-flex;
+      text-align:center;
+      position:inherit;
+    }
+    #header-links a {
+      margin:unset;
+      float:unset;
+    }
+    #gold-links {
+      margin-left:unset;
+    }
+  .results_header_nav1 .h1 {
+  display:none;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -1870,6 +2008,11 @@ a.preflib_change {
     #dashboard {
         display: none;
     }
+    #footer {
+    margin-right: 1em;
+    margin-left: 1em;
+    text-align: center;
+    }
     #holds_box form blockquote {
         margin-left: 10px;
         margin-right: 2px;
@@ -1909,9 +2052,45 @@ a.preflib_change {
         padding: 0px;
         margin: 0px;
     }
-    tr[name=results_isbn_tr], tr[name=results_phys_desc_tr], tr[name=results_pub_tr] strong, .result_count {
+    /* Mobile Results */
+    /* Show ISBN, and Series only for Mobile (tr[name=results_isbn_tr] and tr[name=results_series_tr] */
+    tr[name=results_phys_desc_tr], tr[name=results_pub_tr], tr[name=results_edition_tr], .result_count {
          display: none;
     }
+    /* Hide Library Info for Mobile*/
+    table.result_holdings_table {
+    	display: none;
+    }
+    .result_util {
+    	padding-left: 0;
+    	border-bottom:none;
+    }
+    div.place_hold {
+    	border-bottom:none;
+    }
+    div.place_hold a {
+    	border-bottom:none;
+    	text-align: center;
+    	font-weight:bold;
+    	padding:5px;
+    	text-decoration:none;
+    }
+    .results_header_nav1 {
+    	text-align:center;
+    }
+    .center_box {
+    	display:inline-block;
+    	padding: 5px;
+    	font-weight: bold;
+    }
+    .center_box a {
+    	text-decoration: none;
+    }
+    .format_icon {
+        float:right;
+        margin-left:12em;
+    }
+    /* Revisit */
     tr.result_table_title_cell[name=bib_cn_list] .result_holdings_table th:nth-child(4),
     tr.result_table_title_cell[name=bib_cn_list] .result_holdings_table td:nth-child(4) {
         display:none;
@@ -1949,8 +2128,10 @@ a.preflib_change {
         width: 100%;
     }
     #search-wrapper #search-box {
-        width: 85%;
+        /* width: 85%; */
+        margin-left:initial;
         padding-top: 5px;
+        text-align:center;
     }
     #main-content-home {
         /* padding: 0px;*/ /*For Mobile Centering*/
@@ -1984,26 +2165,33 @@ a.preflib_change {
     }
     .result_metadata {
         width: inherit;
+        padding-left: 5px;
     }
     div#rdetail_actions_div {
         float: none;
+        border: 1px solid #75954E;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    div#rdetail_actions_div a {
+        text-decoration:none
     }
     h2.rdetail_uris {
         clear: both;
     }
     .search_catalog_lbl {
-	margin-left: 0;
-	white-space: nowrap;
+	    margin-left: 0;
+	    white-space: nowrap;
     }
     .adv_search_catalog_lbl { 
         margin-top: 0;
-	white-space: nowrap;
+	      white-space: nowrap;
     }
     .browse_the_catalog_lbl {
         white-space: nowrap;
     }
     .mobile_hide {
-	display: none;
+	    display: none;
     } 
     #dash_user {
         display: block;
@@ -2015,10 +2203,13 @@ a.preflib_change {
     .dash_account_buttons {
         display: block;
     } 
-    .searchbar { line-height: 1.5em; }
+    .searchbar { line-height: 1.5em; text-align:center; margin-left:auto;}
     #browse-controls { line-height: 1.5em; }
     #search_query_label, #search_qtype_label, #search_itype_label, #search_locg_label {
         display: block;
+        width:233px;
+        margin:auto;
+        text-align:right;
     }
     .bookshelf td {
 	display: block;
@@ -2077,7 +2268,8 @@ a.preflib_change {
         }
 
         table#acct_checked_main_header td:nth-of-type(1) { border-top: 5px solid #aaa; padding-top: 15px; background-color: #fff;}
-        table#acct_checked_main_header td:nth-of-type(2):before { content: "[% l('Title / Author') %]";}
+        table#acct_checked_main_header td:nth-of-type(2):before { content: "[% l('Title') %]";}
+        table#acct_checked_main_header td:nth-of-type(3):before { content: "[% l('Author') %]"; }
         table#acct_checked_main_header td:nth-of-type(3):before { content: "[% l('Renewals Left') %]"; }
         table#acct_checked_main_header td:nth-of-type(4):before { content: "[% l('Due Date') %]"; }
         table#acct_checked_main_header td:nth-of-type(5):before { content: "[% l('Barcode') %]"; }

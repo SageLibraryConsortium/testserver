@@ -38,6 +38,7 @@ function autoSuggestInit() {
             },
             "type_selector": G.ui.searchbar.type_selector,
             "submitter": searchBarSubmit,
+	    "highlight_min": 4,
             "style": {"width": dojo.style("search_box", "width")},
             "value": ((getTerm() != null) ? getTerm() : "")
         }, "search_box"

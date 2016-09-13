@@ -1,4 +1,7 @@
 <div>
+    <script>window.duplicate_barcode_string = "[% l('Duplicate Barcode') %]";</script>
+    <script>window.empty_barcode_string = "[% l('Missing Barcode') %]";</script>
+    <script>window.empty_label_string = "[% l('Missing Call Number') %]";</script>
     <div ng-show="!only_vols" class="btn-group">
         <label class="btn btn-default" ng-click="show_vols = !show_vols">
             <span ng-show="show_vols" style="padding-right: 5px;">[% l('Hide Volume/Copy Details') %]</span>
@@ -52,7 +55,7 @@
                         </div>
                     </div>
                     <div class="col-xs-2" ng-show="only_vols">
-                        <button class="btn btn-default center-block" ng-click="workingToComplete() && saveAndExit()" type="button">
+                        <button class="btn btn-default center-block" ng-disabled="disableSave()" ng-click="workingToComplete() && saveAndExit()" type="button">
                             <span ng-if="embedded">[% l('Save changes') %]</span>
                             <span ng-if="!embedded">[% l('Save & Exit') %]</span>
                         </button>
@@ -62,7 +65,7 @@
         </div> <!-- row -->
         <eg-vol-edit
             focus-next="focusNextFirst"
-            ng-repeat="(lib,callnumbers) in data.tree | orderBy:lib track by lib"
+            ng-repeat="(lib,callnumbers) in data.tree"
             ng-init="ind = $index"
             record="{{record_id}}"
             only-vols="only_vols"
@@ -106,7 +109,7 @@
         
                           <eg-grid-menu-item handler="workingToComplete"
                            label="[% l('Store Selected') %]"></eg-grid-menu-item>
-                          <eg-grid-menu-item handler="workingSaveAndExit"
+                          <eg-grid-menu-item disabled="disableSave" handler="workingSaveAndExit"
                            label="[% l('Save & Exit') %]"></eg-grid-menu-item>
         
                         
@@ -140,9 +143,9 @@
                  <eg-grid-menu-item standalone="true" handler="completeToWorking"
                   label="[% l('Edit Selected') %]"></eg-grid-menu-item>
         
-                 <eg-grid-menu-item handler="saveAndContinue"
+                 <eg-grid-menu-item disabled="disableSave" handler="saveAndContinue"
                   label="[% l('Save Completed') %]"></eg-grid-menu-item>
-                 <eg-grid-menu-item handler="saveAndExit"
+                 <eg-grid-menu-item disabled="disableSave" handler="saveAndExit"
                   label="[% l('Save & Exit') %]"></eg-grid-menu-item>
         
                  <eg-grid-field label="[% l('Barcode') %]"     path='barcode' visible></eg-grid-field>

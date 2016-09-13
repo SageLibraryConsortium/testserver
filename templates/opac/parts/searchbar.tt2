@@ -60,14 +60,12 @@
         -%]
         </label>
     <span>
-    [%- IF (show_more_details.default == 'true' OR show_more_details.default == 'hide') AND !CGI.param('detail_record_view') %]
-        <input id="detail" type="hidden" name="detail_record_view" value="1"/>
-    [%- END %]
-        <input id='search-submit-go' type="submit" value="[% l('Search') %]" class="opac-button"
+        <input id="detail" type="hidden" name="detail_record_view" value="[% show_detail_view %]"/>
+        <input id='search-submit-go' type="submit" value="[% l('Search') %]" class="opac-button" i class="fa fa-circle-o-notch"
             onclick='setTimeout(function(){$("search-submit-spinner").className=""; $("search-submit-go").className="hidden";[% IF ctx.depth_sel_button AND NOT took_care_of_form %] $("search-submit-go-depth").className="hidden";[% END %]}, 2000)'/>
         [%- IF ctx.depth_sel_button AND NOT took_care_of_form %]
         <button id='search-submit-go-depth' type="submit" value="[% ctx.depth_sel_depth %]" name="depth" class="[% ctx.depth_sel_button_class %]"
-            onclick='setTimeout(function(){$("search-submit-spinner").className=""; $("search-submit-go").className="hidden"; $("search-submit-go-depth").className="hidden";}, 2000)' title="[% ctx.depth_sel_tooltip | html %]">[% ctx.depth_sel_button_label | html %]</button>
+            onclick='setTimeout(function(){$("search-submit-spinner").className="fa fa-circle-o-notch"; $("search-submit-go").className="hidden"; $("search-submit-go-depth").className="hidden";}, 2000)' title="[% ctx.depth_sel_tooltip | html %]">[% ctx.depth_sel_button_label | html %]</button>
         [%- END %]
         <img id='search-submit-spinner' src='/opac/images/progressbar_green.gif' style='height:16px;width:16px;' class='hidden' alt='[% l("Search In Progress") %]'/>
     </span>
@@ -100,7 +98,12 @@
         [% END %]
     </div>
     [%- END %]
-    [% UNLESS took_care_of_form %]</form>[% END %]
+    [% UNLESS took_care_of_form %]
+        [% IF ctx.default_sort %]
+            <input type="hidden" name="sort" value="[% ctx.default_sort %]"/>
+        [% END %]
+        </form>
+    [% END %]
     [% IF (is_advanced AND NOT is_special) AND CGI.param('qtype') %]
     <div class="opac-auto-102">
         [ <a href="[% mkurl(ctx.opac_root _ '/advanced') %]">[%
