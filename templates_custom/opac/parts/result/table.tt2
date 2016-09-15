@@ -365,6 +365,7 @@ END;
                                                    [% FOR format IN attrs.all_formats %]
                                                      <img title="[% format.label | html %]"
                                                        alt="[% format.label | html %]"
+						       class="format_icon"
                                                        src="[% format.icon %]" />
                                                     
                                                    [% END %]
@@ -376,6 +377,7 @@ END;
             && (ctx.holds_block.enabled != 'true' || attrs.org_copy_counts.$search_ou.available == 0)
         )
 %]
+							<div class="result_actions">
                                                         <div class="results_aux_utils place_hold"><a
                                                                 href="[% mkurl(ctx.opac_root _ '/place_hold',
                                                                     {hold_target => rec.id, hold_type => hold_type, 
@@ -443,6 +445,7 @@ END;
                     </tbody>
                 </table>
             </div>
+		</div>
 </div>
 <div class="result_footer_nav1">
     [% ctx.results_count_header %]
