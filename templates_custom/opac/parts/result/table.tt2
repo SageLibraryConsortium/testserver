@@ -55,11 +55,11 @@
                                 ELSE;
                                     # for MR, bre_id refers to the master and in
                                     # this case, only, record
-                                    record_url = mkurl(ctx.opac_root _ '/record/' _ rec.bre_id);
+				record_url = mkurl(ctx.opac_root _ '/record/' _ rec.bre_id, { badges => rec.badges.join(',') });
                                 END;
                                 hold_type = 'M';
                             ELSE;
-                                record_url = mkurl(ctx.opac_root _ '/record/' _ rec.bre_id);
+				record_url = mkurl(ctx.opac_root _ '/record/' _ rec.bre_id, { badges => rec.badges.join(',') });
                                 hold_type = 'T';
                             END;
                     -%]
@@ -83,6 +83,14 @@
                                                       title='tag:[% ctx.hostname %],[% date.format(date.now, '%Y') %]:biblio-record_entry/[% rec.bre_id %]'>
                                                     </abbr>
                                                     [% END %]
+                                                    [%- IF attrs.format_label; %]
+                                                   [% FOR format IN attrs.all_formats %]
+                                                     <img title="[% format.label | html %]"
+                                                       alt="[% format.label | html %]"
+                                                       class="format_icon"
+                                                       src="[% format.icon %]" />
+                                                                [% END %]
+                                                        [% END %]
                                                     <a class='record_title search_link' name='record_[% rec.id %]'
                                                         href="[% record_url %]"
                                                         [% html_text_attr('title', l('Display record details for "[_1]"', attrs.title)) %]>
@@ -135,7 +143,6 @@ END;
 
                                                     </div>
                                                     <div class='result_table_title_cell'>
-                                                    
                                                     [%- UNLESS CGI.param('detail_record_view')
                                                             OR (show_more_details.default == 'true'
                                                             OR show_more_details.default == 'hide');
@@ -149,6 +156,11 @@ END;
                                                         END
                                                     -%]
                                                     </div>
+						    [% IF rec.popularity > 0.0 %]
+                                                      <div>
+                                                        <span><strong>[% l('Popularity:') %]</strong> [% rec.popularity %] / 5.0</span>
+                                                      </div>
+                                                    [% END %]
                                                     <table 
                                                        role="presentation"
                                                        title="[% l('Record Holdings Summary') %]"
@@ -361,15 +373,6 @@ END;
                                                 </div>
                                                 <div class="result_table_utils_cont">
                                                     <div class="result_table_utils">
-                                                [%- IF attrs.format_label; %]
-                                                   [% FOR format IN attrs.all_formats %]
-                                                     <img title="[% format.label | html %]"
-                                                       alt="[% format.label | html %]"
-						       class="format_icon"
-                                                       src="[% format.icon %]" />
-                                                    
-                                                   [% END %]
-                                                [%- END %]
 [%- search_ou = ctx.search_ou;
     num_holdable_copies = attrs.marc_xml.findnodes('//*[local-name()="holdings" and @has_holdable="true"]').size || 0;
     IF ctx.place_unfillable ||

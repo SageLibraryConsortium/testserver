@@ -1,3 +1,4 @@
+[% IF !ctx.is_staff %]
 <div id="footer-wrap">
 <div id="footer">
     [% IF ctx.get_org_setting(
@@ -34,3 +35,4 @@
     </div>
 </div>
 </div>
+[% END %]

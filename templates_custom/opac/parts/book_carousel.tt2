@@ -1,4 +1,4 @@
-<div id="carousels">
+<div id="carousels" class="mobile_hide">
 
 </div>
 
@@ -21,7 +21,7 @@
 <script language='javascript'> 
 jQuery.noConflict(); 
 
-bbags = [1];
+bbags = [2];
 </script> 
 
 
