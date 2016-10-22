@@ -3,7 +3,8 @@
 body {
     margin: 0;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    font-size: 13px;
+    font-size: 14px;
+    color: #242729;
     background: #75954E;
     -webkit-font-smoothing: antialiased;
     /*Chrome - Sage */
@@ -15,6 +16,12 @@ input {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 14px;
 }
+
+/* For highlighting Search buttons */
+button,input[type='submit'] {
+   text-transform:uppercase;
+}
+
 img {
     border: none;
 }
@@ -29,6 +36,10 @@ img {
 }
 a {
     color: #5B743D;
+}
+
+a:hover {
+    color: #f70;
 }
 #search-wrapper input[type=text] {
     margin: 0;
@@ -68,15 +79,15 @@ a {
 h1 {
     margin: 0;
     margin-bottom: 5px;
-    font-size: 150%;
+    font-size: 170%;
     font-weight: normal;
 }
 h2 {
-    font-size: 125%;
+    font-size: 120%;
     font-weight: bold;
 }
 h2.graphic880 {
-    font-size: 125%;
+    font-size: 120%;
     font-weight: normal;
 }
 .hide_me,
@@ -229,6 +240,26 @@ for now until a better color is picked - if needed.
 #header #header-links2 a:hover {
     text-decoration: underline;
 }
+
+/*font awesome bits */
+.dropbutton:after {
+    padding-left:.5em;
+    font-family:'fontawesome';
+    content: "\f0d7";
+}
+
+.right-arrow:after {
+    padding-left:.5em;
+    font-family:'fontawesome';
+    content: "\f054";
+}
+
+.search-lens:after {
+    padding-left:.5em;
+    font-family:'fontawesome';
+    content: "\f002";
+}
+
 /* changed to hide My Account button */
 
 #your-acct-login {
@@ -283,7 +314,7 @@ for now until a better color is picked - if needed.
 }
 #search-wrapper #breadcrumb {
     margin-top: 0px;
-    font-size: 83%;
+    font-size: 80%;
     float: left;
 }
 #search-wrapper #search-within {
@@ -296,7 +327,7 @@ for now until a better color is picked - if needed.
     color: black;
 }
 #search-wrapper #search_frm label {
-    font-size: 83%;
+    font-size: 80%;
 }
 #search-wrapper #search-box {
     margin-left: 1em;
@@ -398,7 +429,7 @@ for now until a better color is picked - if needed.
 #acct_holds_tabs a,
 #acct_prefs_tabs a {
     margin-top: 0px;
-    font-size: 83%;
+    font-size: 80%;
     color: #333;
     padding: 10px 10px 10px 10px;
 }
@@ -431,7 +462,7 @@ for now until a better color is picked - if needed.
 .rdetail_results a {
     color: #75954E;
     font-weight: bold;
-    font-size: 125%;
+    font-size: 120%;
     text-decoration: none;
 }
 .rdetail_result_count {
@@ -447,7 +478,7 @@ for now until a better color is picked - if needed.
 }
 .rdetail_result_nav a {
     text-decoration: none;
-    font-size: 125%;
+    font-size: 120%;
 }
 #rdetail_details_table {
     margin-top: 15px;
@@ -511,7 +542,7 @@ div.place_hold {
     /*padding-top: 10px;*/
 }
 div.place_hold a {
-    text-decoration: none;
+    /*text-decoration: none;*/
 }
 .place_hold_btn {
     display: block;
@@ -530,8 +561,13 @@ div.place_hold a {
     background: #5b743d;
 }
 .result_util a {
+    /*text-decoration: none;*/
+}
+
+div.place_hold, .place_hold_mobile a {
     text-decoration: none;
 }
+
 div.toggle_list {
     padding-top: 6px;
 }
@@ -548,7 +584,7 @@ div.share_record {
 div.result_actions {
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
     padding: 10px;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(118, 150, 79, 0.2);
 }
 .result_util {
     /*border-bottom: 1px dotted #ccc;*/
@@ -556,7 +592,7 @@ div.result_actions {
 }
 .results_aux_utils {
     display: inline-block;
-    font-size: 105%;
+    /*font-size: 105%;*/
     font-weight: 700;
 }
 .result_util {
@@ -579,7 +615,7 @@ div.result_actions {
 #rdetails_status thead th {
     background-color: #d8d8d8;
     padding: 13px 0px 13px 13px;
-    font-size: 83%;
+    font-size: 80%;
     font-weight: bold;
     text-align: left;
 }
@@ -611,7 +647,7 @@ div.result_actions {
 }
 .rdetail_extras_link {
     padding: 6px 12px;
-    font-size: 83%;
+    font-size: 80%;
     font-weight: bold;
 }
 .rdetail_extras_lbl {
@@ -638,7 +674,7 @@ div.result_actions {
 #content-wrapper {
     background: #fff;
     min-height: 260px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #242729;
     border-top: 1px solid #75954E;
     padding-top: 5px;
     margin: 0;
@@ -690,7 +726,7 @@ div.result_actions {
     margin: 0;
     padding: 0;
     background: #fff;
-    font-size: 125%;
+    font-size: 120%;
     color: black;
 }
 #main-content .left_brain .input_bg {
@@ -699,18 +735,19 @@ div.result_actions {
     height: 29px;
 }
 .login-help-box {
-    float: left;
+    display: inline-block;
     width: 200px;
     text-align: center;
-    margin-left: 2em;
+    margin-left: 4em;
     margin-right: 2em;
+    margin-top: 1.5em;
 }
 .login-help-button {
     font-size: 150%;
-    padding: 1.5em;
+    /*padding: 1.5em;*/
 }
 #login-failed-message {
-    font-size: 125%;
+    font-size: 120%;
     font-weight: bold;
     color: red;
     padding-top: 1em;
@@ -773,7 +810,7 @@ collapse correctly when the window width decreases */
     border-bottom: 1px dotted #ccc;
 }
 .results_header_nav1 .h1 {
-    font-size: 125%;
+    font-size: 120%;
     font-weight: bold;
     color: #75954E;
 }
@@ -883,7 +920,7 @@ div.result_table_utils_cont {
 }
 .header_middle {
     height: 22px;
-    font-size: 125%;
+    font-size: 120%;
     font-weight: bold;
     color: #75954E;
     padding: 0px 7px 0px 0px;
@@ -989,20 +1026,20 @@ table.acct_notes th {
     text-transform: none;
 }
 .search_catalog_lbl {
-    font-size: 125%;
+    font-size: 120%;
 }
 .adv_search_catalog_lbl {
-    font-size: 125%;
+    font-size: 120%;
 }
 .browse_the_catalog_lbl {
-    font-size: 125%;
+    font-size: 120%;
 }
 .lbl1 {
-    font-size: 125%;
+    font-size: 120%;
     font-weight: bold;
 }
 .lbl2 {
-    font-size: 83%;
+    font-size: 80%;
     font-weight: normal;
     position: relative;
     top: 3px;
@@ -1046,7 +1083,7 @@ table.acct_notes th {
 .payment-processing {
     font-weight: bold;
     color: green;
-    font-size: 125%;
+    font-size: 120%;
     padding: 10px;
     border: 1px solid;
     text-align: center;
@@ -1068,7 +1105,7 @@ div.adv_search_available {
     width: 100%;
     text-align: center;
     padding-top: 20px;
-    font-size: 125%;
+    font-size: 120%;
     font-weight: bold;
 }
 .chili_link {
@@ -1153,7 +1190,7 @@ div#facet_sidebar {
     padding-top: 5px;
     padding-bottom: 10px;
     margin-left: 1em;
-    /*font-size: 92%;*/
+    font-size: 95%;
 }
 #footer a {
     color: #fff;
@@ -1212,7 +1249,7 @@ div#facet_sidebar {
     width: 7em;
 }
 .adv_adv_link {
-    font-size: 83%;
+    font-size: 80%;
     color: red;
 }
 #acct_prefs_header {
@@ -1227,7 +1264,7 @@ div#facet_sidebar {
 }
 .renew-summary,
 .message-update-summary {
-    font-size: 125%;
+    font-size: 120%;
     font-style: italic;
     margin: 0.5ex 0;
 }
@@ -1237,7 +1274,7 @@ div#facet_sidebar {
     color: red;
 }
 .refine-controls {
-    font-size: 125%;
+    font-size: 120%;
     padding: 0.5ex 0;
 }
 #adv_search_refine input[type=text] {
@@ -1316,7 +1353,7 @@ a.dash-link:hover {
     font-weight: bold;
 }
 #hold_editor h1 {
-    font-size: 125%;
+    font-size: 120%;
     font-weight: bold;
 }
 #hold_editor h2 {
@@ -1407,7 +1444,7 @@ a.dash-link:hover {
     margin-bottom: 20px;
 }
 .hold-items-list-title {
-    font-size: 125%;
+    font-size: 120%;
     margin-bottom: 20px;
 }
 .hold-items-list-problem {
@@ -1437,7 +1474,7 @@ a.dash-link:hover {
 }
 .big-strong {
     font-weight: bold;
-    font-size: 125%;
+    font-size: 120%;
 }
 .results_header_btns,
 .results_header_sel {
@@ -1457,14 +1494,14 @@ a.dash-link:hover {
     background-image: none;
     color: #fff;
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     margin: .4em;
     padding: .4em .6em;
     font-weight: 600;
     text-decoration: none ! important;
     transition: all 0.2s ease-in-out 0s;
     -webkit-transition: all 0.2s ease-in-out 0s;
-    display: -webkit-inline-box;
+    display: inline-block;
 }
 .opac-multiline-button > a:hover,
 .opac-button:hover,
@@ -1639,7 +1676,7 @@ table.bookbag-specific {
     padding: 8px 0px 6px 0px;
     width: 100%;
     border: 0;
-    font-size: 125%;
+    font-size: 120%;
     text-align: center;
     font-style: italic;
 }
@@ -1688,24 +1725,20 @@ table.bookbag-specific {
 .saved-searches-header {
     width: 100%;
     font-weight: bold;
-    font-size: 125%;
+    font-size: 120%;
 }
 .saved-searches-header .button {
     float: right;
-    width: 28px;
+    width: 30px;
 }
 .saved-searches-header .text {
-    float: left;
-    padding-right: 1em;
+    float:left;
+    /*padding-right: 1em;*/
     margin: 0.5ex 0;
-}
-.saved-searches-header {
-    font-weight: bold;
-    font-size: 125%;
 }
 .saved-searches {
     border-bottom: 1px solid #999;
-    padding-right: 1em;
+    /*padding-right: .5em;*/
 }
 #staff-saved-search {
     /* wraps .saved-searches-header and .saved-searches on the record page */
@@ -1729,11 +1762,11 @@ table.bookbag-specific {
     margin: 2ex;
 }
 .result-bookbag-name {
-    font-size: 125%;
+    font-size: 120%;
     font-weight: bold;
 }
 .result-bookbag-description {
-    font-size: 125%;
+    font-size: 120%;
     font-style: italic;
 }
 .result-bookbag-item-note {
@@ -1772,7 +1805,7 @@ span.preflib {
 }
 a.preflib_change {
     vertical-align: super;
-    font-size: 83%;
+    font-size: 80%;
     line-height: normal;
     text-decoration: none;
 }
@@ -1943,7 +1976,7 @@ a.preflib_change {
     padding-bottom: 0.5ex;
 }
 .browse-shortcuts {
-    font-size: 125%;
+    font-size: 120%;
 }
 .browse-result-authority-field-name {
     font-style: italic;
@@ -1968,7 +2001,7 @@ a.preflib_change {
 }
 #main-content-register {
     margin-left: 40px;
-    font-size: 125%;
+    font-size: 120%;
 }
 #main-content-register table {
     padding: 20px;
@@ -2003,14 +2036,14 @@ a.preflib_change {
 #search_locg_label {
     white-space: nowrap;
     display: inline-block;
-    padding: 5px 0 0px 0;
+    padding: 5px 0 0 5px;
 }
 .result_table_title_cell {
     padding-top: 4px;
     padding-bottom: 4px;
 }
 .record_title {
-    font-size: 125%;
+    font-size: 120%;
 }
 /* styling for sms text call number */
 
@@ -2047,23 +2080,7 @@ a.preflib_change {
 .myopac_message_message {
     white-space: pre-wrap;
 }
-@media only screen and (max-width: 1015px) {
-    .facet_sidebar_visible,
-    .result_block_visible {
-        display: inline ! important;
-    }
-    /* Center Box Biz */
-    /* Hide Library Info for Mobile*/
-    
-    .center_box {
-        display: inline-block;
-        padding: 5px;
-    }
-    .format_icon {
-        float: right;
-        /*margin-left:16em;*/
-    }
-}
+
 @media only screen and (max-width: 800px) {
     .facet_sidebar_hidden,
     .result_block_hidden {
@@ -2147,6 +2164,25 @@ a.preflib_change {
     span .nav_arrow_fix {
         display: none;
     }
+
+#results_header_inner {
+display: inline-flex;
+}
+
+/* No need to show search links on small screen */
+
+.rdetail_related_subjects {
+display:none; }
+
+.rdetail_related_series {
+display:none; }
+
+.rdetail_subject {
+display:none; }
+
+.rdetail_series_value {
+display:none; }
+
     #header {
         padding: 10px;
         margin: 0px;
@@ -2199,7 +2235,7 @@ a.preflib_change {
         margin: 0px 5px 0px 0px;
     }
     .place_hold_btn {
-        border-radius: 5px;
+        border-radius: 1em;
     }
     #dash_wrapper div {
         background: transparent;
@@ -2286,9 +2322,12 @@ a.preflib_change {
         padding-left: 0;
         border-bottom: none;
     }
-    div.place_hold {
-        border-bottom: none;
-        padding-right: 5px;
+    div.place_hold_mobile {
+	clear:both;
+    }
+    div.place_hold_mobile a {
+    	text-decoration: none;
+	font-weight:bold;
     }
     div.place_hold a {
         border-bottom: none;
@@ -2296,7 +2335,7 @@ a.preflib_change {
         font-weight: bold;
         /*padding:5px;*/
         
-        text-decoration: none;
+        /*text-decoration: none;*/
     }
     .results_header_nav1 {
         text-align: center;
@@ -2326,7 +2365,7 @@ a.preflib_change {
         background-color: inherit;
     }
     .results_header_btns a {
-        margin: 0.2em;
+        margin: .2em;
     }
     #main-content {
         margin: 0 1px;
@@ -2377,7 +2416,7 @@ a.preflib_change {
         margin-top: 0.5em;
     }
     #adv_search_parent {
-        font-size: 83%;
+        font-size: 80%;
     }
     #adv_search_filters {
         position: relative;
@@ -2387,7 +2426,7 @@ a.preflib_change {
         float: right;
     }
     .rdetail_aux_utils {
-        padding: 0px;
+        padding: 10px;
         border: none;
     }
     .result_metadata {
@@ -2398,11 +2437,20 @@ a.preflib_change {
     div#rdetail_actions_div {
         float: none;
         border-radius: 5px;
-        padding: 5px;
-        min-width: 11em;
+	margin-right: 5px;
+        /*padding: 5px;*/
+        /*min-width: 11em;*/
     }
     div#rdetail_actions_div a {
-        text-decoration: none
+        text-decoration: underline;
+    }
+
+   div.toggle_list {
+	padding-top:10px;
+    }
+
+    div.share_record {
+	padding-top:10px;
     }
     h2.rdetail_uris {
         clear: both;
@@ -2420,6 +2468,9 @@ a.preflib_change {
     }
     .mobile_hide {
         display: none;
+    }
+    .mobile_show {
+	display: initial;
     }
     #dash_user {
         display: block;
@@ -2597,11 +2648,13 @@ a.preflib_change {
         color: #fff;
     }
 }
+
 /*Action box response*/
 
-@media only screen and (max-width: 1130px) {
+@media only screen and (max-width: 1200px) {
     .results_aux_utils {
         display: block;
+	padding-right:5px;
     }
     .result_util {
         padding-left: initial;
@@ -2619,9 +2672,44 @@ a.preflib_change {
         padding-left: 1em;
     }
     div.place_hold img {
-        padding-right: initial;
+        /*padding-right: inherit;*/
     }
 }
+
+@media only screen and (max-width: 1100px) {
+    .results_aux_utils {
+        display: inline-block;
+	padding-top: initial;
+    }
+    .result_util {
+        padding-left: 1em;
+    }
+    .facet_sidebar_visible,
+    .result_block_visible {
+        display: inline ! important;
+    }
+    /* Center Box Biz */
+    /* Hide Library Info for Mobile*/
+
+    .center_box {
+        display: inline-block;
+        padding: 5px;
+    }
+    .format_icon {
+        float: right;
+        /*margin-left:16em;*/
+    }
+}
+@media only screen and (max-width: 350px) {
+    div.result_actions img {
+        display:none;
+    }
+    .results_aux_utils {
+	padding-right:initial
+    }
+
+}
+
 /* 
 For text which is visible only to screen readers.
 Borrowed from http://getbootstrap.com/css/#helper-classes-screen-readers 
