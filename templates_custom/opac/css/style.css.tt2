@@ -453,12 +453,18 @@ for now until a better color is picked - if needed.
     background: #75954E;
 }
 .rdetail_header {
-    /*padding: 5px 7px 6px 0px;*/
-    
-    padding-top: 5px;
+    /*padding: 5px 7px 6px 0px;*/   
+    padding-bottom: 5px;
     /*margin-left: 1em;*/
-    /*border-bottom: 1px dotted #ccc;*/
+    border-bottom: 1px dotted #ccc;
 }
+/* Since footer search uses header bits */
+.rdetail_header:nth-child(n+2) {
+    border-bottom:none;
+    padding-top:5px;
+    border-top: 1px dotted #ccc;
+}
+
 .rdetail_results a {
     color: #75954E;
     font-weight: bold;
@@ -501,9 +507,24 @@ div.rdetail_uris ul li {
     position: relative;
     left: 1em;
 }
+
+/* Added Content Link in Staff Client */
+.clear_addedcontent_cache {
+	padding-top:5px;
+}
+.clear_addedcontent_cache:before {
+	font-family:'fontawesome';
+    	content: "\f021";
+	padding-right:.5em;
+	padding-left: 2px;
+}
 div.rdetail_show_copies {
     margin-top: 1em;
 }
+#rdetail_title_div {
+/*padding-top:0.5em;*/
+}
+
 div#rdetail_actions_div {
     float: right;
     background: #fff;
@@ -674,8 +695,8 @@ div.result_actions {
 #content-wrapper {
     background: #fff;
     min-height: 260px;
-    border-bottom: 1px solid #242729;
-    border-top: 1px solid #75954E;
+    /*border-bottom: 1px solid #242729;
+    border-top: 1px solid #75954E;*/
     padding-top: 5px;
     margin: 0;
 }
@@ -771,7 +792,7 @@ div.result_actions {
 #results_header_bar {
     background: #999;
     border-top: 1px solid #75954E;
-    /*border-bottom: 1px solid #888;*/
+    border-bottom: 1px solid #888;
 }
 .results_header_lbl {
     font-weight: bold;
@@ -967,6 +988,7 @@ table.acct_notes th {
     float: right;
     padding: 15px 0px 0px 23px;
     background: #f0f0f0;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
     width: 177px;
     height: 166px;
 }
@@ -1737,7 +1759,7 @@ table.bookbag-specific {
     margin: 0.5ex 0;
 }
 .saved-searches {
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid #333;
     /*padding-right: .5em;*/
 }
 #staff-saved-search {
@@ -1856,7 +1878,7 @@ a.preflib_change {
 }
 .popmenu li a {
     display: block;
-    padding: 3px 5px;
+    padding: 5px 0px 5px;
 }
 .popmenu li ul {
     display: none;
@@ -2161,9 +2183,9 @@ a.preflib_change {
 #search-wrapper input[type=text] {
 	width: 50%;
 }
-    span .nav_arrow_fix {
+span .nav_arrow_fix {
         display: none;
-    }
+}
 
 #results_header_inner {
 display: inline-flex;
@@ -2211,6 +2233,12 @@ display:none; }
         margin: 0px;
         padding: 5px;
     }
+.login-help-box {
+margin-top:3em;
+margin-left:0;
+margin-right:0;
+width:100%;
+}
     #topnav_logo {
         margin: 0;
     }
