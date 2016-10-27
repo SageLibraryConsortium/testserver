@@ -41,7 +41,7 @@ END;
             <th scope='col'>[% l("Barcode") %]</th>
             <th scope='col'>[% l("Shelving Location") %]</th>
             [%- IF ctx.is_staff %]
-            <th scope='col'>[% l("Age Protect") %] / <br> [% l("Expires") %]</th>
+            <th scope='col'>[% l("Age Hold Protection") %]</th>
             <th scope='col'>[% l("Create Date") %]</th>
             [%- END %]
             [%- IF ctx.is_staff OR serial_holdings %]
@@ -162,9 +162,9 @@ END; # FOREACH bib
                 END;
             %]
             [%- IF ctx.is_staff %]
-            <td style='color:[% date_color | html %];'>
-                [% age_protect  | html %] <br />
-                [% expire_msg  | html %] 
+            <td>
+                [% copy_info.age_protect ?
+                    ctx.get_crahp(copy_info.age_protect).name : l('None') | html %]
             </td>
             <td>[% 
                 IF copy_info.create_date;
@@ -238,19 +238,12 @@ END; # FOREACH bib
                     );
                 ELSE;
                     '-';
-                END %]
-            </td>
+                END %]</td>
         </tr>
-        [%- IF age_protect_is_active AND !ctx.is_staff %]
-        <tr>
-          <td></td>
-          <td colspan='3'  style='color:orange'>This copy is new and can only be picked up at this library.</td>
-        </tr>
-        [%- END %]
 
         [% IF copy_info.notes; %]
             [% FOREACH note IN copy_info.notes; %]
-                <tr><td class='mobile_hide'>&nbsp;</td><td class="copy_note" colspan="4" property="description"><strong>[% note.title | html %]:</strong> [% note.value | html %]</td></tr>
+                <tr><td>&nbsp;</td><td class="copy_note" colspan="4" property="description"><strong>[% note.title | html %]:</strong> [% note.value | html %]</td></tr>
             [% END %]
         [% END %]
 
@@ -285,6 +278,14 @@ END; # FOREACH bib
                     l('Previous [_1]', ctx.copy_offset - new_offset) %]</a>
             </td>
         [%- END %]
+
+	[%- IF age_protect_is_active AND !ctx.is_staff %]
+	<tr>
+	<td></td>
+	<td colspan="3" style="color:orange">This copy is new and can only be picked up at this library.</td>
+	</tr>
+	[%- END %]
+
         [%- IF copies.size >= ctx.copy_limit AND NOT serial_holdings %]
             <td>
                 <a href="[% mkurl('', {copy_offset => ctx.copy_offset + ctx.copy_limit, copy_limit => ctx.copy_limit}) %]">[%
