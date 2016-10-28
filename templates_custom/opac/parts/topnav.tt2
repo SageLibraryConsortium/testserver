@@ -2,7 +2,7 @@
 <div id="maintenance_message">[% ctx.maintenance_message %]</div>
 [%- END -%]
 [% IF !ctx.is_staff %]
-<div id="header-wrap" class="row">
+<div id="header-wrap">
 <div id="header">
     <div class="float-left logo-wrap">
         [% INCLUDE "opac/parts/topnav_logo.tt2" %]

@@ -27,6 +27,15 @@ img {
 }
 /* adjusted to be a little smaller for header */
 
+/* keep record body from going bananas */
+.row{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+        margin-bottom: 0;
+        max-width: 85rem;
+}
 #topnav_logo {
     margin: 1.4em 0;
 }
