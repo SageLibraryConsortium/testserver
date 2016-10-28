@@ -201,8 +201,8 @@ IF num_uris > 0;
 </div>
 [%- END %]
 
-<h2 id='rdetail_record_details'>[% l("Record details") %]</h2>
-<ul>
+<h2 id='rdetail_record_details'onclick="toggle_visibility('rdetail_display_list');">[% l("Record details") %]</h2>
+<ul id=rdetail_display_list>
     [%- IF attrs.isbns.0;
           FOR isbn IN attrs.isbns;
             isbn_extra = '';
@@ -351,3 +351,12 @@ IF num_uris > 0;
 [%- INCLUDE "opac/parts/record/subjects.tt2" %]
 [%- INCLUDE "opac/parts/record/series.tt2" %]
 [%- INCLUDE "opac/parts/record/extras.tt2" %]
+<script type="text/javascript">
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'none')
+          e.style.display = 'block';
+       else
+          e.style.display = 'none';
+    }
+</script>
