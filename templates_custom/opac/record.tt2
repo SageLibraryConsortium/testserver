@@ -17,7 +17,7 @@
             </div>
         </div>
         [% END %]
-        <div id="[% ctx.staff_saved_search_size ? 'main-content-after-bar' : 'main-content' %]">
+        <div id="[% ctx.staff_saved_search_size ? 'main-content-after-bar' : 'main-content' %]" class="row">
             [% INCLUDE "opac/parts/record/body.tt2" %]
             <div class="common-full-pad"></div>
         </div>
