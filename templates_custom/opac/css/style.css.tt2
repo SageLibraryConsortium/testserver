@@ -2103,6 +2103,23 @@ a.preflib_change {
 .mobile_view {
     display: none;
 }
+
+/* Social Media Biz */
+.like_share {
+  width: 100%;
+  padding-bottom:10px;
+  clear: both;
+  display: inline-flex;
+}
+
+.bottom-spacer {
+  margin: 0 1em 0 0;
+  border: none;
+}
+
+[id^=___plusone] { 
+  width:65px !important;
+}
 /* patron message center */
 
 #myopac_message_tbody {
