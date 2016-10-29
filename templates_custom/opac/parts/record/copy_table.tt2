@@ -242,9 +242,9 @@ END; # FOREACH bib
             </td>
         </tr>
         [%- IF age_protect_is_active AND !ctx.is_staff %]
-        <tr>
+        <tr class="copy_details_offers_row age_protect_row" style="margin-top:0;">
           <td></td>
-          <td colspan='3'  style='color:orange'>This copy is new and can only be picked up at this library.</td>
+          <td class='age_protect' colspan='3'>This copy is new and can only be picked up at this library.</td>
         </tr>
         [%- END %]
 

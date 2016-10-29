@@ -29,7 +29,7 @@ img {
 
 /* keep record body from going bananas */
 .row{
-        width: 100%;
+        /*width: 100%;*/
         margin-left: auto;
         margin-right: auto;
         margin-top: 0;
@@ -2120,6 +2120,20 @@ a.preflib_change {
 [id^=___plusone] { 
   width:65px !important;
 }
+
+/* Age Protect Patron View*/
+
+.age_protect {
+	color: orange;
+	font-size: 0.95em;
+}
+
+.age_protect:before {
+	padding-right:.5em;
+	font-family:'fontawesome';
+	content: "\f062";
+}
+
 /* patron message center */
 
 #myopac_message_tbody {
