@@ -90,12 +90,12 @@ h1 {
     margin: 0;
     margin-bottom: 5px;
     font-size: 170%;
-    font-weight: normal;
+    font-weight: 400;
     font-family: Merriweather;
 }
 h2 {
     font-size: 120%;
-    font-weight: bold;
+    font-weight: 400;
     font-family: Merriweather;
 }
 h2.graphic880 {
@@ -1593,6 +1593,13 @@ a.opac-button-header:hover,
     clear: both;
     margin-top: 1em;
 }
+
+/*Drop Down for Copy Info in Record Display*/
+#rdetail_record_details:after, .rdetail_contents:after {
+	font-family:'fontawesome';
+    	content: "\f0d7";
+	padding-left:.5em;
+}
 .rdetail_content {
     margin-left: 1.5em;
     padding-left: 1.5em;
@@ -2130,6 +2137,7 @@ a.preflib_change {
 .age_protect {
 	color: orange;
 	font-size: 0.95em;
+	white-space:normal !important;
 }
 
 .age_protect:before {
