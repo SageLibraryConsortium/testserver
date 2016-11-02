@@ -1,3 +1,3 @@
 <div id="topnav_logo"> <a href="http://catalog.sage.eou.edu">
 <img alt="[% l('Sage Library System Logo') %]"
-style="width:250px;background:#fff;border-radius:5px;" src="[% ctx.media_prefix %]/images/new_logos/Sage_Library_Leaves_TextRight.png" /></a></div>
+style="background:#fff;border-radius:5px;" src="[% ctx.media_prefix %]/images/new_logos/Sage_Library_Leaves_TextRight.png" /></a></div>

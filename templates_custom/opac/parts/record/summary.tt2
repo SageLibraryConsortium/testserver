@@ -26,7 +26,7 @@
         -%]
         [%- INCLUDE "opac/parts/record/authors.tt2" %]
     </div>
-[%- INCLUDE "opac/parts/record/social.tt2" %]
+[%-# INCLUDE "opac/parts/record/social.tt2" %]
     <div id="rdetail_image_div">
         <a href='[% ctx.media_prefix %]/opac/extras/ac/jacket/large/r/[% ctx.bre_id | uri %]'><img
             alt="[% l('Image of item') %]" id='rdetail_image'
@@ -360,3 +360,7 @@ IF num_uris > 0;
           e.style.display = 'none';
     }
 </script>
+<script type="text/javascript">
+(".rotate").click(function(){
+    $(this).toggleClass("down"); 
+});
