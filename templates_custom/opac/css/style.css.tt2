@@ -2792,13 +2792,13 @@ width:100%;
         display: inline-block;
 	padding-top: initial;
     }
+    div.result_actions {
+    	margin-top:0.5em;
+}
     .result_util {
         padding-left: 1em;
     }
-    .facet_sidebar_visible,
-    .result_block_visible {
-        display: inline ! important;
-    }
+
     /* Center Box Biz */
     /* Hide Library Info for Mobile*/
 
