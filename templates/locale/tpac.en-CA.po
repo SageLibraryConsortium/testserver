@@ -13,8 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Launchpad (build 17947)\n"
-"X-Launchpad-Export-Date: 2016-03-16 05:42+0000\n"
+"X-Generator: Launchpad (build 18179)\n"
+"X-Launchpad-Export-Date: 2016-08-26 05:28+0000\n"
 
 #: ../../Open-ILS/src/templates/opac/register.tt2:63
 msgid ""
@@ -87,7 +87,7 @@ msgid "%m/%d/%Y"
 msgstr "%m/%d/%Y"
 
 #. (ctx.record_hold_count, ctx.copy_summary.$count_entry.count)
-#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:163
+#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:165
 msgid "%quant(%1,current hold,current holds) with %quant(%2,total copy,total copies)."
 msgstr ""
 "%quant(%1,current hold,current holds) with %quant(%2,total copy,total "
@@ -252,9 +252,8 @@ msgid "Activate"
 msgstr "Activate"
 
 #: ../../Open-ILS/src/templates/opac/parts/hold_status.tt2:24
-#, fuzzy
 msgid "Activate On"
-msgstr "Active On"
+msgstr ""
 
 #: ../../Open-ILS/src/templates/opac/myopac/prefs.tt2:156
 msgid "Active Addresses"
@@ -602,11 +601,11 @@ msgstr ""
 msgid "Back to Account Summary"
 msgstr "Back to Account Summary"
 
-#: ../../Open-ILS/src/templates/opac/myopac/receipt_email.tt2:18 ../../Open-ILS/src/templates/opac/myopac/receipt_print.tt2:22
+#: ../../Open-ILS/src/templates/opac/myopac/receipt_email.tt2:18 ../../Open-ILS/src/templates/opac/myopac/receipt_print.tt2:23
 msgid "Back to Payments History"
 msgstr "Back to Payments History"
 
-#: ../../Open-ILS/src/templates/opac/record/email.tt2:22 ../../Open-ILS/src/templates/opac/record/print.tt2:24
+#: ../../Open-ILS/src/templates/opac/record/email.tt2:22 ../../Open-ILS/src/templates/opac/record/print.tt2:25
 msgid "Back to Record"
 msgstr "Back to Record"
 
@@ -614,7 +613,7 @@ msgstr "Back to Record"
 msgid "Back to results"
 msgstr ""
 
-#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:319
+#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:321
 msgid "Badges:"
 msgstr ""
 
@@ -912,7 +911,7 @@ msgstr "Citation/References Note: "
 msgid "City"
 msgstr "City"
 
-#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:89
+#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:91
 msgid "Clear AddedContent Cache"
 msgstr ""
 
@@ -1092,7 +1091,7 @@ msgstr "Copyright claimant"
 msgid "Copyright holder"
 msgstr "Copyright holder"
 
-#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:308
+#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:310
 msgid "Copyright:"
 msgstr ""
 
@@ -1176,7 +1175,7 @@ msgstr "Current Password"
 msgid "Current Username"
 msgstr "Current Username"
 
-#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:161
+#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:163
 msgid "Current holds"
 msgstr "Current holds"
 
@@ -1357,7 +1356,7 @@ msgstr "Distribution place"
 msgid "Distributor"
 msgstr "Distributor"
 
-#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:280 ../../Open-ILS/src/templates/opac/parts/result/table.tt2:215
+#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:282 ../../Open-ILS/src/templates/opac/parts/result/table.tt2:215
 #, fuzzy
 msgid "Distributor:"
 msgstr "Distributor"
@@ -1428,7 +1427,7 @@ msgstr ""
 msgid "Editing Hold"
 msgstr "Editing Hold"
 
-#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:214 ../../Open-ILS/src/templates/opac/parts/result/table.tt2:269
+#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:216 ../../Open-ILS/src/templates/opac/parts/result/table.tt2:269
 msgid "Edition:"
 msgstr "Edition:"
 
@@ -1452,7 +1451,7 @@ msgstr "Electrician"
 msgid "Electronic resource"
 msgstr "Electronic resource"
 
-#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:106 ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:130
+#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:108 ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:132
 msgid "Electronic resources"
 msgstr "Electronic resources"
 
@@ -1523,12 +1522,12 @@ msgid "Error preparing receipt:"
 msgstr "Error preparing receipt:"
 
 #. ((ctx.printable_receipt.textcode ? ctx.printable_receipt.textcode _ ' / ' _ ctx.printable_receipt.desc : 0) || ctx.printable_receipt.error_output.data || l("No receipt data returned from server"))
-#: ../../Open-ILS/src/templates/opac/myopac/receipt_print.tt2:13
+#: ../../Open-ILS/src/templates/opac/myopac/receipt_print.tt2:14
 msgid "Error preparing receipt: %1"
 msgstr "Error preparing receipt: %1"
 
 #. ((ctx.printable_record.textcode ? ctx.printable_record.textcode _ ' / ' _ ctx.printable_record.desc : 0) || ctx.printable_record.error_output.data || l("No record data returned from server"))
-#: ../../Open-ILS/src/templates/opac/record/print.tt2:14
+#: ../../Open-ILS/src/templates/opac/record/print.tt2:15
 msgid "Error printing record: %1"
 msgstr "Error printing record: %1"
 
@@ -1903,7 +1902,7 @@ msgstr "I have checked this item out before"
 msgid "ISBN"
 msgstr "ISBN"
 
-#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:194 ../../Open-ILS/src/templates/opac/parts/result/table.tt2:230
+#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:196 ../../Open-ILS/src/templates/opac/parts/result/table.tt2:230
 msgid "ISBN:"
 msgstr "ISBN:"
 
@@ -1911,7 +1910,7 @@ msgstr "ISBN:"
 msgid "ISSN"
 msgstr "ISSN"
 
-#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:201 ../../Open-ILS/src/templates/opac/parts/result/table.tt2:238
+#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:203 ../../Open-ILS/src/templates/opac/parts/result/table.tt2:238
 msgid "ISSN:"
 msgstr "ISSN:"
 
@@ -2397,7 +2396,7 @@ msgstr "Manufacture place"
 msgid "Manufacturer"
 msgstr "Manufacturer"
 
-#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:294 ../../Open-ILS/src/templates/opac/parts/result/table.tt2:222
+#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:296 ../../Open-ILS/src/templates/opac/parts/result/table.tt2:222
 #, fuzzy
 msgid "Manufacturer:"
 msgstr "Manufacturer"
@@ -2657,11 +2656,11 @@ msgstr "No holds found."
 msgid "No messages found."
 msgstr ""
 
-#: ../../Open-ILS/src/templates/opac/myopac/main_pay.tt2:47 ../../Open-ILS/src/templates/opac/myopac/receipt_print.tt2:13
+#: ../../Open-ILS/src/templates/opac/myopac/main_pay.tt2:47 ../../Open-ILS/src/templates/opac/myopac/receipt_print.tt2:14
 msgid "No receipt data returned from server"
 msgstr "No receipt data returned from server"
 
-#: ../../Open-ILS/src/templates/opac/record/print.tt2:14
+#: ../../Open-ILS/src/templates/opac/record/print.tt2:15
 msgid "No record data returned from server"
 msgstr "No record data returned from server"
 
@@ -2908,7 +2907,7 @@ msgstr "Perform an Author Search"
 msgid "Performer"
 msgstr "Performer"
 
-#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:82 ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:83
+#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:83 ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:84
 msgid "Permalink"
 msgstr ""
 
@@ -2942,7 +2941,7 @@ msgstr "Photographer"
 msgid "Phys. Desc.:"
 msgstr "Phys. Desc.:"
 
-#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:208
+#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:210
 msgid "Physical Description:"
 msgstr "Physical Description:"
 
@@ -3119,7 +3118,7 @@ msgstr "Print"
 msgid "Print / Email Actions Image"
 msgstr ""
 
-#: ../../Open-ILS/src/templates/opac/record/print.tt2:4
+#: ../../Open-ILS/src/templates/opac/record/print.tt2:5
 msgid "Print Record"
 msgstr "Print Record"
 
@@ -3163,7 +3162,7 @@ msgstr "Processing..."
 msgid "Producer"
 msgstr "Producer"
 
-#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:266 ../../Open-ILS/src/templates/opac/parts/result/table.tt2:208
+#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:268 ../../Open-ILS/src/templates/opac/parts/result/table.tt2:208
 #, fuzzy
 msgid "Producer:"
 msgstr "Producer"
@@ -3225,7 +3224,7 @@ msgstr "Publications About Described Materials Note: "
 msgid "Publisher"
 msgstr "Publisher"
 
-#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:235 ../../Open-ILS/src/templates/opac/parts/result/table.tt2:185
+#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:237 ../../Open-ILS/src/templates/opac/parts/result/table.tt2:185
 msgid "Publisher:"
 msgstr "Publisher:"
 
@@ -3265,7 +3264,7 @@ msgstr "Re-enter new password:"
 msgid "Ready for Pickup"
 msgstr "Ready for Pickup"
 
-#: ../../Open-ILS/src/templates/opac/myopac/main_payments.tt2:31 ../../Open-ILS/src/templates/opac/myopac/receipt_print.tt2:4
+#: ../../Open-ILS/src/templates/opac/myopac/main_payments.tt2:31 ../../Open-ILS/src/templates/opac/myopac/receipt_print.tt2:5
 msgid "Receipt"
 msgstr "Receipt"
 
@@ -3290,7 +3289,7 @@ msgstr ""
 msgid "Record Holdings Summary"
 msgstr ""
 
-#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:183
+#: ../../Open-ILS/src/templates/opac/parts/record/summary.tt2:185
 msgid "Record details"
 msgstr "Record details"
 
@@ -4753,27 +4752,3 @@ msgstr ""
 #: ../../Open-ILS/src/templates/opac/parts/record/copy_table.tt2:111 ../../Open-ILS/src/templates/opac/parts/record/copy_table.tt2:119
 msgid "view"
 msgstr ""
-
-#~ msgid "Active"
-#~ msgstr "Active"
-
-#~ msgid "Date Fulfilled"
-#~ msgstr "Date Fulfilled"
-
-#~ msgid "Enabled"
-#~ msgstr "Enabled"
-
-#~ msgid "Estimated wait: %quant(%1,day,days)"
-#~ msgstr "Estimated wait: %quant(%1,day,days)"
-
-#~ msgid "Expires %1"
-#~ msgstr "Expires %1"
-
-#~ msgid "Notification Type"
-#~ msgstr "Notification Type"
-
-#~ msgid "Please include leading zeros and no spaces."
-#~ msgstr "Please include leading zeros and no spaces."
-
-#~ msgid "Title / Author"
-#~ msgstr "Title / Author"

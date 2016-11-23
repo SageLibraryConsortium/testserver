@@ -334,7 +334,7 @@
 
 <!ENTITY staff.bibs_abreast.view_bib "Zobrazit bib. záznam">
 <!ENTITY staff.bibs_abreast.edit_bib "Editovat bib. záznam">
-<!ENTITY staff.bibs_abreast.holdings "Kknihovní fond">
+<!ENTITY staff.bibs_abreast.holdings "Knihovní fond">
 
 <!ENTITY staff.cat.opac.add_bucket.accesskey "s">
 <!ENTITY staff.cat.opac.add_bucket.label "Přidat do skupiny">
@@ -795,18 +795,18 @@
 <!ENTITY staff.main.menu.admin.server_admin.conify.sms_carrier.label "SMS operátor">
 <!ENTITY staff.main.menu.admin.server_admin.conify.z3950_source.label "Z39.50 servery">
 <!ENTITY staff.main.menu.admin.server_admin.conify.org_unit_proximity_adjustment.label "Nastavení proximity organizační jednotky">
-<!ENTITY staff.main.menu.admin.server_admin.conify.z3950_index_field_map.label "Z39.50 Index Field Maps">
+<!ENTITY staff.main.menu.admin.server_admin.conify.z3950_index_field_map.label "Mapy indexovaných polí Z39.50">
 <!ENTITY staff.main.menu.admin.server_admin.conify.circulation_modifier.label "Modifikátory výpůjček">
 <!ENTITY staff.main.menu.admin.server_admin.conify.org_unit_setting_type "Typy nastavení organizační jednotky">
 <!ENTITY staff.main.menu.admin.server_admin.conify.import_match_set "Sady shod importu">
 <!ENTITY staff.main.menu.admin.server_admin.conify.usr_setting_type "Typy uživatelských nastavení">
 <!ENTITY staff.main.menu.admin.server_admin.conify.config_hard_due_date "Změny v půjčování k pevnému datu">
 <!ENTITY staff.main.menu.admin.server_admin.conify.config_rule_circ_duration "Pravidla délky výpůjček">
-<!ENTITY staff.main.menu.admin.server_admin.conify.config_best_hold_order 'Pořadí pro třídění "nejvýhodnějších rezervací"'>
+<!ENTITY staff.main.menu.admin.server_admin.conify.config_best_hold_order 'Pořadí pro řazení "nejvýhodnějších rezervací"'>
 <!ENTITY staff.main.menu.admin.server_admin.conify.vandelay_import_bib_trash_group "Pole k odebrání při importu MARCu">
 <!ENTITY staff.main.menu.admin.server_admin.conify.config_rule_recurring_fine "Pravidla pokut">
 <!ENTITY staff.main.menu.admin.server_admin.conify.config_rule_max_fine "Limity pokut">
-<!ENTITY staff.main.menu.admin.server_admin.conify.config_rule_age_hold_protect "Doba hájení před rezervací">
+<!ENTITY staff.main.menu.admin.server_admin.conify.config_rule_age_hold_protect "Doba ochrany před rezervacemi">
 <!ENTITY staff.main.menu.admin.server_admin.conify.config_circ_weights "Váhy pro výpůjčky">
 <!ENTITY staff.main.menu.admin.server_admin.conify.config_hold_weights "Váhy pro zachycení rezervací">
 <!ENTITY staff.main.menu.admin.server_admin.conify.config_weight_assoc "Asociace vah">
@@ -3753,7 +3753,7 @@
 <!ENTITY staff.circ.alternate_copy_summary.Edition.label "Vydání">
 <!ENTITY staff.circ.alternate_copy_summary.Floating.label "Pohyblivý exemplář">
 <!ENTITY staff.circ.alternate_copy_summary.Holdable.label "Lze rezervovat">
-<!ENTITY staff.circ.alternate_copy_summary.Age_Protect.label "Age-based Hold Protection">
+<!ENTITY staff.circ.alternate_copy_summary.Age_Protect.label "Dočasná ochrana před rezervacemi">
 <!ENTITY staff.circ.alternate_copy_summary.Hold_Shelf_Location.label "Umístění regálu s rezervacemi">
 <!ENTITY staff.circ.alternate_copy_summary.Holds_Transit.label "Rezervace / přeprava">
 <!ENTITY staff.circ.alternate_copy_summary.Holds_Transit.accesskey "">
@@ -3766,7 +3766,7 @@
 <!ENTITY staff.circ.alternate_copy_summary.Circ_Library.label "Výpůjční knihovna">
 <!ENTITY staff.circ.alternate_copy_summary.Patron_Name.label "Čtenář">
 <!ENTITY staff.circ.alternate_copy_summary.Price.label "Cena">
-<!ENTITY staff.circ.alternate_copy_summary.Cost.label "Acquisition Cost">
+<!ENTITY staff.circ.alternate_copy_summary.Cost.label "Akviziční cena">
 <!ENTITY staff.circ.alternate_copy_summary.Previous_Circ_Group.label "Předchozí výpůjční skupina">
 <!ENTITY staff.circ.alternate_copy_summary.Pub_Date.label "Datum vydání">
 <!ENTITY staff.circ.alternate_copy_summary.Publisher.label "Vydavatel">

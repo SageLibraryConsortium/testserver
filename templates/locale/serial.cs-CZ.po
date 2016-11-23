@@ -1,24 +1,24 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# Czech translation for evergreen
+# Copyright (c) 2016 Rosetta Contributors and Canonical Ltd 2016
+# This file is distributed under the same license as the evergreen package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: evergreen\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2016-09-02 09:38+0000\n"
+"Last-Translator: Eva Cerninakova <Unknown>\n"
+"Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.9.0\n"
+"X-Generator: Launchpad (build 18179)\n"
+"X-Launchpad-Export-Date: 2016-09-03 05:55+0000\n"
 
 #: ../../Open-ILS/src/templates/serial/subscription/caption_and_pattern.tt2:21
 msgid "(853) Basic"
-msgstr ""
+msgstr "(853) Základní"
 
 #: ../../Open-ILS/src/templates/serial/subscription/caption_and_pattern.tt2:22
 msgid "(854) Supplement"
@@ -26,15 +26,15 @@ msgstr ""
 
 #: ../../Open-ILS/src/templates/serial/subscription/caption_and_pattern.tt2:23
 msgid "(855) Index"
-msgstr ""
+msgstr "(855) Rejstíř"
 
 #: ../../Open-ILS/src/templates/serial/subscription/caption_and_pattern.tt2:66
 msgid "(Inactive)"
-msgstr ""
+msgstr "(Neaktivní)"
 
 #: ../../Open-ILS/src/templates/serial/print_routing_list_users.tt2:55
 msgid "<u>P</u>rint"
-msgstr ""
+msgstr "<u>T</u>isk"
 
 #: ../../Open-ILS/src/templates/serial/subscription/caption_and_pattern.tt2:9
 msgid "Active"
@@ -42,19 +42,19 @@ msgstr ""
 
 #: ../../Open-ILS/src/templates/serial/list_stream.tt2:93
 msgid "Add"
-msgstr ""
+msgstr "Přidat"
 
 #: ../../Open-ILS/src/templates/serial/subscription/caption_and_pattern.tt2:47
 msgid "Add New"
-msgstr ""
+msgstr "Přidat nový"
 
 #: ../../Open-ILS/src/templates/serial/subscription.tt2:178
 msgid "Add to record entry"
-msgstr ""
+msgstr "Přidat k  záznamu"
 
 #: ../../Open-ILS/src/templates/serial/subscription.tt2:39
 msgid "Batch Item Receive"
-msgstr ""
+msgstr "Dávkový příjem exemplářů"
 
 #: ../../Open-ILS/src/templates/serial/subscription.tt2:104
 msgid "Bibliographic Record"

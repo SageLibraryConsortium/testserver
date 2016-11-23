@@ -2708,7 +2708,7 @@ msgstr ""
 msgid "Load Shared Bucket Bucket by ID"
 msgstr ""
 
-#: ../../Open-ILS/src/templates/staff/circ/patron/t_edit.tt2:123
+#: ../../Open-ILS/src/templates/staff/circ/patron/t_edit.tt2:123 ../../Open-ILS/src/templates/staff/circ/patron/t_search_results.tt2:8
 msgid "Loading..."
 msgstr ""
 
@@ -3557,7 +3557,7 @@ msgstr ""
 msgid "Patron Search"
 msgstr ""
 
-#: ../../Open-ILS/src/templates/staff/circ/patron/t_search_results.tt2:4
+#: ../../Open-ILS/src/templates/staff/circ/patron/t_search_results.tt2:19
 msgid "Patron Search Results"
 msgstr ""
 
