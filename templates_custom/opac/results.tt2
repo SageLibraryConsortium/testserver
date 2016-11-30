@@ -62,7 +62,7 @@
                     <a href="[% mkurl(ctx.opac_root _ '/mylist') %]">[% l('View My List') %]</a>
                     [%- END %]
                     [%- IF show_more_details.default != 'hide' -%]
-                    <div class='results_header_sel' id='simple-detail-view-links'>
+                    <div class='results_header_sel hidden' id='simple-detail-view-links'>
                         [% IF show_detail_view %]
                         <a href="[% mkurl('', {detail_record_view => 0}) %]">[% l('Show Fewer Details') %]</a> [% ELSE %]
                         <a href="[% mkurl('', {detail_record_view => 1}) %]">[% l('Show More Details') %]</a>
@@ -72,18 +72,18 @@
                 </div>
                 [% END %]
 <div id="results_selection">
-                    <label class="results_header_lbl" for="opac.result.sort">[% l('Sort by') %]
+                    <label class="results_header_lbl hidden" for="opac.result.sort">[% l('Sort by') %]
                     [% INCLUDE "opac/parts/filtersort.tt2" value=CGI.param('sort') submit_on_change=1 %]
                     </label>
 
-                    <label class="results_header_lbl" for="limit_to_available">
+                    <label class="results_header_lbl hidden" for="limit_to_available">
                         <input type="checkbox" id="limit_to_available" name="modifier" value="available"
                             onchange="search_modifier_onchange('available', this, true)"
                             [% CGI.param('modifier').grep('available').size ? ' checked="checked"' : '' %] />
                         [% l('Limit to Available Items') %]
                     </label>
                     [% IF NOT metarecords.disabled %]
-                        <label class="results_header_lbl" for="metabib_search_modifier">
+                        <label class="results_header_lbl hidden" for="metabib_search_modifier">
                             <input type="checkbox" id="metabib_search_modifier"
                                 name="modifier" value="metabib"
                                 onchange="search_modifier_onchange('metabib', this, true)"

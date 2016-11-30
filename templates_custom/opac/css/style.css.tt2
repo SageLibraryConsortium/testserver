@@ -724,6 +724,8 @@ div.result_actions {
 }
 .almost-content-wrapper {
     background: #fff;
+    display:none;
+    visibility:hidden;
 }
 #content-wrapper {
     background: #fff;
@@ -822,10 +824,11 @@ div.result_actions {
     margin-bottom: 6px;
     float: none;
 }
+
 #results_header_bar {
     background: #999;
-    border-top: 1px solid #75954E;
-    border-bottom: 1px solid #888;
+    /*border-top: 1px solid #75954E;*/
+    /*border-bottom: 1px solid #888;*/
 }
 .results_header_lbl {
     font-weight: bold;
@@ -834,10 +837,10 @@ div.result_actions {
     /* this border is not visible, but it keeps these labels the same size
     as the buttons */
     
-    border: 1px solid #999;
-    background: #999;
-    margin: 0.5em 0.3em;
-    padding: 0.3em;
+    /*border: 1px solid #999;*/
+    background: #fff;
+    margin: 0.5em 0.2em;
+    padding: 0;
 }
 /* we need a negative margin on the select to allow the containing <label>
 to determine the actual size of the element.  By doing this, we can increase
@@ -847,11 +850,10 @@ collapse correctly when the window width decreases */
 .results_header_lbl select {
     margin: -0.5em 0;
 }
-#limit_to_available {
-    vertical-align: middle;
-}
-#metabib_search_modifier {
-    vertical-align: middle;
+#limit_to_available,
+#metabib_search_modifier,
+#depth_zero {
+    margin: 0.9em 0 0 0.2em;
 }
 .results_header_sel {
     /* width: 88px; */
@@ -1545,6 +1547,12 @@ a.dash-link:hover {
 .results_header_sel {
     float: left;
 }
+
+#simple-detail-view-links a {
+    margin: 0.3em;
+    white-space: nowrap;
+}
+
 /*
  * .various_containers a = shortcut to putting .opac-button on every 'a' with
  *     the tradeoff of increased stylesheet complexity (TODO: rethink?)
@@ -1809,7 +1817,7 @@ table.bookbag-specific {
     margin: 0.5ex 0;
 }
 .saved-searches {
-    border-bottom: 1px solid #333;
+    /*border-bottom: 1px solid #333;*/
     /*padding-right: .5em;*/
 }
 #staff-saved-search {
@@ -2191,6 +2199,11 @@ a.preflib_change {
     .result_block_hidden {
         display: none;
     }
+
+    .almost-content-wrapper {
+	display:block;
+	visibility:visible;
+	}
     .facet_sidebar_visible,
     .result_block_visible {
         display: inline ! important;
