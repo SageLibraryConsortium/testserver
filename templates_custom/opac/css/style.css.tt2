@@ -94,6 +94,10 @@ a:hover {
 .searchbar label {
     font-size: 14px;
 }
+
+.search_options_lbl {
+    font-size: 13px;
+}
 /*
 #search-wrapper select {
     border:0px solid black;
@@ -852,6 +856,7 @@ collapse correctly when the window width decreases */
 }
 #limit_to_available,
 #metabib_search_modifier,
+#opac_result_excludeelec,
 #depth_zero {
     margin: 0.9em 0 0 0.2em;
 }
@@ -1223,7 +1228,7 @@ div#facet_sidebar {
     border-left: 1px solid #e9ebf3;
     border-right: 1px solid #e9ebf3;
     padding: 0 0.5em;
-    width: 14em;
+    width: 13rem;
     overflow: hidden;
 }
 .facet_template {

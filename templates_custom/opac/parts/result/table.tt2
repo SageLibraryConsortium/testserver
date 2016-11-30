@@ -36,15 +36,15 @@
                     </div>
                     <label class="results_header_lbl" for="opac.result.sort">[% l('') %]
                     [% INCLUDE "opac/parts/filtersort.tt2" value=CGI.param('sort') submit_on_change=1 %]
-                    </label><br class="clear-both" />
-                    <label class="search_options_lbl" for="limit_to_available">
+                    </label><br class="clear-both" /><hr>
+                    <label class="search_options_lbl" for="limit_to_available" title="[% l('Only show items in an Available status') %]">
                         <input type="checkbox" id="limit_to_available" name="modifier" value="available"
                             onchange="search_modifier_onchange('available', this, true)"
                             [% CGI.param('modifier').grep('available').size ? ' checked="checked"' : '' %] />
-                        [% l('Limit to available items') %]
+                        [% l('Limit to Available Items') %]
                     </label><br>
                     [% IF NOT metarecords.disabled %]
-                        <label class="search_options_lbl" for="metabib_search_modifier">
+                        <label class="search_options_lbl" for="metabib_search_modifier" title="[% l('Group multiple formats and editions of the same title together in the result set') %]">
                             <input type="checkbox" id="metabib_search_modifier"
                                 name="modifier" value="metabib"
                                 onchange="search_modifier_onchange('metabib', this, true)"
@@ -52,17 +52,26 @@
                             [% l('Group Formats and Editions') %]
                         </label><br>
                     [% END %]
+                     <label class="search_options_lbl" for='opac_result_excludeelec' title="[% l('Exclude Electronic Records from your result set') %]">
+                         <input type='checkbox' name="fi:-search_format" value="electronic"
+                             onchange="search_modifier_onchange('available', this, true)"
+                             [%- CGI.param('fi:-search_format').grep('electronic').size ? ' checked="checked"' : '' %]
+                             id='opac_result_excludeelec' />
+                         [% l("Exclude Electronic Resources") %]
+                     </label>
+		     <br>
                     [% IF loc_value != 1 %]
-                    <label class="search_options_lbl" for="depth_zero" title="[% l('Select this option to expand your results to all Org Units while retaining the priority of your selected library\'s holdings.') %]">
+                    <label class="search_options_lbl" for="depth_zero" title="[% l('Select this option to expand your results to all libraries while retaining the priority of your selected library\'s holdings.') %]">
                         <input type="checkbox" id="depth_zero" name="depth" value="0"
                             onchange="this.form.submit()"
                             [% CGI.param('depth') == '0' ? ' checked="checked"' : '' %] />
-                        [% l('Show results from all Libraries') %]
+                        [% l('Show Results from All Libraries') %]
                     </label><br>
                     [% END %]
                     [% IF CGI.param('detail_record_view') %]
                         <input type="hidden" name="detail_record_view" value="1" />
                     [% END %]
+                     </label>
                     <br>
                 </form>
             </div>
