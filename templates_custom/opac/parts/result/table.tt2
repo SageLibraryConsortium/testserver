@@ -34,7 +34,7 @@
                     <div class="hidden">
                         [% INCLUDE "opac/parts/searchbar.tt2" took_care_of_form=1 %]
                     </div>
-                    <label class="results_header_lbl" for="opac.result.sort">[% l('') %]
+                    <label class="results_header_lbl" for="opac.result.sort">
                     [% INCLUDE "opac/parts/filtersort.tt2" value=CGI.param('sort') submit_on_change=1 %]
                     </label><br class="clear-both" /><hr>
                     <label class="search_options_lbl" for="limit_to_available" title="[% l('Only show items in an Available status') %]">

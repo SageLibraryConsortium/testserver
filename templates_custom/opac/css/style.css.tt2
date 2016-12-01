@@ -52,11 +52,11 @@ img {
     margin-right: 30px;
 }
 a {
-    color: #5B743D;
+    color: #3f512a;
 }
 
 a:hover {
-    color: #f70;
+    color: #12170c;
 }
 
 .rotate{
@@ -650,8 +650,8 @@ div.result_actions {
 }
 .results_aux_utils {
     display: inline-block;
-    /*font-size: 105%;*/
-    font-weight: 700;
+    font-size: 105%;
+    /*font-weight: 700;*/
 }
 .result_util {
     padding-left: 1em;
@@ -2010,7 +2010,7 @@ a.preflib_change {
 #locale_picker_form {
     float: right;
     padding: 0.5em;
-    margin-top: 2em;
+    margin-top: 2.5em;
     border-right: thin #A7C089 solid;
 }
 #locale_picker_form * {
@@ -2023,10 +2023,14 @@ a.preflib_change {
     color: red;
 }
 .record_title {
-    font-weight: bold;
+    /*font-weight: bold;*/
+    font-size:120%;
+    font-family:'Merriweather';
 }
 .record_author {
     font-style: italic;
+    font-size:95%;
+    text-decoration:none;
 }
 .password_message {
     padding-top: 1em;
@@ -2127,9 +2131,6 @@ a.preflib_change {
 .result_table_title_cell {
     padding-top: 4px;
     padding-bottom: 4px;
-}
-.record_title {
-    font-size: 120%;
 }
 /* styling for sms text call number */
 
@@ -2461,7 +2462,6 @@ width:100%;
     div.place_hold a {
         border-bottom: none;
         text-align: center;
-        font-weight: bold;
         /*padding:5px;*/
         
         /*text-decoration: none;*/
