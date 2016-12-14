@@ -6,7 +6,7 @@ body {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #242729;
-    background: #75954E;
+    background: #88B04B;
     -webkit-font-smoothing: antialiased;
     /*Chrome - Sage */
     -moz-osx-font-smoothing: grayscale;
@@ -18,11 +18,13 @@ input {
     font-size: 14px;
 }
 
+select {
+    font-family:inherit;
+    font-weight:normal;
+}
+
 select.radius {
     border-radius: 3px; }
-select:hover {
-    background-color: #f3f3f3;
-    border-color: #999999; }
 select:disabled {
     background-color: #DDDDDD;
     cursor: default; }
@@ -202,11 +204,11 @@ for now until a better color is picked - if needed.
     margin-left: -1.5em;
 }
 #header-wrap {
-    background: linear-gradient(#5B743D, #75954E);
-    background: -moz-linear-gradient(#5B743D, #75954E);
-    background: -o-linear-gradient(#5B743D, #75954E);
-    background: -webkit-linear-gradient(#5B743D, #75954E);
-    background-color: #75954E;
+    background: linear-gradient(#5B743D, #88B04B);
+    background: -moz-linear-gradient(#5B743D, #88B04B);
+    background: -o-linear-gradient(#5B743D, #88B04B);
+    background: -webkit-linear-gradient(#5B743D, #88B04B);
+    background-color: #88B04B;
 }
 #header {
     color: #fff;
@@ -242,9 +244,9 @@ for now until a better color is picked - if needed.
     text-align: center;
     padding: 13px 14px;
     text-decoration: none;
-    -webkit-transition: background-color .2s, color .10s, box-shadow .2s, opacity 0.2s;
-    transition: background-color .2s, color .10s, box-shadow .2s, opacity 0.2s;
-    font-size: 14px;
+    -webkit-transition: background-color .2s, box-shadow .2s, opacity 0.2s;
+    transition: background-color .2s, box-shadow .2s, opacity 0.2s;
+    box-sizing: border-box;
 }
 #header-links a:hover {
     color: #000;
@@ -345,7 +347,7 @@ for now until a better color is picked - if needed.
     height: 0px;
 }
 #search-wrapper {
-    border-bottom: 1px solid #e9ebf3;
+    border-bottom: 1px solid #ccc;
     padding-bottom: 5px;
     background: #fff;
 }
@@ -492,8 +494,9 @@ for now until a better color is picked - if needed.
 .rdetail_header {
     /*padding: 5px 7px 6px 0px;*/   
     padding-bottom: 5px;
-    /*margin-left: 1em;*/
-    border-bottom: 1px dotted #ccc;
+    margin-left: .5em;
+    margin-right: .5em;
+    border-bottom: 1px solid #ccc;
 }
 /* Since footer search uses header bits */
 .rdetail_header:nth-child(n+2) {
@@ -1251,12 +1254,12 @@ div#facet_sidebar {
     border: 1px solid #999;
 }
 #footer-wrap {
-    /* background: linear-gradient(#5B743D, #75954E);*/
-    /* background: -moz-linear-gradient(#5B743D, #75954E);*/
-    /* background: -o-linear-gradient(#5B743D, #75954E);*/
-    /* background: -webkit-linear-gradient(#5B743D, #75954E);*/
+     background: linear-gradient(#5B743D, #88B04B);
+     background: -moz-linear-gradient(#5B743D, #88B04B);
+     background: -o-linear-gradient(#5B743D, #88B04B);
+     background: -webkit-linear-gradient(#5B743D, #88B04B);
     
-    background-color: #75954E;
+    background-color: #88B04B;
 }
 #footer {
     padding-top: 5px;
@@ -1577,8 +1580,8 @@ a.dash-link:hover {
     padding: .4em .6em;
     font-weight: 600;
     text-decoration: none ! important;
-    transition: all 0.2s ease-in-out 0s;
-    -webkit-transition: all 0.2s ease-in-out 0s;
+    transition: background-color .2s, box-shadow .2s, opacity 0.2s;
+    -webkit-transition: background-color .2s, box-shadow .2s, opacity 0.2s;
     display: inline-block;
 }
 .opac-multiline-button > a:hover,
@@ -1635,7 +1638,13 @@ a.opac-button-header:hover,
 }
 #rdetail_record_details {
     clear: both;
-    margin-top: 1em;
+    margin-left:.5em;
+    margin-right.5em;
+    /*margin-top: 1em;*/
+}
+.rdetail_contents {
+margin-left:.5em;
+margin-right:.5em;
 }
 
 /*Drop Down for Copy Info in Record Display*/
@@ -1647,6 +1656,7 @@ a.opac-button-header:hover,
 .rdetail_content {
     margin-left: 1.5em;
     /*padding-left: 1.5em;*/
+    margin-right:.5em;
 }
 .rdetail_content_type,
 .rdetail_subject_type {
@@ -2269,6 +2279,7 @@ a.preflib_change {
     #header-links a {
         margin: unset;
         float: unset;
+	height: 100%;
     }
     #gold-links {
         margin-left: unset;
@@ -2291,6 +2302,7 @@ span .nav_arrow_fix {
 
 #results_header_inner {
 display: inline-flex;
+text-align: center;
 }
 
 /* No need to show search links on small screen */
@@ -2340,6 +2352,10 @@ margin-top:3em;
 margin-left:0;
 margin-right:0;
 width:100%;
+}
+#copy_hold_counts {
+margin-left:.5em;
+margin-right:.5em;
 }
     #topnav_logo {
         margin: 0;
@@ -2829,6 +2845,24 @@ width:100%;
         /*margin-left:16em;*/
     }
 }
+
+/*Flex Nav Menu*/
+@media only screen and (max-width: 970px) {
+    #header-links {
+        display: inline-flex;
+        text-align: center;
+        position: inherit;
+    }
+    #header-links a {
+        margin: unset;
+        float: unset;
+        height: 100%;
+    }
+    .sagedropdown-bits {
+        right: 0;
+    }
+}
+
 @media only screen and (max-width: 350px) {
     div.result_actions img {
         display:none;
