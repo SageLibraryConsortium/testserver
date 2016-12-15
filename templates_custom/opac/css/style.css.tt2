@@ -12,6 +12,21 @@ body {
     -moz-osx-font-smoothing: grayscale;
     /*Firefox - Sage*/
 }
+
+/*Style Placeholder*/
+::-webkit-input-placeholder {
+text-align:center;
+}
+:-moz-placeholder { /* Firefox 18- */
+text-align:center;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+text-align:center;
+}
+:-ms-input-placeholder {  
+text-align:center;
+}
+
 button,
 input {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
@@ -61,24 +76,12 @@ a:hover {
     color: #12170c;
 }
 
-.rotate{
-    -moz-transition: all 2s linear;
-    -webkit-transition: all 2s linear;
-    transition: all 2s linear;
-}
-
-.rotate.down{
-    -ms-transform:rotate(180deg);
-    -moz-transform:rotate(180deg);
-    -webkit-transform:rotate(180deg);
-    transform:rotate(180deg);
-}
-
 #search-wrapper input[type=text] {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans';
     font-size: 14px;
+    width: 14em;
 }
 #search-wrapper select,
 .results_header_lbl select {
@@ -91,10 +94,15 @@ a:hover {
 .searchbar {
     font-weight: bold;
     padding-top: 10px;
-    margin-left: 1em;
+}
+.searchbar-field {
+display:inline-block;
+margin-left:1em;
 }
 .searchbar label {
     font-size: 14px;
+    display:block;
+    text-align:start;
 }
 
 .search_options_lbl {
@@ -365,6 +373,10 @@ for now until a better color is picked - if needed.
 #search-wrapper #breadcrumb a {
     color: black;
 }
+
+#copy_hold_counts {
+display:table;
+}
 #search-wrapper #search_frm label {
     font-size: 80%;
 }
@@ -536,6 +548,13 @@ for now until a better color is picked - if needed.
     padding-top: 3px;
     padding-right: 10px;
 }
+
+#opac-icon {
+float:left;
+display:inline-block;
+vertical-align:top;
+margin-right:1em;
+}
 h2.rdetail_uris {
     margin-top: 1em;
 }
@@ -562,23 +581,23 @@ div.rdetail_show_copies {
     margin-top: 1em;
 }
 #rdetail_title_div {
-/*padding-top:0.5em;*/
+margin-bottom:1em;
+margin-left:1em;
 }
 
 div#rdetail_actions_div {
     float: right;
     background: #fff;
     box-shadow: 0px 1px 4px 3px rgba(204, 204, 204, 0.5);
-    margin-bottom: 10px;
-    margin-right: 10px;
+    margin-bottom: 1em;
+    margin-right: 1em;
+    margin-left: 1em;
     font-size: 14px;
 }
 span#rdetail_copy_counts {
     display: inline-block;
-    border-right: thin;
     vertical-align: top;
-    margin-right: 1em;
-    padding-right: 1em;
+    margin-right: 2em;
 }
 span#rdetail_hold_counts {
     display: inline-block;
@@ -587,6 +606,10 @@ span#rdetail_hold_counts {
 span#rdetail_hold_counts p {
     padding-left: 2em;
 }
+/*span#rdetail_summary_blob {
+    display:inline-block;
+    width:75%;
+}*/
 #rdetail_image_div {
     float: left;
     margin-right: 1em;
@@ -846,7 +869,8 @@ div.result_actions {
     
     /*border: 1px solid #999;*/
     background: #fff;
-    margin: 0.5em 0.2em;
+    /*margin: 0.5em 0.2em;*/
+    margin: 0.5em;
     padding: 0;
 }
 /* we need a negative margin on the select to allow the containing <label>
@@ -1654,8 +1678,7 @@ margin-right:.5em;
 	padding-left:.5em;
 }
 .rdetail_content {
-    margin-left: 1.5em;
-    /*padding-left: 1.5em;*/
+    margin-left:.5em;
     margin-right:.5em;
 }
 .rdetail_content_type,
@@ -2135,8 +2158,9 @@ a.preflib_change {
 #search_itype_label,
 #search_locg_label {
     white-space: nowrap;
-    display: inline-block;
-    padding: 5px 0 0 5px;
+    display: block;
+    padding-left: 0.5em;
+    text-align:start;
 }
 .result_table_title_cell {
     padding-top: 4px;
@@ -2294,15 +2318,24 @@ a.preflib_change {
         font-size: 110%;
     }
 #search-wrapper input[type=text] {
-	width: 50%;
+	width: 21em;
 }
 span .nav_arrow_fix {
         display: none;
 }
-
 #results_header_inner {
 display: inline-flex;
 text-align: center;
+}
+
+/* center jacket in mobile */
+#rdetail_image_div img {
+margin-left:auto;
+margin-right:auto;
+display:block;
+}
+#rdetail_image_div {
+float:initial;
 }
 
 /* No need to show search links on small screen */
@@ -2468,6 +2501,7 @@ margin-right:.5em;
         padding-left: 0;
         border-bottom: none;
     }
+
     div.place_hold_mobile {
 	clear:both;
     }
@@ -2573,6 +2607,7 @@ margin-right:.5em;
     .rdetail_aux_utils {
         padding: 10px;
         border: none;
+	text-align:center;
     }
     .result_metadata {
         min-width: 100%;
@@ -2580,11 +2615,10 @@ margin-right:.5em;
         /*padding-left: 5px;*/
     }
     div#rdetail_actions_div {
-        float: none;
         border-radius: 5px;
-	margin-right: 5px;
-        /*padding: 5px;*/
-        /*min-width: 11em;*/
+	/*margin-right: 5px;*/
+	display:flex;
+	float:initial;
     }
     div#rdetail_actions_div a {
         text-decoration: underline;
@@ -2610,6 +2644,7 @@ margin-right:.5em;
     }
     .browse_the_catalog_lbl {
         white-space: nowrap;
+	display:none;
     }
     .mobile_hide {
         display: none;
@@ -2632,18 +2667,31 @@ margin-right:.5em;
         text-align: center;
 	margin-left:0;
     }
+    .searchbar-field {
+	display:block;
+        margin:0;
+	padding-bottom:0.5em;
+    }
+    .searchbar label {
+	text-align:center;
+	display:block;
+    }
     #browse-controls {
         line-height: 1.5em;
     }
-    #search_query_label,
-    #search_qtype_label,
-    #search_itype_label,
-    #search_locg_label {
-        display: block;
+#search_query_label,
+#search_qtype_label,
+#search_itype_label,
+#search_locg_label {
+        display: none;
         width: 256px;
         margin: auto;
         text-align: right;
     }
+#search-wrapper select,
+.results_header_lbl select {
+width:20em;
+}
     .bookshelf td {
         display: block;
         width: 100%;

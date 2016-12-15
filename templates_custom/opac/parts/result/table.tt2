@@ -138,12 +138,17 @@
                                                       title='tag:[% ctx.hostname %],[% date.format(date.now, '%Y') %]:biblio-record_entry/[% rec.bre_id %]'>
                                                     </abbr>
                                                     [% END %]
-                                                    [%- IF attrs.format_label; %]
-                                                   [% FOR format IN attrs.all_formats %]
+                                                    [%- IF attrs.format_label;
+							 format_seen = {}; %]
+                                                    [% FOR format IN attrs.all_formats %]
+							[% label = format.label; %]
+							[%- IF NOT format_seen.exists(label); %]
                                                      <img title="[% format.label | html %]"
                                                        alt="[% format.label | html %]"
                                                        class="format_icon"
                                                        src="[% format.icon %]" />
+						     [% format_seen.$label = label; %]
+						     [% END %]
                                                                 [% END %]
                                                         [% END %]
                                                     <a class='record_title search_link' name='record_[% rec.id %]'
