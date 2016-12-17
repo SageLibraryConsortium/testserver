@@ -366,8 +366,3 @@ IF num_uris > 0;
           e.style.display = 'none';
     }
 </script>
-<script type="text/javascript">
-(".rotate").click(function(){
-    $(this).toggleClass("down"); 
-});
-</script>

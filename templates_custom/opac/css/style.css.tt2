@@ -27,8 +27,11 @@ text-align:center;
 text-align:center;
 }
 
-button,
-input {
+/*input[type=button],input[value="Search"] {
+    width:91px;
+    height:35px;
+}*/
+button, input {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 14px;
 }
@@ -77,10 +80,12 @@ a:hover {
 }
 
 #search-wrapper input[type=text] {
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans';
-    font-size: 14px;
+  margin: 0;
+  height: 2em;
+  font-size:initial;
+  border-radius: 2px;
+  border: 1px solid #DDD;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
     width: 14em;
 }
 #search-wrapper select,
@@ -375,6 +380,9 @@ for now until a better color is picked - if needed.
 }
 
 #copy_hold_counts {
+display:table;
+}
+#rdetail_summary_blob {
 display:table;
 }
 #search-wrapper #search_frm label {
@@ -803,8 +811,10 @@ div.result_actions {
     margin: 0;
 }
 #main-content .left_brain {
-    padding-left: 28px;
-    padding-top: 25px;
+    /*padding-left: 28px;*/
+    /*padding-top: 25px;*/
+    padding:28px;
+    margin:0.5em;
 }
 #main-content .left_brain input[type=text],
 #main-content .left_brain input[type=password] {
@@ -2318,7 +2328,12 @@ a.preflib_change {
         font-size: 110%;
     }
 #search-wrapper input[type=text] {
-	width: 21em;
+  width: 21em;
+  height: 2em;
+  font-size:initial;
+  border-radius: 2px;
+  border: 1px solid #DDD;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
 }
 span .nav_arrow_fix {
         display: none;
@@ -2387,6 +2402,10 @@ margin-right:0;
 width:100%;
 }
 #copy_hold_counts {
+margin-left:.5em;
+margin-right:.5em;
+}
+#rdetail_summary_blob {
 margin-left:.5em;
 margin-right:.5em;
 }
@@ -2623,7 +2642,12 @@ margin-right:.5em;
     div#rdetail_actions_div a {
         text-decoration: underline;
     }
-
+/* Mobile icon placement above full-width hold */
+.rdetail_aux_utils a,
+.share_record a,
+.toggle_list a {
+float:none;
+}
    div.toggle_list {
 	padding-top:10px;
     }
