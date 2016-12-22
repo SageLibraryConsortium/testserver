@@ -156,6 +156,9 @@ div.select-box-wrapper {
 }
 #dash_wrapper {
     margin-left: 0.5em;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+    margin-top: .5em;
+    background: #5B743D;
 }
 #dash_wrapper div {
     background: #5B743D;
@@ -168,7 +171,7 @@ div.select-box-wrapper {
     display: inline-block;
 }
 #dashboard {
-    margin-top: 1em;
+    /*margin-top: 1em;*/
     height: 3em;
 }
 #dashboard span.dash-align a {
@@ -180,6 +183,9 @@ div.select-box-wrapper {
 }
 #logout_link {
     left: 1px;
+}
+.mobile_logout {
+    display:none;
 }
 #dash_checked {
     color: #ffcc33;
@@ -245,7 +251,6 @@ for now until a better color is picked - if needed.
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
 }
 #header-links li {
     float: left;
@@ -351,7 +356,7 @@ for now until a better color is picked - if needed.
 }
 #gold-links-holder {
     min-height: 44px;
-    background: rgba(246, 255, 240, 0.7);
+    background: #333;
     height: auto;
 }
 #util-bar {
@@ -770,7 +775,6 @@ div.result_actions {
     min-height: 260px;
     /*border-bottom: 1px solid #242729;
     border-top: 1px solid #75954E;*/
-    padding-top: 5px;
     margin: 0;
 }
 .content-wrapper-record-page {
@@ -1032,7 +1036,6 @@ div.result_table_utils_cont {
     font-weight: bold;
     color: #75954E;
     padding: 0px 7px 0px 0px;
-    border-bottom: 1px dotted #ccc;
     clear: both;
 }
 .header_middle a {
@@ -1641,6 +1644,7 @@ input.opac-button::-moz-focus-inner {
 /*modded for curvier and bigger My Account button */
 
 .opac-button-header,
+#logout_link_mobile,
 #dash_wrapper .opac-button {
     background: #A7C089;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
@@ -2266,6 +2270,13 @@ a.preflib_change {
     #acct_prefs_tabs {
         display: none;
     }
+	.mobile_logout {
+		display:inline-block;
+		float:right;
+		}
+	#logout_link {
+    		display:none;;
+		}
     .radio-parts-selection {
         width: 90%;
     }
@@ -2438,10 +2449,15 @@ margin-right:.5em;
     #dash_wrapper div {
         background: transparent;
         padding: 0px;
+	color:black;
+	text-align:right;
     }
     #dash_wrapper {
         position: static;
         top: auto;
+	box-shadow:initial;
+	background:initial;
+	margin-top:initial;
     }
     #dash_wrapper .opac-button {
         top: 0px;
