@@ -651,7 +651,7 @@ div.place_hold a {
     width: 100%;
     text-align: center;
     font-size: 14px;
-    background: [% css_colors.primary_fade %];
+    background: [% css_colors.primary %];
     overflow: auto;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -660,7 +660,7 @@ div.place_hold a {
     -webkit-transition: all 0.2s ease-in-out 0s;
 }
 .place_hold_btn:hover {
-    background: [% css_colors.primary %];
+    background: [% css_colors.primary_fade %];
 }
 .result_util a {
     /*text-decoration: none;*/
@@ -1612,7 +1612,7 @@ a.dash-link:hover {
 .results_header_btns a,
 #simple-detail-view-links a,
 .dash_account_buttons a {
-    background: [% css_colors.primary_fade %];
+    background: [% css_colors.primary %];
     background-image: none;
     color: #fff;
     border-radius: 5px;
@@ -1630,7 +1630,7 @@ a.dash-link:hover {
 .results_header_btns a:hover,
 #simple-detail-view-links a:hover,
 #dash_wrapper a.opac-button:hover {
-    background: [% css_colors.primary %];
+    background: [% css_colors.primary_fade %];
 }
 .opac-button:disabled {
     color: [% css_colors.accent_medium %];
