@@ -159,6 +159,7 @@ div.select-box-wrapper {
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
     margin-top: .5em;
     background: #5B743D;
+    border-radius:5px;
 }
 #dash_wrapper div {
     background: #5B743D;
@@ -322,6 +323,7 @@ for now until a better color is picked - if needed.
 #your-acct-login {
     padding-top: 2em;
     visibility: inherit;
+    margin: 0.2em;
 }
 #gold-links {
     margin-left: .5em;
@@ -1649,6 +1651,7 @@ input.opac-button::-moz-focus-inner {
     background: #A7C089;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
     padding: .5em;
+    margin: 0.2em;
     border-radius: 10px;
     font-size: 14px;
 }
