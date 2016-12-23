@@ -372,6 +372,7 @@ for now until a better color is picked - if needed.
     border-bottom: 1px solid #ccc;
     padding-bottom: 5px;
     background: #fff;
+    max-width: 100%;
 }
 #search-wrapper #breadcrumb {
     margin-top: 0px;
@@ -785,8 +786,8 @@ div.result_actions {
     /*position: relative;*/
 }
 #main-content-home {
-    padding-left: 17px;
-    margin-left: 1em;
+    /*padding-left: 17px;
+    margin-left: 1em;*/
 }
 #main-content {
     padding-left: 0px;
