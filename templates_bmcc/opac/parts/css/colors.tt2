@@ -33,6 +33,9 @@
         table_heading = "#d8d8d8", # grey-blue
         mobile_header_text = "#fff", # white
 	links = "#67561d" # muted gold
+	action_box_results = "rgba(41, 86, 161, 0.2)", # very light blue
+	mobile_header = "initial",
+	mobile_header_text = "#fff"
     };
     
 %]

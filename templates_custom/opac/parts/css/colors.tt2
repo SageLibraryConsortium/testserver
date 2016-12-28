@@ -32,7 +32,10 @@
         button_text_shadow = "#555555", # medium grey
         table_heading = "#d8d8d8", # grey-blue
         mobile_header_text = "#fff", # white
-	links = "#3f512a" # muted, dark green
+	links = "#3f512a", # muted, dark green
+	action_box_results = "rgba(118, 150, 79, 0.2)", # very light green
+	mobile_header = "#fff",
+	mobile_header_text = "black"
     };
     
 %]

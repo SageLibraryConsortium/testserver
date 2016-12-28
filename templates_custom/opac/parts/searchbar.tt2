@@ -13,7 +13,7 @@
     <div class="searchbar">
         <div class="searchbar-field">
             <label id="search_box_label" for="search_box">[% l('Search: ') %]</label>
-            <input type="text" placeholder="What are you looking for?" id="search_box" name="query" aria-label="[%
+            <input type="text" placeholder="What are you looking for?" id="search_box" class="search_normalize" name="query" aria-label="[%
                     l('Enter search query:');
                     %]" value="[% is_advanced ? ctx.naive_query_scrub(ctx.processed_search_query) : CGI.param('query') | html %]"
                     [% IF basic_search != "f" %] autofocus [% END %] x-webkit-speech 
@@ -57,7 +57,7 @@
         <button id='search-submit-go-depth' type="submit" value="[% ctx.depth_sel_depth %]" name="depth" class="[% ctx.depth_sel_button_class %]"
             onclick='setTimeout(function(){$("search-submit-spinner").className=""; $("search-submit-go").className="hidden"; $("search-submit-go-depth").className="hidden";}, 200)' title="[% ctx.depth_sel_tooltip | html %]">[% ctx.depth_sel_button_label | html %]</button>
         [%- END %]
-        <img id='search-submit-spinner' src='/opac/images/progressbar_green.gif' class='hidden' alt='[% l("Search In Progress") %]'/>
+        <span id="search-submit-spinner" class='hidden' alt='[% l("Search In Progress") %]'/><i class="fa fa-circle-o-notch fa-spin fa-lg" aria-hidden="true"></i></span>
     </span>
     </div>
     [% IF ctx.bookbag %]
@@ -96,5 +96,4 @@
         %]</a> ]
     </div>
     [% END %]
-    <div class="clear-both"></div>
 </div>

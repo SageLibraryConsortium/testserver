@@ -2,7 +2,7 @@
 
     <div class="saved-searches-header">
         <div class="text">
-            [% l("Recent searches") %]
+            [% l("Recent Searches") %]
         </div>
         <div class="button">
             [% IF ctx.saved_searches_expanded %]
@@ -11,9 +11,7 @@
             <a href="[% mkurl('', {'sss_expand' => 1}) %]" title="[% l('Expand') %]"><img src="[% ctx.media_prefix %]/images/staff_search_plus_btn.png" alt="[% l('Expand') %]" /></a>
             [% END %]
         </div>
-        <div class="clear">&nbsp;</div>
     </div>
-    <div class="clear">&nbsp;</div>
     <div class="saved-searches">
     [% IF ctx.saved_searches_expanded %]
         [% FOR s IN ctx.saved_searches %]

@@ -32,10 +32,12 @@ text-align:center;
 text-align:center;
 }
 
-/*input[type=button],input[value="Search"] {
-    width:91px;
-    height:35px;
-}*/
+.search_normalize {
+padding:3px 6px;
+box-shadow:inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #fff, 0 1px 0 #fff;
+border: 1px solid #ddd;
+}
+
 button, input {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 14px;
@@ -73,8 +75,8 @@ img {
     max-width:250px;
 }
 #homesearch_main_logo {
-    padding-top: 10px;
-    margin-right: 30px;
+margin-left:1em;
+margin-right:1em;
 }
 a {
     color: [% css_colors.links %];
@@ -522,7 +524,7 @@ display:table;
     background: [% css_colors.primary_fade %];
 }
 .rdetail_header {
-    /*padding: 5px 7px 6px 0px;*/   
+    padding: 5px 0px;   
     padding-bottom: 5px;
     margin-left: .5em;
     margin-right: .5em;
@@ -684,9 +686,9 @@ div.share_record {
 /*new*/
 
 div.result_actions {
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6);
     padding: 10px;
-    background: rgba(118, 150, 79, 0.2);
+    background: [% css_colors.action_box_results %];
 }
 .result_util {
     /*border-bottom: 1px dotted #ccc;*/
@@ -889,7 +891,7 @@ div.result_actions {
     background: #fff;
     /*margin: 0.5em 0.2em;*/
     margin: 0.5em;
-    padding: 0;
+    padding-top: 5px;
 }
 /* we need a negative margin on the select to allow the containing <label>
 to determine the actual size of the element.  By doing this, we can increase
@@ -1238,7 +1240,7 @@ div#facet_sidebar {
 .facet_box_temp {
     padding-bottom: 3px;
 }
-.facet_box_temp .header {
+.facet_box_temp .header, .saved-searches-header {
     height: 2.3em;
     background: [% css_colors.primary %];
     -moz-border-top-left-radius: 5px;
@@ -1858,28 +1860,45 @@ table.bookbag-specific {
 .float-right {
     float: right;
 }
+/* Saved Searches in Staff Client */
 .saved-searches-header {
-    width: 100%;
-    font-weight: bold;
-    font-size: 120%;
+	-moz-border-bottom-left-radius: 5px;
+    	border-bottom-left-radius: 5px;
+    	-moz-border-bottom-right-radius: 5px;
+    	border-bottom-right-radius: 5px;
+	color: #242729;
+	background:rgba(118, 150, 79, 0.1);
+	border: 1px solid #ccc;
+}
+.saved-searches-header-result {
+	float:right;
 }
 .saved-searches-header .button {
     float: right;
-    width: 30px;
+   /* padding-right:0.5em; */
+    width: 28px;
 }
 .saved-searches-header .text {
     float:left;
-    /*padding-right: 1em;*/
-    margin: 0.5ex 0;
+    padding-left: 0.5em;
+    padding-right: 1em;
+    margin: 0.5ex;
+    font-size: 1em;
+    font-weight:700;
+}
+/*PLS added */
+.saved-searches-list li {
+  line-height: normal;
+  text-decoration: none;
+  list-style-type: circle;
 }
 .saved-searches {
     /*border-bottom: 1px solid [% css_colors.accent_darker %];*/
-    /*padding-right: .5em;*/
+    padding-right: 1em;
 }
 #staff-saved-search {
-    /* wraps .saved-searches-header and .saved-searches on the record page */
-    
-    border-right: 1px solid [% css_colors.accent_darker %];
+    /* wraps .saved-searches-header and .saved-searches on the record page */    
+    /*border-right: 1px solid [% css_colors.accent_darker %];*/
 }
 .result_item_circulated {
     padding-top: 4px;
@@ -2385,7 +2404,7 @@ display:none; }
     #header {
         padding: 10px;
         margin: 0px;
-        background: white;
+        background: [% css_colors.mobile_header %];
     }
     div.result_actions {
         float: left;
@@ -2453,7 +2472,7 @@ margin-right:.5em;
     #dash_wrapper div {
         background: transparent;
         padding: 0px;
-	color:black;
+	color:[% css_colors.mobile_header_text %];
 	text-align:right;
     }
     #dash_wrapper {
