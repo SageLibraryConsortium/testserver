@@ -6,6 +6,30 @@
     PROCESS "opac/parts/css/colors.tt2";
 %]
 
+/*Test jQuery expander */
+.collapsible_info {
+  display: hide;
+  transition: opacity 1s;
+}
+
+.out {
+  opacity: 0;
+}
+
+.in {
+  opacity: 1;
+}
+
+.collapsible_main {
+  padding:0;
+  list-style:none;
+}
+#rdetail_display_list_hide {
+  display:none;
+  padding:0;
+}
+/* end expander */
+
 body {
     margin: 0;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
@@ -396,6 +420,7 @@ display:table;
 }
 #rdetail_summary_blob {
 display:table;
+margin-left:1.5em;
 }
 #search-wrapper #search_frm label {
     font-size: 80%;
@@ -525,7 +550,6 @@ display:table;
 }
 .rdetail_header {
     padding: 5px 0px;   
-    padding-bottom: 5px;
     margin-left: .5em;
     margin-right: .5em;
     border-bottom: 1px solid #ccc;
@@ -599,10 +623,6 @@ div.rdetail_uris ul li {
 }
 div.rdetail_show_copies {
     margin-top: 1em;
-}
-#rdetail_title_div {
-margin-bottom:1em;
-margin-left:1em;
 }
 
 div#rdetail_actions_div {
@@ -716,6 +736,11 @@ div.result_actions {
 #rdetails_status td[headers=copy_header_shelfloc] {
     white-space: normal;
 }
+
+#rdetails_status thead {
+border: 1px solid #ccc;
+}
+
 #rdetails_status thead th {
     background-color: [% css_colors.accent_lighter2 %];
     padding: 13px 0px 13px 13px;
@@ -734,27 +759,31 @@ div.result_actions {
     word-wrap: normal;
 }
 .rdetail_extras {
-    background: [% css_colors.primary_fade %];
+    background: #efefef;
     /*border: 1px solid [% css_colors.primary %];*/
     /*padding-top:1px;*/
     clear: both;
+}
+.rdetail_extras:hover {
+background: #ccc;
 }
 #rdetail_extras_div {
     margin: 1em 0;
 }
 .rdetail_extras_hr {
-    height: 1px;
+    /*height: 1px;*/
     background: #ccc;
     margin-left: 1px;
     margin-right: 1px;
 }
 .rdetail_extras_link {
     padding: 6px 12px;
-    font-size: 80%;
-    font-weight: bold;
+    font-size: 90%;
+    margin-bottom:2px;
+    border:1px solid #ccc;
 }
 .rdetail_extras_lbl {
-    color: #fff;
+    /*color: #fff;*/
     text-decoration: none;
 }
 ##rdetail_extras_expand,
@@ -792,8 +821,7 @@ div.result_actions {
     margin-left: 1em;*/
 }
 #main-content {
-    padding-left: 0px;
-    margin: 0 1em;
+    margin: .1em 1em 0 1em;
     clear: both;
 }
 #main-content-after-bar {
@@ -1564,6 +1592,8 @@ a.dash-link:hover {
 .hold-items-list-title {
     font-size: 120%;
     margin-bottom: 20px;
+    background: #efefef;
+    box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.3);
 }
 .hold-items-list-problem {
     color: red;
@@ -1683,23 +1713,36 @@ a.opac-button-header:hover,
 #rdetail_record_details {
     clear: both;
     margin-left:.5em;
-    margin-right.5em;
-    /*margin-top: 1em;*/
+    margin-right:.5em;
 }
-.rdetail_contents {
-margin-left:.5em;
-margin-right:.5em;
+#rdetail_record_details a {
+    text-decoration:none;
+    color:inherit;
 }
 
-/*Drop Down for Copy Info in Record Display*/
+.rdetail_content {
+    margin-left: 1.5em;
+}
+
+#rdetail_contents {
+    margin-left:.5em;
+    margin-right:.5em;
+}
+#rdetail_contents a {
+   text-decoration:none;
+   color:inherit;
+}
+
+/*Drop Down for Copy Info in Record Display
 #rdetail_record_details:after, .rdetail_contents:after {
 	font-family:'fontawesome';
     	content: "\f0d7";
 	padding-left:.5em;
 }
-.rdetail_content {
-    margin-left:.5em;
-    margin-right:.5em;
+*/
+
+.rdetail_subject {
+margin-left:2em;
 }
 .rdetail_content_type,
 .rdetail_subject_type {
@@ -1718,10 +1761,12 @@ margin-right:.5em;
     font-weight: bold;
 }
 .rdetail_related_subjects {
-    margin-top: 1.5em;
+    /*margin-top: 1em;*/
+    margin-left:0.5em;
 }
 .rdetail_related_series {
-    margin-top: 1.5em;
+    margin-top: 1em;
+    margin-left:0.5em;
 }
 #rdetail_openurl {
     margin-top: 1em;
@@ -2188,7 +2233,7 @@ a.preflib_change {
     display: none;
 }
 .rdetail_authors_div {
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 #search_query_label,
 #search_qtype_label,
@@ -2362,7 +2407,7 @@ a.preflib_change {
         font-size: 110%;
     }
 #search-wrapper input[type=text] {
-  width: 21em;
+  width: 20em;
   height: 2em;
   font-size:initial;
   border-radius: 2px;
@@ -2385,6 +2430,7 @@ display:block;
 }
 #rdetail_image_div {
 float:initial;
+margin-right:initial;
 }
 
 /* No need to show search links on small screen */
@@ -2605,14 +2651,14 @@ margin-right:.5em;
         margin: .2em;
     }
     #main-content {
-        margin: 0 1px;
+        margin: .1em 0.5em 0 0.5em;
     }
     #rdetails_status thead {
         display: none;
     }
     #rdetails_status tr {
         display: block;
-        margin-top: 3px;
+        margin-top: 0.5em;
     }
     #rdetails_status td {
         display: block;
@@ -2623,15 +2669,14 @@ margin-right:.5em;
     }
     .copy_details_offers_row {
         background-color: [% css_colors.accent_lightest %];
+	border: 1px solid #ddd;
     }
     select#pickup_lib.search-wrapper-locg {
         width: 100%;
     }
     #search-wrapper #search-box {
-        /* width: 85%; */
-        
         margin-left: initial;
-        padding-top: 5px;
+        padding-top: 0.5em;
         text-align: center;
     }
     #main-content-home {

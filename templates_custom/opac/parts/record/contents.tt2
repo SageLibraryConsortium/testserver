@@ -196,10 +196,19 @@ END
 [%-  content_html = PROCESS render_all_contents;
     IF content_html.length > 0;
 %]
-<h2 class='rdetail_contents' onclick="toggle_visibility('rdetail_content2');">[% l('Content descriptions') %]</h2>
+<nav class="collapsible_info">
+<ul class="collapsible_main">
+<li id='rdetail_contents'><a href="#" class="hide" data-toggle="list">
+  <h2>[% l('Content descriptions') %]
+	<i class="fa fa-sort" aria-hidden="true" style="padding-left: .5em;"></i>
+  </h2></a>
+<ul id="rdetail_display_list_hide">
 <table class='rdetail_content'>
     <tbody id='rdetail_content2'>
 [%- content_html %]
     </tbody>
 </table>
+</li>
+</ul>
+</nav>
 [%- END %]
