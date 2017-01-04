@@ -198,7 +198,7 @@ END
 %]
 <nav class="collapsible_info">
 <ul class="collapsible_main">
-<li id='rdetail_contents'><a href="#" class="hide" data-toggle="list">
+<li id='rdetail_contents'><a href="#void" class="hide" data-toggle="list">
   <h2>[% l('Content descriptions') %]
 	<i class="fa fa-sort" aria-hidden="true" style="padding-left: .5em;"></i>
   </h2></a>

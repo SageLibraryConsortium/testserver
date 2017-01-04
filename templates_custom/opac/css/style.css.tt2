@@ -1,6 +1,9 @@
 @charset "UTF-8";
-@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,700';
-@import url('https://fonts.googleapis.com/css?family=Merriweather');
+/*@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,700';*/
+/*@import url('https://fonts.googleapis.com/css?family=Merriweather');*/
+/*@import url('https://fonts.googleapis.com/css?family=Open+Sans');*/
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather">
 
 [%-
     PROCESS "opac/parts/css/colors.tt2";
@@ -729,7 +732,7 @@ div.result_actions {
     padding-top: 1.5em;
 }
 #rdetails_status td {
-    padding: 7px 0px 3px 13px;
+    padding: 7px 0px 0px;
     white-space: nowrap;
 }
 #rdetails_status td[headers=copy_header_library],
@@ -1718,6 +1721,7 @@ a.opac-button-header:hover,
 #rdetail_record_details a {
     text-decoration:none;
     color:inherit;
+    outline:none;
 }
 
 .rdetail_content {
@@ -1731,6 +1735,7 @@ a.opac-button-header:hover,
 #rdetail_contents a {
    text-decoration:none;
    color:inherit;
+   outline:none;
 }
 
 /*Drop Down for Copy Info in Record Display
