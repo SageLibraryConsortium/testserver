@@ -740,6 +740,11 @@ div.result_actions {
 .results_reviews {
     top: -5px;
 }
+
+#rdetails_box {
+    border-top: 1px solid #F5F5F5;
+}
+
 #rdetail_copies {
     padding-top: 1.5em;
 }
@@ -1737,7 +1742,7 @@ a.opac-button-header:hover,
 }
 
 .rdetail_content {
-    margin-left: 1.5em;
+    /*margin-left: 1.5em;*/
 }
 
 #rdetail_contents {
