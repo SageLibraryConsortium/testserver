@@ -6,4 +6,5 @@
 <br/>
 <hr style="border:2px solid;color:grey;width:80%;">
 [% INCLUDE "opac/parts/book_carousel.tt2" %]
+[%# INCLUDE "opac/parts/lg_flipster.tt2" %]
 </div>
