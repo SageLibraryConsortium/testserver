@@ -200,7 +200,7 @@ END
 <ul class="collapsible_main">
 <li id='rdetail_contents'><a href="#void" class="hide" data-toggle="list">
   <h2>[% l('Content descriptions') %]
-	<i class="fa fa-sort" aria-hidden="true" style="padding-left: .5em;"></i>
+	<i class="fa fa-sort faicons" aria-hidden="true" style="padding-left: .5em;"></i>
   </h2></a>
 <ul id="rdetail_display_list_hide">
 <table class='rdetail_content'>

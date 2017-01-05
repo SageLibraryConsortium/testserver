@@ -2324,6 +2324,12 @@ a.preflib_change {
 	content: "\f062";
 }
 
+/* Font Awesome Normalizing */
+
+.faicons {
+color: [% css_colors.links %];
+}
+
 /* patron message center */
 
 #myopac_message_tbody {

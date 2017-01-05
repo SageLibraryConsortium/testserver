@@ -214,7 +214,7 @@ IF num_uris > 0;
 <ul class="collapsible_main">
 <li id='rdetail_record_details'><a href="#void" class="hide" data-toggle="list">
  <h2>[% l("Record details") %]
-  <i class="fa fa-sort" aria-hidden="true" style="padding-left: .5em;"></i>
+  <i class="fa fa-sort faicons" aria-hidden="true" style="padding-left: .5em;"></i>
  </h2></a>
 <ul id=rdetail_display_list>
     [%- IF attrs.isbns.0;
