@@ -210,7 +210,7 @@ IF num_uris > 0;
 <br />
 [% END %]
 [%- INCLUDE "opac/parts/record/copy_table.tt2" copies=ctx.copies %]
-<div id="details_box">
+<div id="rdetails_box">
 <nav class="collapsible_info">
 <ul class="collapsible_main">
 <li id='rdetail_record_details'><a href="#void" class="hide" data-toggle="list">
