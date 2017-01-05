@@ -120,7 +120,7 @@ a:hover {
   border-radius: 2px;
   border: 1px solid [% css_colors.accent_lighter %];
   box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
-    width: 14em;
+  width: 16em;
 }
 #search-wrapper select,
 .results_header_lbl select {
@@ -138,6 +138,11 @@ a:hover {
 .searchbar-field {
 display:inline-block;
 margin-left:1em;
+}
+
+/*Hide "Search" text. People know what to do */
+#search_box_label {
+    display:none;
 }
 .searchbar label {
     font-size: 14px;
@@ -584,6 +589,7 @@ margin-left:1.5em;
 .rdetail_result_nav a {
     text-decoration: none;
     font-size: 120%;
+    color: [% css_colors.primary_fade %];
 }
 #rdetail_details_table {
     margin-top: 15px;
