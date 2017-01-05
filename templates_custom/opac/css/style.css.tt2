@@ -133,6 +133,7 @@ a:hover {
 .searchbar {
     font-weight: bold;
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 .searchbar-field {
 display:inline-block;
@@ -399,7 +400,7 @@ for now until a better color is picked - if needed.
 }
 #search-wrapper {
     border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
+    /*padding-bottom: 5px;*/
     background: #fff;
     max-width: 100%;
 }
@@ -441,7 +442,6 @@ margin-left:1.5em;
 #acct_holds_tabs,
 #acct_prefs_tabs,
 #results_header_inner {
-    margin-left: 2px;
     overflow: auto;
 }
 #adv_search_tabs a,
@@ -686,6 +686,18 @@ div.place_hold a {
 }
 .place_hold_btn:hover {
     background: [% css_colors.primary_fade %];
+}
+
+.place_hold_unavailable span {
+  color: #777777;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: not-allowed !important;
+  background: #eceff1;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: block;
+  text-align: center;
 }
 .result_util a {
     /*text-decoration: none;*/
@@ -2760,7 +2772,7 @@ float:none;
 	display:none;
     }
     .mobile_hide {
-        display: none;
+        display: none !important;
     }
     .mobile_show {
 	display: initial;

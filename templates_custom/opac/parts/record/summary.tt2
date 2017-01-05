@@ -58,6 +58,10 @@
                     [% alt(l('Request [_1]', attrs.title)) %]>
                 <span class="place_hold place_hold_btn mobile_hide">[% l('Place Hold') %]</span></a>
             </div>
+		[% ELSE %]
+		<div class="place_hold_unavailable">
+			<span class="place_hold mobile_hide" title="No holdable copies available">[% l('Place Hold') %]</span></a>
+		</div>
             [%- END -%]
             <div class="rdetail_aux_utils toggle_list">
             [%  IF ctx.user;
