@@ -18,7 +18,7 @@
         control = "#A7C089", # lighter green
         accent_light = "#ccc", #  grey (light)
         accent_lighter = "#ddd", #  grey (lighter)
-        accent_lighter2 = "#d8d8d8", #  grey (lighter again)
+        accent_lighter2 = "#efefef", #  grey (lighter again)
         accent_lightest = "#eee", #  grey (lightest)
         accent_ultralight = "#f0f0f0", # ivory
         accent_medium = "#999", # gun metal grey (medium)
