@@ -10,8 +10,8 @@
 		<a href="#" class="dropbutton">About Sage</a>
 		<div class="sagedropdown-bits">
 			<a href="http://batchgeo.com/map/d325cffa95d06f3d90a408592a00e3c7" target="_blank">[% l('Sage Member Map') %]</a>
-			<a href="https://sagelib.org/about-us" target="_blank">[% l('About Sage') %]</a>
 			<a href="https://sagelib.org/help" target="_blank">[% l('Need Help?') %]</a>
+                        <a href="https://sagelib.org/about-us" target="_blank">[% l('About Sage') %]</a>
 	</li>
 		</div>
  	</ul>
