@@ -748,7 +748,10 @@ div.result_actions {
 }
 
 #rdetails_box {
-    border-top: 1px solid #F5F5F5;
+    border-top: 5px double #F5F5F5;
+    margin-top: 1em;
+    display:inline-block;
+    width:100%;
 }
 
 #rdetail_copies {
@@ -2692,7 +2695,7 @@ margin-right:.5em;
     }
     #rdetails_status tr {
         display: block;
-        margin-top: 0.5em;
+        margin-top: 0.2em;
     }
     #rdetails_status td {
         display: block;
