@@ -2,7 +2,7 @@
 /*@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,700';*/
 /*@import url('https://fonts.googleapis.com/css?family=Merriweather');*/
 /*@import url('https://fonts.googleapis.com/css?family=Open+Sans');*/
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,800">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather">
 
 [%-
@@ -26,6 +26,10 @@
 .collapsible_main {
   padding:0;
   list-style:none;
+}
+#rdetail_display_list_show {
+  display:block;
+  padding:0;
 }
 #rdetail_display_list_hide {
   display:none;
@@ -134,10 +138,11 @@ a:hover {
     font-weight: bold;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-left:1em;
 }
 .searchbar-field {
 display:inline-block;
-margin-left:1em;
+margin-left:.5em;
 }
 
 /*Hide "Search" text. People know what to do */
@@ -302,8 +307,8 @@ for now until a better color is picked - if needed.
     text-align: center;
     padding: 13px 14px;
     text-decoration: none;
-    -webkit-transition: background-color .2s, box-shadow .2s, opacity 0.2s;
-    transition: background-color .2s, box-shadow .2s, opacity 0.2s;
+    -webkit-transition: background-color .2s, color .2s;
+    transition: background-color .2s, color .2s;
     box-sizing: border-box;
 }
 #header-links a:hover {
@@ -578,12 +583,12 @@ margin-left:1.5em;
 .rdetail_result_count {
     color: black;
     font-weight: normal;
-    padding-left: 1em;
+    padding-left: 0.5em;
     display: inline-block;
 }
 .rdetail_result_nav {
     font-weight: normal;
-    padding-left: 1em;
+    padding-left: 0.5em;
     display: inline-block;
 }
 .rdetail_result_nav a {
@@ -773,7 +778,7 @@ border: 1px solid #ccc;
 #rdetails_status thead th {
     background-color: [% css_colors.accent_lighter2 %];
     padding: 13px 0px 13px 13px;
-    font-size: 80%;
+    font-size: 90%;
     font-weight: bold;
     text-align: left;
 }
@@ -1751,7 +1756,7 @@ a.opac-button-header:hover,
 }
 
 .rdetail_content {
-    /*margin-left: 1.5em;*/
+    margin-left: 1.5em;
 }
 
 #rdetail_contents {
@@ -2444,7 +2449,7 @@ color: [% css_colors.links %];
         font-size: 110%;
     }
 #search-wrapper input[type=text] {
-  width: 20em;
+  width: 85%;
   height: 2em;
   font-size:initial;
   border-radius: 2px;
@@ -2468,6 +2473,11 @@ display:block;
 #rdetail_image_div {
 float:initial;
 margin-right:initial;
+}
+
+div#rdetail_actions_div {
+margin: 0.5em;
+display:inline-flex;
 }
 
 /* No need to show search links on small screen */
