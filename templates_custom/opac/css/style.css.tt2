@@ -1697,6 +1697,7 @@ a.dash-link:hover {
 #simple-detail-view-links a:hover,
 #dash_wrapper a.opac-button:hover {
     background: [% css_colors.primary_fade %];
+    color: #fff;
 }
 .opac-button:disabled {
     color: [% css_colors.accent_medium %];
